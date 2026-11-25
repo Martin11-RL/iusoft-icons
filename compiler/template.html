@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IU-SOFT Icons — Librería Vectorial Glass, Outline, Solid y Duotone</title>
+  <meta name="description" content="Librería vectorial de 243 iconos en 4 estilos (Glass, Outline, Solid y Duotone · 972 SVGs) para Sarchi Pizza POS e IU-SOFT, con descarga directa SVG y JSX bajo licencia MIT." />
+  <meta property="og:title" content="IU-SOFT Icons — Librería Vectorial Glass, Outline, Solid y Duotone" />
+  <meta property="og:description" content="243 iconos × 4 estilos (972 SVGs) con refracción óptica Glass, búsqueda en vivo y exportación limpia SVG/JSX." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2318181B'/%3E%3Cpath fill='%23FAFAFA' d='M16 6a10 10 0 0 0-10 10c0 2 .6 3.9 1.7 5.4L16 16V6Zm2 0v10l8.3 5.4A10 10 0 0 0 18 6Zm-1 12.6L9.1 23.8a10 10 0 0 0 13.8 0L17 18.6Z'/%3E%3C/svg%3E" />
+  <style>
+    /* 1. Design Tokens Canónicos SARCHI-UI v3 / DESIGN.md */
+    :root, .app-light {
+      --background: #FFFFFF;
+      --foreground: #09090B;
+      --card: #FFFFFF;
+      --card-foreground: #09090B;
+      --secondary: #F4F4F5;
+      --secondary-foreground: #18181B;
+      --muted: #F4F4F5;
+      --muted-foreground: #52525B;
+      --border: #E4E4E7;
+      --input: #E4E4E7;
+      --primary: #18181B;
+      --primary-foreground: #FAFAFA;
+      --ring: #09090B;
+    }
+    .app-dark {
+      --background: #09090B;
+      --foreground: #FAFAFA;
+      --card: #18181B;
+      --card-foreground: #FAFAFA;
+      --secondary: #27272A;
+      --secondary-foreground: #FAFAFA;
+      --muted: #27272A;
+      --muted-foreground: #D4D4D8;
+      --border: #27272A;
+      --input: #27272A;
+      --primary: #FAFAFA;
+      --primary-foreground: #09090B;
+      --ring: #FAFAFA;
+    }
+
+    /* 2. Reset Base / Preflight Autocontenido (0 CDN) */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: var(--border);
+    }
+    [hidden] {
+      display: none !important;
+    }
+    html {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+    html, body, button, input {
+      line-height: 20px;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--foreground);
+      caret-color: var(--ring);
+    }
+    h1, h2, h3, p {
+      margin: 0;
+    }
+    button, input {
+      font-family: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+    }
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    svg {
+      display: block;
+      vertical-align: middle;
+    }
+    .antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+      background-color: #18181B;
+      color: #FAFAFA;
+    }
+
+    /* 3. Utilidades Atómicas Compiladas */
+    .lh-24 { line-height: 24px; }
+    .lh-20 { line-height: 20px; }
+    .lh-16 { line-height: 16px; }
+    .num-lock {
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .font-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .text-\[12px\] { font-size: 12px; }
+    .text-\[13px\] { font-size: 13px; }
+    .text-\[14px\] { font-size: 14px; }
+    .text-\[15px\] { font-size: 15px; }
+    .text-\[16px\] { font-size: 16px; }
+    .text-\[18px\] { font-size: 18px; }
+    .tracking-\[-0\.01em\] { letter-spacing: -0.01em; }
+    .text-center { text-align: center; }
+    .whitespace-nowrap { white-space: nowrap; }
+    .truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .m-0 { margin: 0; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .mt-0\.5 { margin-top: 2px; }
+    .mt-1 { margin-top: 4px; }
+
+    .p-0\.5 { padding: 2px; }
+    .p-2 { padding: 8px; }
+    .p-3 { padding: 12px; }
+    .p-4 { padding: 16px; }
+    .p-8 { padding: 32px; }
+    .px-2\.5 { padding-left: 10px; padding-right: 10px; }
+    .px-3 { padding-left: 12px; padding-right: 12px; }
+    .px-3\.5 { padding-left: 14px; padding-right: 14px; }
+    .px-4 { padding-left: 16px; padding-right: 16px; }
+    .py-2 { padding-top: 8px; padding-bottom: 8px; }
+    .pt-0\.5 { padding-top: 2px; }
+    .pt-3 { padding-top: 12px; }
+    .pt-4 { padding-top: 16px; }
+    .pb-3 { padding-bottom: 12px; }
+    .pb-36 { padding-bottom: 144px; }
+
+    .space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 4px; }
+    .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 8px; }
+    .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 10px; }
+    .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 12px; }
+
+    .w-\[18px\] { width: 18px; }
+    .w-\[32px\] { width: 32px; }
+    .w-\[36px\] { width: 36px; }
+    .w-full { width: 100%; }
+    .w-\[calc\(100\%-24px\)\] { width: calc(100% - 24px); }
+    .min-w-0 { min-width: 0; }
+    .min-w-\[44px\] { min-width: 44px; }
+    .min-w-\[92px\] { min-width: 92px; }
+    .min-w-\[240px\] { min-width: 240px; }
+    .max-w-\[460px\] { max-width: 460px; }
+    .max-w-\[700px\] { max-width: 700px; }
+    .max-w-\[1160px\] { max-width: 1160px; }
+
+    .h-\[18px\] { height: 18px; }
+    .h-\[28px\] { height: 28px; }
+    .h-\[32px\] { height: 32px; }
+    .h-\[34px\] { height: 34px; }
+    .h-\[36px\] { height: 36px; }
+    .h-\[38px\] { height: 38px; }
+    .h-\[40px\] { height: 40px; }
+    .min-h-\[32px\] { min-height: 32px; }
+    .min-h-\[40px\] { min-height: 40px; }
+    .min-h-\[64px\] { min-height: 64px; }
+    .aspect-square { aspect-ratio: 1 / 1; }
+
+    .hidden { display: none; }
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .grid { display: grid; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .flex-nowrap { flex-wrap: nowrap; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .flex-1 { flex: 1 1 0%; }
+    .shrink-0 { flex-shrink: 0; }
+    .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .gap-0\.5 { gap: 2px; }
+    .gap-1\.5 { gap: 6px; }
+    .gap-2 { gap: 8px; }
+    .gap-2\.5 { gap: 10px; }
+    .gap-3 { gap: 12px; }
+
+    .fixed { position: fixed; }
+    .bottom-2\.5 { bottom: 10px; }
+    .left-1\/2 { left: 50%; }
+    .-translate-x-1\/2 { transform: translateX(-50%); }
+    .z-30 { z-index: 30; }
+
+    .overflow-x-auto { overflow-x: auto; }
+    .border-0 { border-width: 0; }
+    .border-b { border-bottom-width: 1px; }
+    .border-t { border-top-width: 1px; }
+    .rounded-\[9px\] { border-radius: 9px; }
+    .rounded-\[12px\] { border-radius: 12px; }
+    .rounded-\[16px\] { border-radius: 16px; }
+    .rounded-\[18px\] { border-radius: 18px; }
+    .rounded-\[22px\] { border-radius: 22px; }
+    .rounded-full { border-radius: 9999px; }
+
+    .bg-transparent { background-color: transparent; }
+    .bg-\[\#18181B\] { background-color: #18181B; }
+    .text-\[\#FAFAFA\] { color: #FAFAFA; }
+    .shadow-\[inset_0_0_0_1px_\#27272A\] { box-shadow: inset 0 0 0 1px #27272A; }
+    .outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+    .cursor-pointer { cursor: pointer; }
+    .focus-ring:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    @media not all and (min-width: 640px) {
+      .max-sm\:min-h-\[44px\] { min-height: 44px; }
+      .max-sm\:min-w-\[44px\] { min-width: 44px; }
+    }
+
+    @media (min-width: 640px) {
+      .sm\:inline-flex { display: inline-flex; }
+      .sm\:flex-row { flex-direction: row; }
+      .sm\:flex-wrap { flex-wrap: wrap; }
+      .sm\:items-center { align-items: center; }
+      .sm\:flex-1 { flex: 1 1 0%; }
+      .sm\:flex-none { flex: none; }
+      .sm\:w-auto { width: auto; }
+      .sm\:ml-auto { margin-left: auto; }
+      .sm\:bottom-4 { bottom: 16px; }
+      .sm\:rounded-full { border-radius: 9999px; }
+      .sm\:p-1 { padding: 4px; }
+      .sm\:px-3\.5 { padding-left: 14px; padding-right: 14px; }
+      .sm\:px-4 { padding-left: 16px; padding-right: 16px; }
+      .sm\:px-6 { padding-left: 24px; padding-right: 24px; }
+      .sm\:pt-1 { padding-top: 4px; }
+      .sm\:pt-7 { padding-top: 28px; }
+      .sm\:pb-4 { padding-bottom: 16px; }
+      .sm\:pb-28 { padding-bottom: 112px; }
+      .sm\:gap-2 { gap: 8px; }
+      .sm\:gap-2\.5 { gap: 10px; }
+      .sm\:gap-3 { gap: 12px; }
+      .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .sm\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .sm\:text-\[13px\] { font-size: 13px; }
+      .sm\:space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 6px; }
+      .sm\:space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 12px; }
+      .sm\:space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 16px; }
+      .sm\:space-y-5 > :not([hidden]) ~ :not([hidden]) { margin-top: 20px; }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+    }
+
+    /* 4. Superficies Semánticas Tema Claro / Oscuro (DESIGN.md) */
+    .app-light {
+      background-color: #FFFFFF;
+      color: #09090B;
+      caret-color: #09090B;
+    }
+    .app-light .muted-ink { color: #52525B; }
+    .app-light .hairline-b { border-color: #E4E4E7; }
+    .app-light .pill-idle {
+      background-color: transparent;
+      color: #52525B;
+    }
+    .app-light .pill-idle:hover {
+      background-color: #F4F4F5;
+      color: #09090B;
+    }
+    .app-light .pill-selected {
+      background-color: #F4F4F5;
+      color: #09090B;
+      box-shadow: inset 0 0 0 1px #D4D4D8;
+    }
+    .app-light .control-surface {
+      background-color: #F4F4F5;
+      color: #09090B;
+      box-shadow: inset 0 0 0 1px #E4E4E7;
+    }
+    .app-light .control-surface:hover {
+      background-color: #E4E4E7;
+    }
+    .app-light .search-box {
+      background-color: #F4F4F5;
+      color: #09090B;
+      box-shadow: inset 0 0 0 1px #E4E4E7;
+    }
+    .app-light .search-box:focus-within {
+      background-color: #FFFFFF;
+      box-shadow: inset 0 0 0 1px #09090B;
+    }
+    .app-light .search-input::placeholder {
+      color: #52525B;
+    }
+    .app-light .icon-tile {
+      background-color: #F4F4F5;
+      color: #18181B;
+    }
+    .app-light .icon-tile:hover {
+      background-color: #E4E4E7;
+    }
+    .app-light .icon-tile-selected {
+      background-color: #E4E4E7;
+      box-shadow: inset 0 0 0 1.5px #18181B;
+    }
+    .app-light .dock-shell {
+      background-color: #FFFFFF;
+      color: #09090B;
+      box-shadow: 0 0 0 1px #E4E4E7, 0 1px 2px 0 rgba(9, 9, 11, 0.05);
+    }
+    .app-light .cta-primary {
+      background-color: #18181B;
+      color: #FAFAFA;
+    }
+    .app-light .cta-primary:hover {
+      background-color: #27272A;
+    }
+    .app-light .drawer-panel {
+      background-color: #FAFAFA;
+      box-shadow: inset 0 0 0 1px #E4E4E7;
+    }
+
+    .app-dark {
+      background-color: #09090B;
+      color: #FAFAFA;
+      caret-color: #FAFAFA;
+    }
+    .app-dark .muted-ink { color: #D4D4D8; }
+    .app-dark .hairline-b { border-color: #27272A; }
+    .app-dark .pill-idle {
+      background-color: transparent;
+      color: #A1A1AA;
+    }
+    .app-dark .pill-idle:hover {
+      background-color: #18181B;
+      color: #FAFAFA;
+    }
+    .app-dark .pill-selected {
+      background-color: #27272A;
+      color: #FAFAFA;
+      box-shadow: inset 0 0 0 1px #3F3F46;
+    }
+    .app-dark .control-surface {
+      background-color: #18181B;
+      color: #FAFAFA;
+      box-shadow: inset 0 0 0 1px #27272A;
+    }
+    .app-dark .control-surface:hover {
+      background-color: #27272A;
+    }
+    .app-dark .search-box {
+      background-color: #18181B;
+      color: #FAFAFA;
+      box-shadow: inset 0 0 0 1px #27272A;
+    }
+    .app-dark .search-box:focus-within {
+      background-color: #18181B;
+      box-shadow: inset 0 0 0 1px #FAFAFA;
+    }
+    .app-dark .search-input::placeholder {
+      color: #A1A1AA;
+    }
+    .app-dark .icon-tile {
+      background-color: #27272A;
+      color: #FAFAFA;
+    }
+    .app-dark .icon-tile:hover {
+      background-color: #3F3F46;
+    }
+    .app-dark .icon-tile-selected {
+      background-color: #27272A;
+      box-shadow: inset 0 0 0 1.5px #FAFAFA;
+    }
+    .app-dark .dock-shell {
+      background-color: #18181B;
+      color: #FAFAFA;
+      box-shadow: 0 0 0 1px #3F3F46, 0 1px 2px 0 rgba(9, 9, 11, 0.05);
+    }
+    .app-dark .cta-primary {
+      background-color: #FAFAFA;
+      color: #09090B;
+    }
+    .app-dark .cta-primary:hover {
+      background-color: #E4E4E7;
+    }
+    .app-dark .drawer-panel {
+      background-color: #18181B;
+      box-shadow: inset 0 0 0 1px #27272A;
+    }
+
+    .ui-transition {
+      transition: background-color 140ms ease, color 140ms ease, box-shadow 140ms ease;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+  </style>
+</head>
+<body id="app-root" class="app-light antialiased pb-36 sm:pb-28">
+  <div class="max-w-[1160px] mx-auto px-4 sm:px-6 pt-3 sm:pt-7 space-y-2.5 sm:space-y-5">
+    <!-- Cabecera principal IU-SOFT Icons -->
+    <header class="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 pb-3 sm:pb-4 border-b hairline-b">
+      <div class="flex items-center gap-3">
+        <span class="w-[32px] h-[32px] rounded-[9px] bg-[#18181B] text-[#FAFAFA] inline-flex items-center justify-center shrink-0 shadow-[inset_0_0_0_1px_#27272A]" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3a9 9 0 0 0-9 9c0 1.8.5 3.5 1.5 4.9L12 12V3Zm2 0v9l7.5 4.9A9 9 0 0 0 14 3Zm-1 11.4L5.8 19A9 9 0 0 0 18.2 19L13 14.4Z" />
+          </svg>
+        </span>
+        <div>
+          <h1 class="text-[18px] lh-24 font-semibold tracking-[-0.01em] m-0">IU-SOFT Icons</h1>
+          <p id="header-stats" class="text-[12px] lh-16 muted-ink num-lock m-0">243 iconos · 4 estilos · 197/197 Sarchi POS (100%)</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          id="btn-inventory"
+          aria-expanded="false"
+          aria-controls="inventory-panel"
+          class="control-surface focus-ring ui-transition text-[13px] lh-20 font-medium px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-2 cursor-pointer"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4 5h16v2H4V5Zm0 6h16v2H4v-2Zm0 6h10v2H4v-2Z" />
+          </svg>
+          <span class="whitespace-nowrap">Ver inventario Sarchi</span>
+        </button>
+
+        <button
+          type="button"
+          id="btn-theme"
+          aria-pressed="false"
+          class="control-surface focus-ring ui-transition text-[13px] lh-20 font-medium px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-2 cursor-pointer"
+        >
+          <svg id="theme-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
+          </svg>
+          <span id="theme-label" class="whitespace-nowrap">Fondo oscuro</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Panel desplegable de auditoría de cobertura 100% Sarchi POS -->
+    <section id="inventory-panel" hidden class="drawer-panel rounded-[16px] p-4 space-y-3">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h2 class="text-[15px] lh-20 font-semibold m-0">Cobertura verificada sobre Sarchi Pizza POS</h2>
+          <p class="text-[13px] lh-20 muted-ink m-0">Los 197 iconos canónicos (204 símbolos normalizados / 215 imports en código fuente) cuentan con sus 4 estilos completos.</p>
+        </div>
+        <button
+          type="button"
+          id="btn-close-inventory"
+          class="control-surface focus-ring ui-transition text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full cursor-pointer"
+        >
+          Cerrar resumen
+        </button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-[13px] lh-20">
+        <div class="icon-tile rounded-[12px] p-3">
+          <div class="muted-ink text-[12px] lh-16">Giro Pizzería (Artesanal)</div>
+          <div class="text-[18px] lh-24 font-semibold num-lock mt-0.5">6 iconos · 24 SVGs</div>
+          <div class="muted-ink text-[12px] lh-16 mt-1">Pizza, Moto reparto, Ticket impresora, Horno y fuego, Pizza entera y Cortador.</div>
+        </div>
+        <div class="icon-tile rounded-[12px] p-3">
+          <div class="muted-ink text-[12px] lh-16">Esenciales Base (MIT)</div>
+          <div class="text-[18px] lh-24 font-semibold num-lock mt-0.5">80 iconos · 320 SVGs</div>
+          <div class="muted-ink text-[12px] lh-16 mt-1">36 equivalencias directas usadas en Sarchi + 44 iconos generales incluidos.</div>
+        </div>
+        <div class="icon-tile rounded-[12px] p-3">
+          <div class="muted-ink text-[12px] lh-16">Compilador 0-Tokens (MIT)</div>
+          <div class="text-[18px] lh-24 font-semibold num-lock mt-0.5">157 iconos · 628 SVGs</div>
+          <div class="muted-ink text-[12px] lh-16 mt-1">Compilados desde Phosphor MIT con refracción SVG y bisel exacto de 0.75 u.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controles de Estilo, Categoría, Búsqueda y Tamaño -->
+    <div class="space-y-2.5 sm:space-y-4">
+      <div class="space-y-1 sm:space-y-1.5">
+        <div class="text-[13px] lh-20 font-medium muted-ink">Estilo</div>
+        <div role="radiogroup" aria-label="Estilo visual de iconos" class="flex flex-nowrap sm:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar" id="style-bar">
+          <button type="button" role="radio" aria-checked="true" data-style="glass" class="style-pill pill-selected focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="glass" aria-hidden="true"></span>
+            <span>Glass</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-style="outline" class="style-pill pill-idle focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="outline" aria-hidden="true"></span>
+            <span>Outline</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-style="solid" class="style-pill pill-idle focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="solid" aria-hidden="true"></span>
+            <span>Solid</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" data-style="duotone" class="style-pill pill-idle focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="duotone" aria-hidden="true"></span>
+            <span>Duotone</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-1 sm:space-y-1.5">
+        <div class="text-[13px] lh-20 font-medium muted-ink">Categoría</div>
+        <div role="radiogroup" aria-label="Filtrar por categoría" class="flex flex-nowrap sm:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar" id="category-bar"></div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-2 sm:gap-2.5 pt-0.5 sm:pt-1">
+        <div class="search-box ui-transition rounded-full min-h-[40px] max-sm:min-h-[44px] px-3.5 flex items-center gap-2.5 flex-1 min-w-[240px] max-w-[460px]">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="muted-ink shrink-0" aria-hidden="true">
+            <path d="M10.5 3a7.5 7.5 0 1 0 4.65 13.38l4.23 4.24a1 1 0 0 0 1.42-1.42l-4.24-4.23A7.5 7.5 0 0 0 10.5 3Zm-5.5 7.5a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Z" />
+          </svg>
+          <input
+            type="search"
+            id="search-input"
+            aria-label="Buscar iconos por nombre en Sarchi o en español"
+            placeholder="Buscar icono (Pizza, Truck, efectivo)..."
+            class="search-input bg-transparent border-0 outline-none w-full h-[40px] max-sm:min-h-[44px] text-[16px] sm:text-[13px] lh-20"
+          />
+          <button
+            type="button"
+            id="btn-clear-search"
+            hidden
+            aria-label="Limpiar búsqueda"
+            class="focus-ring muted-ink text-[12px] lh-16 font-medium px-2.5 min-h-[32px] max-sm:min-h-[44px] min-w-[44px] rounded-full cursor-pointer"
+          >
+            Limpiar
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <div role="radiogroup" aria-label="Tamaño de icono en mosaico" class="inline-flex items-center p-0.5 sm:p-1 rounded-full control-surface gap-0.5" id="size-bar">
+            <button type="button" role="radio" aria-checked="false" data-size="24" class="size-pill pill-idle focus-ring ui-transition text-[12px] lh-16 num-lock font-medium px-2.5 h-[28px] max-sm:min-h-[44px] rounded-full cursor-pointer">24 px</button>
+            <button type="button" role="radio" aria-checked="false" data-size="32" class="size-pill pill-idle focus-ring ui-transition text-[12px] lh-16 num-lock font-medium px-2.5 h-[28px] max-sm:min-h-[44px] rounded-full cursor-pointer">32 px</button>
+            <button type="button" role="radio" aria-checked="true" data-size="40" class="size-pill pill-selected focus-ring ui-transition text-[12px] lh-16 num-lock font-medium px-2.5 h-[28px] max-sm:min-h-[44px] rounded-full cursor-pointer">40 px</button>
+            <button type="button" role="radio" aria-checked="false" data-size="48" class="size-pill pill-idle focus-ring ui-transition text-[12px] lh-16 num-lock font-medium px-2.5 h-[28px] max-sm:min-h-[44px] rounded-full cursor-pointer">48 px</button>
+          </div>
+          <span id="results-count" class="text-[12px] lh-16 muted-ink num-lock">243 resultados</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mosaico principal de losetas -->
+    <main aria-label="Galería de iconos vectoriales">
+      <div
+        id="icon-grid"
+        class="space-y-2 sm:space-y-3"
+      ></div>
+
+      <div id="empty-state" hidden class="drawer-panel rounded-[16px] p-8 text-center space-y-2.5">
+        <p class="text-[15px] lh-20 font-semibold m-0">No encontramos iconos con ese término</p>
+        <p class="text-[13px] lh-20 muted-ink m-0">Prueba buscando por nombre de componente en Sarchi (como Truck, ChefHat o QrCode) o en español (reparto, caja, ticket).</p>
+        <button
+          type="button"
+          id="btn-reset-filters"
+          class="control-surface focus-ring ui-transition text-[13px] lh-20 font-medium px-4 h-[38px] max-sm:min-h-[44px] rounded-full cursor-pointer mt-1"
+        >
+          Mostrar los 243 iconos
+        </button>
+      </div>
+    </main>
+
+    <!-- Pie informativo -->
+    <footer class="pt-4 border-t hairline-b flex flex-wrap items-center justify-between gap-2 text-[12px] lh-16 muted-ink">
+      <span>Haz clic en cualquier loseta para inspeccionar usos en Sarchi POS, copiar JSX o descargar el SVG limpio.</span>
+      <span class="font-mono num-lock">viewBox 0 0 24 24 · 243 iconos · 972 SVGs</span>
+    </footer>
+  </div>
+
+  <!-- Cápsula flotante inferior de selección activa -->
+  <aside
+    id="selection-dock"
+    aria-label="Acciones del icono seleccionado"
+    class="fixed bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 w-[calc(100%-24px)] max-w-[700px]"
+  >
+    <div class="dock-shell rounded-[22px] sm:rounded-full px-3 sm:px-4 py-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-2.5">
+      <div class="flex items-center gap-2.5 min-w-0 w-full sm:w-auto sm:flex-1">
+        <span id="dock-preview" class="w-[36px] h-[36px] rounded-full icon-tile inline-flex items-center justify-center shrink-0" aria-hidden="true"></span>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5">
+            <span id="dock-title" class="text-[14px] lh-20 font-semibold truncate">Ticket impresora</span>
+            <span id="dock-code" class="text-[12px] lh-16 font-mono muted-ink num-lock">Printer</span>
+          </div>
+          <div id="dock-meta" class="text-[12px] lh-16 muted-ink truncate num-lock">14 usos en Sarchi · Giro Pizzería</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 w-full sm:w-auto shrink-0 sm:ml-auto">
+        <button
+          type="button"
+          id="btn-copy-jsx"
+          class="control-surface focus-ring ui-transition text-[12px] lh-16 font-medium px-3 h-[36px] max-sm:min-h-[44px] rounded-full cursor-pointer whitespace-nowrap hidden sm:inline-flex items-center justify-center"
+        >
+          Copiar JSX
+        </button>
+        <button
+          type="button"
+          id="btn-copy-svg"
+          class="control-surface focus-ring ui-transition text-[12px] lh-16 font-medium px-3 h-[36px] max-sm:min-h-[44px] rounded-full cursor-pointer whitespace-nowrap inline-flex items-center justify-center flex-1 sm:flex-none min-w-[92px]"
+        >
+          Copiar SVG
+        </button>
+        <button
+          type="button"
+          id="btn-download-svg"
+          class="cta-primary focus-ring ui-transition text-[13px] lh-20 font-medium px-3.5 sm:px-4 h-[36px] max-sm:min-h-[44px] rounded-full cursor-pointer whitespace-nowrap inline-flex items-center justify-center flex-1 sm:flex-none gap-1.5"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1ZM4 19a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Z" />
+          </svg>
+          <span id="download-label">Descargar SVG</span>
+        </button>
+        <button
+          type="button"
+          id="btn-close-dock"
+          aria-label="Cerrar barra de selección"
+          class="control-surface focus-ring ui-transition w-[36px] h-[36px] max-sm:min-w-[44px] max-sm:min-h-[44px] rounded-full inline-flex items-center justify-center shrink-0 cursor-pointer"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    (function () {
+      const CATALOG = __IUSOFT_CATALOG_JSON__;
+
+      let activeStyle = "glass";
+      let activeCategory = "Todos";
+      let activeSize = 40;
+      let searchQuery = "";
+      let isDark = false;
+      let selectedItem = CATALOG[0];
+      let uidSeq = 0;
+
+      const CATEGORIES = [
+        { id: "Todos", label: "Todos", match: () => true },
+        { id: "Sarchi POS", label: "Sarchi POS", match: (e) => e.inSarchi },
+        { id: "Giro Pizzería", label: "Giro Pizzería", match: (e) => e.source === "giro" },
+        { id: "Esenciales Base", label: "Esenciales Base", match: (e) => e.source === "base" },
+        { id: "Compilados 0-Tokens", label: "Compilados 0-Tokens", match: (e) => e.source === "compiler" },
+        { id: "Caja y Comercio", label: "Caja y Comercio", match: (e) => e.category === "Caja y Comercio" },
+        { id: "Pedidos y Reparto", label: "Pedidos y Reparto", match: (e) => e.category === "Pedidos y Reparto" },
+        { id: "Interfaz y Alertas", label: "Interfaz y Alertas", match: (e) => e.category === "Interfaz y Alertas" },
+        { id: "Navegación", label: "Navegación", match: (e) => e.category === "Navegación" },
+        { id: "Usuarios y Ajustes", label: "Usuarios y Ajustes", match: (e) => e.category === "Usuarios y Ajustes" }
+      ];
+
+      function scopeRawInnerIds(innerMarkup, prefix) {
+        const idMap = {};
+        let idx = 0;
+        const withIds = innerMarkup.replace(/\bid="([^"]+)"/g, (_m, oldId) => {
+          const newId = `${prefix}-${++idx}`;
+          idMap[oldId] = newId;
+          return `id="${newId}"`;
+        });
+        return withIds.replace(/url\(#([^)]+)\)/g, (_m, oldId) => {
+          return `url(#${idMap[oldId] || oldId})`;
+        });
+      }
+
+      function renderSVG(item, styleKey, sizePx, cleanExport) {
+        const sv = item.svg;
+        const pfx = cleanExport ? `iusoft-${item.id}` : `iu-${++uidSeq}`;
+
+        if (styleKey === "glass") {
+          if (typeof sv.glass === "string") {
+            const scoped = scopeRawInnerIds(sv.glass, pfx);
+            return `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="none">${cleanExport ? scoped : `<g class="js-spring-whole">${scoped}</g>`}</svg>`;
+          }
+          const g = sv.glass;
+          const bevelD = g.inner !== undefined ? (g.inner ? `${g.glass} ${g.inner}` : g.glass) : g.bevel;
+          const backM = g.back.map((d) => `<path d="${d}" fill="url(#${pfx}-obs)" />`).join("");
+          const frontM = g.front.map((d) => `<path d="${d}" fill="url(#${pfx}-obs)" />`).join("");
+          const gCls = cleanExport ? "" : ` class="js-glass-xf"`;
+          const bCls = cleanExport ? "" : ` class="js-back-xf"`;
+          return [
+            `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="none">`,
+            `<defs>`,
+            `<linearGradient id="${pfx}-obs" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5b5b5e"/><stop offset="100%" stop-color="#161617"/></linearGradient>`,
+            `<linearGradient id="${pfx}-glass" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#e3e3e5" stop-opacity="0.64"/><stop offset="100%" stop-color="#bbbbc0" stop-opacity="0.62"/></linearGradient>`,
+            `<linearGradient id="${pfx}-bevel" x1="12" y1="${g.y1}" x2="12" y2="${g.y2}" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/><stop offset="58%" stop-color="#ffffff" stop-opacity="0.26"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient>`,
+            `<filter id="${pfx}-blur" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox"><feGaussianBlur stdDeviation="1.6"/></filter>`,
+            `<mask id="${pfx}-out" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#ffffff"/><g${gCls}><path d="${g.glass}" fill="#000000"/></g></mask>`,
+            `<mask id="${pfx}-in" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#000000"/><g${gCls}><path d="${g.glass}" fill="#ffffff"/></g></mask>`,
+            `</defs>`,
+            `<g mask="url(#${pfx}-out)"><g${bCls}>${backM}</g></g>`,
+            `<g mask="url(#${pfx}-in)"><g filter="url(#${pfx}-blur)"><g${bCls}>${backM}</g></g></g>`,
+            `<g${gCls}><path d="${g.glass}" fill="url(#${pfx}-glass)"/><path d="${bevelD}" fill="url(#${pfx}-bevel)" fill-rule="evenodd"/>${frontM}</g>`,
+            `</svg>`
+          ].join("");
+        }
+
+        const inner = scopeRawInnerIds(sv[styleKey], pfx);
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="currentColor">${cleanExport ? inner : `<g class="js-spring-whole">${inner}</g>`}</svg>`;
+      }
+
+      function buildJsxSnippet(item, styleKey) {
+        const compName = item.name.replace(/[^a-zA-Z0-9]/g, "") + "Icon";
+        const svgStr = renderSVG(item, styleKey, 24, true)
+          .replace(/fill-rule=/g, "fillRule=")
+          .replace(/clip-rule=/g, "clipRule=")
+          .replace(/stroke-width=/g, "strokeWidth=")
+          .replace(/stroke-linecap=/g, "strokeLinecap=")
+          .replace(/stroke-linejoin=/g, "strokeLinejoin=")
+          .replace(/stop-color=/g, "stopColor=")
+          .replace(/stop-opacity=/g, "stopOpacity=")
+          .replace(/fill-opacity=/g, "fillOpacity=")
+          .replace(/width="24" height="24"/, 'width={size} height={size} {...props}');
+        return `export function ${compName}({ size = 24, ...props }) {\n  return (\n    ${svgStr}\n  );\n}`;
+      }
+
+      const sarchiTotal = CATALOG.filter((e) => e.inSarchi).length;
+      document.getElementById("header-stats").textContent = `${CATALOG.length} iconos · 4 estilos · ${sarchiTotal}/${sarchiTotal} Sarchi POS (100%)`;
+
+      document.querySelectorAll("[data-style-preview]").forEach((el) => {
+        const st = el.getAttribute("data-style-preview");
+        el.innerHTML = renderSVG(CATALOG[0], st, 18, false);
+      });
+
+      const categoryBar = document.getElementById("category-bar");
+      function renderCategories() {
+        categoryBar.innerHTML = CATEGORIES.map((cat) => {
+          const count = CATALOG.filter(cat.match).length;
+          const sel = cat.id === activeCategory;
+          const cls = sel ? "pill-selected" : "pill-idle";
+          return `<button type="button" role="radio" aria-checked="${sel ? "true" : "false"}" data-cat="${cat.id}" class="cat-pill ${cls} focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 h-[34px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer"><span class="whitespace-nowrap">${cat.label}</span><span class="text-[12px] lh-16 muted-ink num-lock">${count}</span></button>`;
+        }).join("");
+
+        categoryBar.querySelectorAll(".cat-pill").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            activeCategory = btn.getAttribute("data-cat");
+            renderCategories();
+            renderGrid();
+          });
+        });
+      }
+
+      let springRaf = null;
+      function springAnimateTile(tileEl) {
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const svg = tileEl.querySelector("svg");
+        if (!svg) return;
+        if (springRaf) cancelAnimationFrame(springRaf);
+
+        const glassNodes = svg.querySelectorAll(".js-glass-xf");
+        const backNodes = svg.querySelectorAll(".js-back-xf");
+        const wholeNode = svg.querySelector(".js-spring-whole");
+
+        let pos = 1.0;
+        let vel = 3.8;
+        const k = 290;
+        const c = 14.5;
+        let last = performance.now();
+
+        function frame(now) {
+          const dt = Math.min((now - last) / 1000, 0.032);
+          last = now;
+          vel += (-k * pos - c * vel) * dt;
+          pos += vel * dt;
+
+          if (Math.abs(pos) < 0.003 && Math.abs(vel) < 0.015) {
+            glassNodes.forEach((n) => n.removeAttribute("transform"));
+            backNodes.forEach((n) => n.removeAttribute("transform"));
+            if (wholeNode) wholeNode.removeAttribute("transform");
+            springRaf = null;
+            return;
+          }
+
+          if (glassNodes.length > 0) {
+            const dy = (-1.15 * pos).toFixed(3);
+            const rot = (-3.2 * pos).toFixed(3);
+            const bdy = (0.35 * pos).toFixed(3);
+            glassNodes.forEach((n) => n.setAttribute("transform", `translate(0 ${dy}) rotate(${rot} 12 12)`));
+            backNodes.forEach((n) => n.setAttribute("transform", `translate(0 ${bdy})`));
+          } else if (wholeNode) {
+            const sc = (1 + 0.08 * pos).toFixed(3);
+            const rot = (-3.5 * pos).toFixed(3);
+            wholeNode.setAttribute("transform", `translate(12 12) rotate(${rot}) scale(${sc}) translate(-12 -12)`);
+          }
+          springRaf = requestAnimationFrame(frame);
+        }
+        springRaf = requestAnimationFrame(frame);
+      }
+
+      const dockEl = document.getElementById("selection-dock");
+      const dockPreview = document.getElementById("dock-preview");
+      const dockTitle = document.getElementById("dock-title");
+      const dockCode = document.getElementById("dock-code");
+      const dockMeta = document.getElementById("dock-meta");
+      const downloadLabel = document.getElementById("download-label");
+
+      function updateSelectionDock() {
+        if (!selectedItem) {
+          dockEl.hidden = true;
+          return;
+        }
+        dockEl.hidden = false;
+        dockPreview.innerHTML = renderSVG(selectedItem, activeStyle, 22, false);
+        dockTitle.textContent = selectedItem.label;
+        dockCode.textContent = selectedItem.name;
+        const usesPart = selectedItem.inSarchi
+          ? `${selectedItem.sarchiUses} ${selectedItem.sarchiUses === 1 ? "uso" : "usos"} en Sarchi`
+          : "Incluido en librería";
+        dockMeta.textContent = `${usesPart} · ${selectedItem.sourceLabel}`;
+        downloadLabel.textContent = `Descargar ${activeStyle} SVG`;
+      }
+
+      document.getElementById("btn-close-dock").addEventListener("click", () => {
+        selectedItem = null;
+        gridEl.querySelectorAll(".icon-tile-selected").forEach((el) => el.classList.remove("icon-tile-selected"));
+        updateSelectionDock();
+      });
+
+      const gridEl = document.getElementById("icon-grid");
+      const emptyEl = document.getElementById("empty-state");
+      const resultsCountEl = document.getElementById("results-count");
+
+      function getFilteredItems() {
+        const catObj = CATEGORIES.find((c) => c.id === activeCategory) || CATEGORIES[0];
+        const q = searchQuery.trim().toLowerCase();
+        return CATALOG.filter((item) => {
+          if (!catObj.match(item)) return false;
+          if (!q) return true;
+          return item.keywords.includes(q) || item.name.toLowerCase().includes(q);
+        });
+      }
+
+      function renderGrid() {
+        const items = getFilteredItems();
+        resultsCountEl.textContent = `${items.length} ${items.length === 1 ? "resultado" : "resultados"}`;
+
+        if (items.length === 0) {
+          gridEl.innerHTML = "";
+          emptyEl.hidden = false;
+          return;
+        }
+        emptyEl.hidden = true;
+
+        const chunks = [];
+        for (let c = 0; c < items.length; c += 20) {
+          const slice = items.slice(c, c + 20);
+          const rowHtml = slice.map((item, idx) => {
+            const isSel = selectedItem && selectedItem.id === item.id;
+            const selCls = isSel ? "icon-tile-selected" : "";
+            const sarchiHint = item.inSarchi ? ` · Sarchi: ${item.name} (${item.sarchiUses})` : "";
+            return `<button type="button" data-idx="${c + idx}" data-id="${item.id}" aria-label="${item.label} (${item.name})" title="${item.label}${sarchiHint}" class="icon-tile ${selCls} focus-ring ui-transition aspect-square w-full min-h-[64px] rounded-[18px] flex items-center justify-center p-2 cursor-pointer">${renderSVG(item, activeStyle, activeSize, false)}</button>`;
+          }).join("");
+          chunks.push(`<div class="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-10 gap-2 sm:gap-3">${rowHtml}</div>`);
+        }
+        gridEl.innerHTML = chunks.join("");
+
+        gridEl.querySelectorAll("button[data-id]").forEach((btn) => {
+          const id = btn.getAttribute("data-id");
+          const item = CATALOG.find((e) => e.id === id);
+          btn.addEventListener("mouseenter", () => springAnimateTile(btn));
+          btn.addEventListener("click", () => {
+            selectedItem = item;
+            gridEl.querySelectorAll(".icon-tile-selected").forEach((el) => el.classList.remove("icon-tile-selected"));
+            btn.classList.add("icon-tile-selected");
+            updateSelectionDock();
+            springAnimateTile(btn);
+          });
+        });
+      }
+
+      document.querySelectorAll(".style-pill").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeStyle = btn.getAttribute("data-style");
+          document.querySelectorAll(".style-pill").forEach((b) => {
+            const on = b.getAttribute("data-style") === activeStyle;
+            b.setAttribute("aria-checked", on ? "true" : "false");
+            b.classList.toggle("pill-selected", on);
+            b.classList.toggle("pill-idle", !on);
+          });
+          renderGrid();
+          updateSelectionDock();
+        });
+      });
+
+      document.querySelectorAll(".size-pill").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeSize = Number(btn.getAttribute("data-size"));
+          document.querySelectorAll(".size-pill").forEach((b) => {
+            const on = Number(b.getAttribute("data-size")) === activeSize;
+            b.setAttribute("aria-checked", on ? "true" : "false");
+            b.classList.toggle("pill-selected", on);
+            b.classList.toggle("pill-idle", !on);
+          });
+          renderGrid();
+        });
+      });
+
+      const searchInput = document.getElementById("search-input");
+      const btnClearSearch = document.getElementById("btn-clear-search");
+      searchInput.addEventListener("input", () => {
+        searchQuery = searchInput.value;
+        btnClearSearch.hidden = searchQuery.length === 0;
+        renderGrid();
+      });
+      btnClearSearch.addEventListener("click", () => {
+        searchInput.value = "";
+        searchQuery = "";
+        btnClearSearch.hidden = true;
+        renderGrid();
+        searchInput.focus();
+      });
+      document.getElementById("btn-reset-filters").addEventListener("click", () => {
+        searchInput.value = "";
+        searchQuery = "";
+        btnClearSearch.hidden = true;
+        activeCategory = "Todos";
+        renderCategories();
+        renderGrid();
+      });
+
+      const btnInv = document.getElementById("btn-inventory");
+      const invPanel = document.getElementById("inventory-panel");
+      btnInv.addEventListener("click", () => {
+        const nextOpen = invPanel.hidden;
+        invPanel.hidden = !nextOpen;
+        btnInv.setAttribute("aria-expanded", nextOpen ? "true" : "false");
+      });
+      document.getElementById("btn-close-inventory").addEventListener("click", () => {
+        invPanel.hidden = true;
+        btnInv.setAttribute("aria-expanded", "false");
+      });
+
+      const appRoot = document.getElementById("app-root");
+      const btnTheme = document.getElementById("btn-theme");
+      const themeLabel = document.getElementById("theme-label");
+      const themeIcon = document.getElementById("theme-icon");
+      btnTheme.addEventListener("click", () => {
+        isDark = !isDark;
+        btnTheme.setAttribute("aria-pressed", isDark ? "true" : "false");
+        appRoot.classList.toggle("app-dark", isDark);
+        appRoot.classList.toggle("app-light", !isDark);
+        if (isDark) {
+          themeLabel.textContent = "Fondo claro";
+          themeIcon.innerHTML = `<path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1ZM4.22 5.64a1 1 0 0 1 1.42-1.42l1.41 1.42a1 1 0 1 1-1.41 1.41L4.22 5.64Zm12.73 12.72a1 1 0 0 1 1.41-1.41l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42ZM2 12a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm16 0a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2h-2a1 1 0 0 1-1-1ZM5.64 19.78a1 1 0 0 1-1.42-1.42l1.42-1.41a1 1 0 1 1 1.41 1.41l-1.41 1.42ZM18.36 7.05a1 1 0 0 1-1.41-1.41l1.41-1.42a1 1 0 1 1 1.42 1.42l-1.42 1.41Z" />`;
+        } else {
+          themeLabel.textContent = "Fondo oscuro";
+          themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />`;
+        }
+      });
+
+      function fallbackCopyText(text) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+
+      async function copyText(text, btnEl, okText, origText) {
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            fallbackCopyText(text);
+          }
+        } catch (_e) {
+          fallbackCopyText(text);
+        }
+        btnEl.textContent = okText;
+        setTimeout(() => {
+          btnEl.textContent = origText;
+        }, 1600);
+      }
+
+      const btnCopySvg = document.getElementById("btn-copy-svg");
+      const btnCopyJsx = document.getElementById("btn-copy-jsx");
+      const btnDownloadSvg = document.getElementById("btn-download-svg");
+
+      btnCopySvg.addEventListener("click", () => {
+        if (!selectedItem) return;
+        const clean = renderSVG(selectedItem, activeStyle, 24, true);
+        copyText(clean, btnCopySvg, "SVG copiado", "Copiar SVG");
+      });
+
+      btnCopyJsx.addEventListener("click", () => {
+        if (!selectedItem) return;
+        const jsx = buildJsxSnippet(selectedItem, activeStyle);
+        copyText(jsx, btnCopyJsx, "JSX copiado", "Copiar JSX");
+      });
+
+      btnDownloadSvg.addEventListener("click", () => {
+        if (!selectedItem) return;
+        const clean = renderSVG(selectedItem, activeStyle, 24, true);
+        const blob = new Blob([clean], { type: "image/svg+xml;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${selectedItem.name.toLowerCase()}-${activeStyle}.svg`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      });
+
+      renderCategories();
+      renderGrid();
+      updateSelectionDock();
+    })();
+  </script>
+</body>
+</html>

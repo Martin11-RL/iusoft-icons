@@ -1,0 +1,5232 @@
+[
+  {
+    "id": "ticket-impresora",
+    "slug": "printer",
+    "name": "Printer",
+    "label": "Ticket impresora",
+    "origin": "domain-dsl",
+    "sourceGroup": "giro",
+    "sourceLabel": "Giro Pizzería",
+    "category": "Giro Pizzería",
+    "dslKey": "ticket-impresora",
+    "phosphorSlug": null,
+    "inPos": true,
+    "posUses": 14,
+    "lucideAliases": [
+      "Printer"
+    ],
+    "posModules": [
+      "layout",
+      "onboarding",
+      "orders",
+      "pos"
+    ],
+    "keywords": "ticket-impresora ticket impresora impresora termica ticket comanda recibo escpos printer"
+  },
+  {
+    "id": "moto-reparto",
+    "slug": "bike",
+    "name": "Bike",
+    "label": "Moto de reparto",
+    "origin": "domain-dsl",
+    "sourceGroup": "giro",
+    "sourceLabel": "Giro Pizzería",
+    "category": "Giro Pizzería",
+    "dslKey": "moto-reparto",
+    "phosphorSlug": null,
+    "inPos": true,
+    "posUses": 11,
+    "lucideAliases": [
+      "Bike"
+    ],
+    "posModules": [
+      "driver",
+      "drivers",
+      "layout",
+      "orders"
+    ],
+    "keywords": "moto-reparto moto de reparto moto motocicleta reparto domicilio entrega caja termica bike"
+  },
+  {
+    "id": "pizza-slice",
+    "slug": "pizza",
+    "name": "Pizza",
+    "label": "Rebanada de pizza",
+    "origin": "domain-dsl",
+    "sourceGroup": "giro",
+    "sourceLabel": "Giro Pizzería",
+    "category": "Giro Pizzería",
+    "dslKey": "pizza-slice",
+    "phosphorSlug": null,
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "Pizza"
+    ],
+    "posModules": [
+      "kitchen",
+      "menu-v3",
+      "orders",
+      "pos"
+    ],
+    "keywords": "pizza-slice rebanada de pizza pizza rebanada queso pepperoni restaurante pizza"
+  },
+  {
+    "id": "horno-fuego",
+    "slug": "flame",
+    "name": "Flame",
+    "label": "Horno y fuego",
+    "origin": "domain-dsl",
+    "sourceGroup": "giro",
+    "sourceLabel": "Giro Pizzería",
+    "category": "Giro Pizzería",
+    "dslKey": "horno-fuego",
+    "phosphorSlug": null,
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "Flame"
+    ],
+    "posModules": [
+      "kitchen",
+      "layout",
+      "orders"
+    ],
+    "keywords": "horno-fuego horno y fuego horno lena fuego flama calor cocina flame"
+  },
+  {
+    "id": "pizza-cutter",
+    "slug": "pizza-cutter",
+    "name": "pizza-cutter",
+    "label": "Cortador de pizza",
+    "origin": "domain-dsl",
+    "sourceGroup": "giro",
+    "sourceLabel": "Giro Pizzería",
+    "category": "Giro Pizzería",
+    "dslKey": "pizza-cutter",
+    "phosphorSlug": null,
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "pizza-cutter cortador de pizza cortador rueda cuchillo rebanar cocina "
+  },
+  {
+    "id": "pizza-whole",
+    "slug": "pizza-whole",
+    "name": "pizza-whole",
+    "label": "Pizza entera",
+    "origin": "domain-dsl",
+    "sourceGroup": "giro",
+    "sourceLabel": "Giro Pizzería",
+    "category": "Giro Pizzería",
+    "dslKey": "pizza-whole",
+    "phosphorSlug": null,
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "pizza-whole pizza entera pizza entera familiar pastel rebanada restaurante "
+  },
+  {
+    "id": "phos-loader2",
+    "slug": "loader-2",
+    "name": "Loader2",
+    "label": "Cargando proceso",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "spinner-gap",
+    "inPos": true,
+    "posUses": 114,
+    "lucideAliases": [
+      "Loader2",
+      "Loader2Icon"
+    ],
+    "posModules": [
+      "auth",
+      "cash-register",
+      "customers",
+      "driver"
+    ],
+    "keywords": "loader2 spinner-gap cargando proceso cargando procesando espera giro loader2 loader2icon"
+  },
+  {
+    "id": "phos-plus",
+    "slug": "plus",
+    "name": "Plus",
+    "label": "Agregar ítem",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "plus",
+    "inPos": true,
+    "posUses": 61,
+    "lucideAliases": [
+      "Plus"
+    ],
+    "posModules": [
+      "bugs",
+      "categories",
+      "customers",
+      "drivers"
+    ],
+    "keywords": "plus plus agregar ítem mas agregar nuevo sumar crear plus"
+  },
+  {
+    "id": "phos-mappin",
+    "slug": "map-pin",
+    "name": "MapPin",
+    "label": "Domicilio de entrega",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "map-pin",
+    "inPos": true,
+    "posUses": 58,
+    "lucideAliases": [
+      "MapPin"
+    ],
+    "posModules": [
+      "customers",
+      "driver",
+      "drivers",
+      "layout"
+    ],
+    "keywords": "mappin map-pin domicilio de entrega ubicacion direccion pin cliente mapa mappin"
+  },
+  {
+    "id": "phos-checkcircle2",
+    "slug": "check-circle-2",
+    "name": "CheckCircle2",
+    "label": "Completado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "check-circle",
+    "inPos": true,
+    "posUses": 56,
+    "lucideAliases": [
+      "CheckCircle",
+      "CheckCircle2",
+      "CircleCheck",
+      "CircleCheckIcon"
+    ],
+    "posModules": [
+      "bugs",
+      "customers",
+      "driver",
+      "drivers"
+    ],
+    "keywords": "checkcircle2 check-circle completado completado exito aprobado pagado checkcircle checkcircle2 circlecheck circlecheckicon"
+  },
+  {
+    "id": "phos-refreshcw",
+    "slug": "refresh-cw",
+    "name": "RefreshCw",
+    "label": "Actualizar datos",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "arrows-clockwise",
+    "inPos": true,
+    "posUses": 52,
+    "lucideAliases": [
+      "RefreshCw"
+    ],
+    "posModules": [
+      "cash-register",
+      "driver",
+      "drivers",
+      "inventory"
+    ],
+    "keywords": "refreshcw arrows-clockwise actualizar datos actualizar sincronizar recargar refreshcw"
+  },
+  {
+    "id": "phos-trash2",
+    "slug": "trash-2",
+    "name": "Trash2",
+    "label": "Eliminar registro",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "trash",
+    "inPos": true,
+    "posUses": 44,
+    "lucideAliases": [
+      "Trash2"
+    ],
+    "posModules": [
+      "bugs",
+      "categories",
+      "customers",
+      "drivers"
+    ],
+    "keywords": "trash2 trash eliminar registro basura papelera eliminar borrar trash2"
+  },
+  {
+    "id": "base-clock",
+    "slug": "clock",
+    "name": "Clock",
+    "label": "Reloj y horario",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "clock",
+    "inPos": true,
+    "posUses": 43,
+    "lucideAliases": [
+      "Clock",
+      "Clock2"
+    ],
+    "posModules": [
+      "admin",
+      "bugs",
+      "driver",
+      "drivers"
+    ],
+    "keywords": "clock clock reloj y horario reloj hora tiempo turno espera clock clock2"
+  },
+  {
+    "id": "phos-check",
+    "slug": "check",
+    "name": "Check",
+    "label": "Confirmar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "check",
+    "inPos": true,
+    "posUses": 38,
+    "lucideAliases": [
+      "Check",
+      "CheckIcon"
+    ],
+    "posModules": [
+      "driver",
+      "drivers",
+      "menu-v3",
+      "orders"
+    ],
+    "keywords": "check check confirmar palomita confirmar listo aceptar check checkicon"
+  },
+  {
+    "id": "phos-x",
+    "slug": "x",
+    "name": "X",
+    "label": "Cerrar modal",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "x",
+    "inPos": true,
+    "posUses": 38,
+    "lucideAliases": [
+      "X",
+      "XIcon"
+    ],
+    "posModules": [
+      "bugs",
+      "cash-register",
+      "customers",
+      "driver"
+    ],
+    "keywords": "x x cerrar modal cerrar cancelar quitar equis x xicon"
+  },
+  {
+    "id": "phos-alerttriangle",
+    "slug": "alert-triangle",
+    "name": "AlertTriangle",
+    "label": "Advertencia",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "warning",
+    "inPos": true,
+    "posUses": 36,
+    "lucideAliases": [
+      "AlertTriangle",
+      "TriangleAlert",
+      "TriangleAlertIcon"
+    ],
+    "posModules": [
+      "bugs",
+      "cash-register",
+      "driver",
+      "drivers"
+    ],
+    "keywords": "alerttriangle warning advertencia advertencia precaucion riesgo alerta alerttriangle trianglealert trianglealerticon"
+  },
+  {
+    "id": "phos-truck",
+    "slug": "truck",
+    "name": "Truck",
+    "label": "Proveedor y reparto",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "truck",
+    "inPos": true,
+    "posUses": 34,
+    "lucideAliases": [
+      "Truck"
+    ],
+    "posModules": [
+      "admin",
+      "driver",
+      "drivers",
+      "menu-v3"
+    ],
+    "keywords": "truck truck proveedor y reparto camion proveedor flete entrega truck"
+  },
+  {
+    "id": "phos-alertcircle",
+    "slug": "alert-circle",
+    "name": "AlertCircle",
+    "label": "Alerta circular",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "warning-circle",
+    "inPos": true,
+    "posUses": 33,
+    "lucideAliases": [
+      "AlertCircle"
+    ],
+    "posModules": [
+      "auth",
+      "drivers",
+      "inventory",
+      "kitchen"
+    ],
+    "keywords": "alertcircle warning-circle alerta circular alerta aviso atencion cuidado alertcircle"
+  },
+  {
+    "id": "phos-package",
+    "slug": "package",
+    "name": "Package",
+    "label": "Insumo o paquete",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "package",
+    "inPos": true,
+    "posUses": 28,
+    "lucideAliases": [
+      "Package"
+    ],
+    "posModules": [
+      "admin",
+      "bugs",
+      "catalog",
+      "categories"
+    ],
+    "keywords": "package package insumo o paquete paquete insumo ingrediente caja package"
+  },
+  {
+    "id": "base-banknote",
+    "slug": "banknote",
+    "name": "Banknote",
+    "label": "Efectivo y billetes",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "money",
+    "inPos": true,
+    "posUses": 27,
+    "lucideAliases": [
+      "Banknote"
+    ],
+    "posModules": [
+      "admin",
+      "cash-register",
+      "driver",
+      "drivers"
+    ],
+    "keywords": "banknote money efectivo y billetes efectivo billete dinero caja cobro pago banknote"
+  },
+  {
+    "id": "phos-search",
+    "slug": "search",
+    "name": "Search",
+    "label": "Buscar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "magnifying-glass",
+    "inPos": true,
+    "posUses": 24,
+    "lucideAliases": [
+      "Search",
+      "SearchIcon"
+    ],
+    "posModules": [
+      "cash-register",
+      "customers",
+      "drivers",
+      "inventory"
+    ],
+    "keywords": "search magnifying-glass buscar buscar lupa filtrar encontrar search searchicon"
+  },
+  {
+    "id": "phos-qrcode",
+    "slug": "qr-code",
+    "name": "QrCode",
+    "label": "Código QR",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "qr-code",
+    "inPos": true,
+    "posUses": 23,
+    "lucideAliases": [
+      "QrCode"
+    ],
+    "posModules": [
+      "driver",
+      "drivers",
+      "menu-v3",
+      "onboarding"
+    ],
+    "keywords": "qrcode qr-code código qr qr escanear vinculacion menu digital qrcode"
+  },
+  {
+    "id": "phos-filetext",
+    "slug": "file-text",
+    "name": "FileText",
+    "label": "Documento y reporte",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "file-text",
+    "inPos": true,
+    "posUses": 22,
+    "lucideAliases": [
+      "FileText"
+    ],
+    "posModules": [
+      "bugs",
+      "customers",
+      "driver",
+      "inventory"
+    ],
+    "keywords": "filetext file-text documento y reporte documento reporte nota texto pdf filetext"
+  },
+  {
+    "id": "base-lock",
+    "slug": "lock",
+    "name": "Lock",
+    "label": "Candado y bloqueo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "lock",
+    "inPos": true,
+    "posUses": 22,
+    "lucideAliases": [
+      "Lock"
+    ],
+    "posModules": [
+      "auth",
+      "bugs",
+      "cash-register",
+      "payroll"
+    ],
+    "keywords": "lock lock candado y bloqueo candado cerrado seguridad permiso lock"
+  },
+  {
+    "id": "base-phone",
+    "slug": "phone",
+    "name": "Phone",
+    "label": "Teléfono",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "phone",
+    "inPos": true,
+    "posUses": 22,
+    "lucideAliases": [
+      "Phone"
+    ],
+    "posModules": [
+      "customers",
+      "driver",
+      "drivers",
+      "menu-v3"
+    ],
+    "keywords": "phone phone teléfono telefono llamada cliente contacto phone"
+  },
+  {
+    "id": "phos-smartphone",
+    "slug": "smartphone",
+    "name": "Smartphone",
+    "label": "App móvil PWA",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "device-mobile",
+    "inPos": true,
+    "posUses": 22,
+    "lucideAliases": [
+      "Smartphone"
+    ],
+    "posModules": [
+      "driver",
+      "drivers",
+      "layout",
+      "menu-v3"
+    ],
+    "keywords": "smartphone device-mobile app móvil pwa celular movil telefono repartidor pwa smartphone"
+  },
+  {
+    "id": "phos-externallink",
+    "slug": "external-link",
+    "name": "ExternalLink",
+    "label": "Abrir en pestaña",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-square-out",
+    "inPos": true,
+    "posUses": 21,
+    "lucideAliases": [
+      "ExternalLink"
+    ],
+    "posModules": [
+      "cash-register",
+      "customers",
+      "menu-v3",
+      "onboarding"
+    ],
+    "keywords": "externallink arrow-square-out abrir en pestaña abrir enlace externo ventana externallink"
+  },
+  {
+    "id": "base-download",
+    "slug": "download",
+    "name": "Download",
+    "label": "Descargar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "download-simple",
+    "inPos": true,
+    "posUses": 19,
+    "lucideAliases": [
+      "Download"
+    ],
+    "posModules": [
+      "bugs",
+      "cash-register",
+      "driver",
+      "onboarding"
+    ],
+    "keywords": "download download-simple descargar descargar bajar exportar archivo respaldo download"
+  },
+  {
+    "id": "phos-chevronright",
+    "slug": "chevron-right",
+    "name": "ChevronRight",
+    "label": "Siguiente",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "caret-right",
+    "inPos": true,
+    "posUses": 18,
+    "lucideAliases": [
+      "ChevronRight",
+      "ChevronRightIcon"
+    ],
+    "posModules": [
+      "bugs",
+      "driver",
+      "payroll",
+      "sales"
+    ],
+    "keywords": "chevronright caret-right siguiente siguiente detalle derecha chevronright chevronrighticon"
+  },
+  {
+    "id": "phos-creditcard",
+    "slug": "credit-card",
+    "name": "CreditCard",
+    "label": "Pago con tarjeta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "credit-card",
+    "inPos": true,
+    "posUses": 18,
+    "lucideAliases": [
+      "CreditCard"
+    ],
+    "posModules": [
+      "driver",
+      "menu-v3",
+      "orders",
+      "payroll"
+    ],
+    "keywords": "creditcard credit-card pago con tarjeta tarjeta terminal banco cobro debito credito creditcard"
+  },
+  {
+    "id": "phos-history",
+    "slug": "history",
+    "name": "History",
+    "label": "Historial de movimientos",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "clock-counter-clockwise",
+    "inPos": true,
+    "posUses": 18,
+    "lucideAliases": [
+      "History"
+    ],
+    "posModules": [
+      "cash-register",
+      "customers",
+      "driver",
+      "inventory"
+    ],
+    "keywords": "history clock-counter-clockwise historial de movimientos historial bitacora pasado kardex history"
+  },
+  {
+    "id": "phos-user",
+    "slug": "user",
+    "name": "User",
+    "label": "Cliente o empleado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "user",
+    "inPos": true,
+    "posUses": 17,
+    "lucideAliases": [
+      "User"
+    ],
+    "posModules": [
+      "bugs",
+      "customers",
+      "driver",
+      "drivers"
+    ],
+    "keywords": "user user cliente o empleado usuario persona cliente cajero user"
+  },
+  {
+    "id": "phos-users",
+    "slug": "users",
+    "name": "Users",
+    "label": "Equipo y nómina",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "users",
+    "inPos": true,
+    "posUses": 17,
+    "lucideAliases": [
+      "Users"
+    ],
+    "posModules": [
+      "admin",
+      "customers",
+      "layout",
+      "onboarding"
+    ],
+    "keywords": "users users equipo y nómina usuarios equipo personal clientes users"
+  },
+  {
+    "id": "phos-keyround",
+    "slug": "key-round",
+    "name": "KeyRound",
+    "label": "PIN de acceso",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "key-return",
+    "inPos": true,
+    "posUses": 16,
+    "lucideAliases": [
+      "KeyRound"
+    ],
+    "posModules": [
+      "driver",
+      "drivers"
+    ],
+    "keywords": "keyround key-return pin de acceso pin llave acceso rapido cajero keyround"
+  },
+  {
+    "id": "phos-pencil",
+    "slug": "pencil",
+    "name": "Pencil",
+    "label": "Modificar campo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "pencil",
+    "inPos": true,
+    "posUses": 16,
+    "lucideAliases": [
+      "Pencil"
+    ],
+    "posModules": [
+      "bugs",
+      "drivers",
+      "payroll",
+      "products"
+    ],
+    "keywords": "pencil pencil modificar campo lapiz editar escribir cambiar pencil"
+  },
+  {
+    "id": "phos-copy",
+    "slug": "copy",
+    "name": "Copy",
+    "label": "Copiar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "copy",
+    "inPos": true,
+    "posUses": 15,
+    "lucideAliases": [
+      "Copy"
+    ],
+    "posModules": [
+      "drivers",
+      "menu-v3",
+      "onboarding",
+      "orders"
+    ],
+    "keywords": "copy copy copiar copiar duplicar portapapeles folio copy"
+  },
+  {
+    "id": "phos-dollarsign",
+    "slug": "dollar-sign",
+    "name": "DollarSign",
+    "label": "Importe en pesos",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "currency-dollar",
+    "inPos": true,
+    "posUses": 15,
+    "lucideAliases": [
+      "DollarSign"
+    ],
+    "posModules": [
+      "driver",
+      "inventory",
+      "orders",
+      "payroll"
+    ],
+    "keywords": "dollarsign currency-dollar importe en pesos peso precio monto dinero costo dollarsign"
+  },
+  {
+    "id": "base-eye",
+    "slug": "eye",
+    "name": "Eye",
+    "label": "Ver detalle",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "eye",
+    "inPos": true,
+    "posUses": 14,
+    "lucideAliases": [
+      "Eye"
+    ],
+    "posModules": [
+      "auth",
+      "cash-register",
+      "customers",
+      "login"
+    ],
+    "keywords": "eye eye ver detalle ojo ver mostrar vista inspeccionar eye"
+  },
+  {
+    "id": "phos-sparkles",
+    "slug": "sparkles",
+    "name": "Sparkles",
+    "label": "Sugerencia inteligente",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "sparkle",
+    "inPos": true,
+    "posUses": 14,
+    "lucideAliases": [
+      "Sparkles"
+    ],
+    "posModules": [
+      "onboarding",
+      "payroll",
+      "settings",
+      "whatsapp"
+    ],
+    "keywords": "sparkles sparkle sugerencia inteligente destello ia automatico mejora sparkles"
+  },
+  {
+    "id": "phos-wallet",
+    "slug": "wallet",
+    "name": "Wallet",
+    "label": "Fondo de caja",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "wallet",
+    "inPos": true,
+    "posUses": 14,
+    "lucideAliases": [
+      "Wallet"
+    ],
+    "posModules": [
+      "admin",
+      "cash-register",
+      "layout",
+      "payroll"
+    ],
+    "keywords": "wallet wallet fondo de caja cartera billetera efectivo liquidacion wallet"
+  },
+  {
+    "id": "base-messagecircle",
+    "slug": "message-circle",
+    "name": "MessageCircle",
+    "label": "Chat WhatsApp",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "chat-circle-dots",
+    "inPos": true,
+    "posUses": 13,
+    "lucideAliases": [
+      "MessageCircle"
+    ],
+    "posModules": [
+      "driver",
+      "layout",
+      "menu-v3",
+      "orders"
+    ],
+    "keywords": "messagecircle chat-circle-dots chat whatsapp mensaje chat whatsapp conversacion cliente messagecircle"
+  },
+  {
+    "id": "phos-chevrondown",
+    "slug": "chevron-down",
+    "name": "ChevronDown",
+    "label": "Desplegar abajo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "caret-down",
+    "inPos": true,
+    "posUses": 12,
+    "lucideAliases": [
+      "ChevronDown",
+      "ChevronDownIcon"
+    ],
+    "posModules": [
+      "driver",
+      "inventory",
+      "menu-v3",
+      "payroll"
+    ],
+    "keywords": "chevrondown caret-down desplegar abajo desplegar abrir menu abajo chevrondown chevrondownicon"
+  },
+  {
+    "id": "phos-info",
+    "slug": "info",
+    "name": "Info",
+    "label": "Información",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "info",
+    "inPos": true,
+    "posUses": 12,
+    "lucideAliases": [
+      "Info",
+      "InfoIcon"
+    ],
+    "posModules": [
+      "drivers",
+      "orders",
+      "payroll",
+      "settings"
+    ],
+    "keywords": "info info información informacion detalle aviso guia info infoicon"
+  },
+  {
+    "id": "phos-save",
+    "slug": "save",
+    "name": "Save",
+    "label": "Guardar cambios",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "floppy-disk",
+    "inPos": true,
+    "posUses": 12,
+    "lucideAliases": [
+      "Save"
+    ],
+    "posModules": [
+      "payroll",
+      "settings"
+    ],
+    "keywords": "save floppy-disk guardar cambios guardar conservar grabar disco save"
+  },
+  {
+    "id": "phos-shieldcheck",
+    "slug": "shield-check",
+    "name": "ShieldCheck",
+    "label": "Acceso verificado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "shield-check",
+    "inPos": true,
+    "posUses": 12,
+    "lucideAliases": [
+      "ShieldCheck"
+    ],
+    "posModules": [
+      "cash-register",
+      "driver",
+      "drivers",
+      "inventory"
+    ],
+    "keywords": "shieldcheck shield-check acceso verificado seguro autorizado validado admin shieldcheck"
+  },
+  {
+    "id": "phos-store",
+    "slug": "store",
+    "name": "Store",
+    "label": "Mostrador y tienda",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "storefront",
+    "inPos": true,
+    "posUses": 12,
+    "lucideAliases": [
+      "Store"
+    ],
+    "posModules": [
+      "maps",
+      "menu-v3",
+      "orders",
+      "pos"
+    ],
+    "keywords": "store storefront mostrador y tienda tienda mostrador sucursal menu digital store"
+  },
+  {
+    "id": "phos-trendingup",
+    "slug": "trending-up",
+    "name": "TrendingUp",
+    "label": "Crecimiento y meta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "trend-up",
+    "inPos": true,
+    "posUses": 12,
+    "lucideAliases": [
+      "TrendingUp"
+    ],
+    "posModules": [
+      "cash-register",
+      "payroll",
+      "products",
+      "reports"
+    ],
+    "keywords": "trendingup trend-up crecimiento y meta subida ventas crecimiento ingreso trendingup"
+  },
+  {
+    "id": "phos-arrowleft",
+    "slug": "arrow-left",
+    "name": "ArrowLeft",
+    "label": "Regresar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-left",
+    "inPos": true,
+    "posUses": 11,
+    "lucideAliases": [
+      "ArrowLeft"
+    ],
+    "posModules": [
+      "cash-register",
+      "driver",
+      "drivers",
+      "orders"
+    ],
+    "keywords": "arrowleft arrow-left regresar flecha izquierda volver atras arrowleft"
+  },
+  {
+    "id": "base-key",
+    "slug": "key",
+    "name": "Key",
+    "label": "Llave de acceso",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "key",
+    "inPos": true,
+    "posUses": 11,
+    "lucideAliases": [
+      "Key"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "key key llave de acceso llave clave credencial acceso token key"
+  },
+  {
+    "id": "phos-layoutgrid",
+    "slug": "layout-grid",
+    "name": "LayoutGrid",
+    "label": "Catálogo en mosaico",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "grid-four",
+    "inPos": true,
+    "posUses": 11,
+    "lucideAliases": [
+      "LayoutGrid"
+    ],
+    "posModules": [
+      "drivers",
+      "layout",
+      "menu-v3",
+      "orders"
+    ],
+    "keywords": "layoutgrid grid-four catálogo en mosaico catalogo mosaico tarjetas productos layoutgrid"
+  },
+  {
+    "id": "phos-navigation",
+    "slug": "navigation",
+    "name": "Navigation",
+    "label": "Navegar en ruta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "navigation-arrow",
+    "inPos": true,
+    "posUses": 11,
+    "lucideAliases": [
+      "Navigation"
+    ],
+    "posModules": [
+      "customers",
+      "driver",
+      "drivers",
+      "layout"
+    ],
+    "keywords": "navigation navigation-arrow navegar en ruta navegar ruta rumbo mapa repartidor navigation"
+  },
+  {
+    "id": "base-calendar",
+    "slug": "calendar",
+    "name": "Calendar",
+    "label": "Calendario",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "calendar-blank",
+    "inPos": true,
+    "posUses": 10,
+    "lucideAliases": [
+      "Calendar",
+      "CalendarIcon"
+    ],
+    "posModules": [
+      "bugs",
+      "cash-register",
+      "driver",
+      "drivers"
+    ],
+    "keywords": "calendar calendar-blank calendario calendario fecha agenda dia periodo calendar calendaricon"
+  },
+  {
+    "id": "phos-mappinoff",
+    "slug": "map-pin-off",
+    "name": "MapPinOff",
+    "label": "Sin cobertura GPS",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "map-pin-simple-area",
+    "inPos": true,
+    "posUses": 10,
+    "lucideAliases": [
+      "MapPinOff"
+    ],
+    "posModules": [
+      "customers",
+      "driver",
+      "orders",
+      "settings"
+    ],
+    "keywords": "mappinoff map-pin-simple-area sin cobertura gps sin ubicacion fuera zona gps apagado mappinoff"
+  },
+  {
+    "id": "base-receipt",
+    "slug": "receipt",
+    "name": "Receipt",
+    "label": "Recibo de venta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "receipt",
+    "inPos": true,
+    "posUses": 10,
+    "lucideAliases": [
+      "Receipt"
+    ],
+    "posModules": [
+      "admin",
+      "cash-register",
+      "layout",
+      "onboarding"
+    ],
+    "keywords": "receipt receipt recibo de venta recibo cuenta ticket nota folio receipt"
+  },
+  {
+    "id": "phos-shoppingbag",
+    "slug": "shopping-bag",
+    "name": "ShoppingBag",
+    "label": "Para llevar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "shopping-bag",
+    "inPos": true,
+    "posUses": 10,
+    "lucideAliases": [
+      "ShoppingBag"
+    ],
+    "posModules": [
+      "admin",
+      "cash-register",
+      "kitchen",
+      "menu-v3"
+    ],
+    "keywords": "shoppingbag shopping-bag para llevar bolsa llevar mostrador pedido shoppingbag"
+  },
+  {
+    "id": "phos-tag",
+    "slug": "tag",
+    "name": "Tag",
+    "label": "Etiqueta y promoción",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "tag",
+    "inPos": true,
+    "posUses": 10,
+    "lucideAliases": [
+      "Tag"
+    ],
+    "posModules": [
+      "catalog",
+      "layout",
+      "menu-v3",
+      "pos"
+    ],
+    "keywords": "tag tag etiqueta y promoción etiqueta precio oferta categoria tag"
+  },
+  {
+    "id": "base-zap",
+    "slug": "zap",
+    "name": "Zap",
+    "label": "Acción rápida",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "lightning",
+    "inPos": true,
+    "posUses": 10,
+    "lucideAliases": [
+      "Zap"
+    ],
+    "posModules": [
+      "drivers",
+      "orders",
+      "payroll",
+      "pos"
+    ],
+    "keywords": "zap lightning acción rápida rayo rapido instantaneo energia zap"
+  },
+  {
+    "id": "base-calculator",
+    "slug": "calculator",
+    "name": "Calculator",
+    "label": "Calculadora",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "calculator",
+    "inPos": true,
+    "posUses": 9,
+    "lucideAliases": [
+      "Calculator"
+    ],
+    "posModules": [
+      "cash-register",
+      "payroll"
+    ],
+    "keywords": "calculator calculator calculadora calculadora corte arqueo cuentas matematicas calculator"
+  },
+  {
+    "id": "phos-calendardays",
+    "slug": "calendar-days",
+    "name": "CalendarDays",
+    "label": "Días del periodo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "calendar-dots",
+    "inPos": true,
+    "posUses": 9,
+    "lucideAliases": [
+      "CalendarDays"
+    ],
+    "posModules": [
+      "driver",
+      "payroll"
+    ],
+    "keywords": "calendardays calendar-dots días del periodo calendario dias semana quincena calendardays"
+  },
+  {
+    "id": "phos-edit",
+    "slug": "edit",
+    "name": "Edit",
+    "label": "Editar registro",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "note-pencil",
+    "inPos": true,
+    "posUses": 9,
+    "lucideAliases": [
+      "Edit",
+      "Edit2",
+      "Edit3",
+      "SquarePen"
+    ],
+    "posModules": [
+      "categories",
+      "customers",
+      "inventory",
+      "orders"
+    ],
+    "keywords": "edit note-pencil editar registro editar modificar cambiar nota edit edit2 edit3 squarepen"
+  },
+  {
+    "id": "phos-power",
+    "slug": "power",
+    "name": "Power",
+    "label": "Encender turno",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "power",
+    "inPos": true,
+    "posUses": 9,
+    "lucideAliases": [
+      "Power"
+    ],
+    "posModules": [
+      "drivers",
+      "products",
+      "settings",
+      "whatsapp"
+    ],
+    "keywords": "power power encender turno encender activar iniciar linea power"
+  },
+  {
+    "id": "phos-rotateccw",
+    "slug": "rotate-ccw",
+    "name": "RotateCcw",
+    "label": "Deshacer o devolver",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "arrow-counter-clockwise",
+    "inPos": true,
+    "posUses": 9,
+    "lucideAliases": [
+      "RotateCcw"
+    ],
+    "posModules": [
+      "bugs",
+      "categories",
+      "menu-v3",
+      "payroll"
+    ],
+    "keywords": "rotateccw arrow-counter-clockwise deshacer o devolver deshacer revertir devolucion atras rotateccw"
+  },
+  {
+    "id": "base-shoppingcart",
+    "slug": "shopping-cart",
+    "name": "ShoppingCart",
+    "label": "Carrito POS",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "shopping-cart",
+    "inPos": true,
+    "posUses": 9,
+    "lucideAliases": [
+      "ShoppingCart"
+    ],
+    "posModules": [
+      "inventory",
+      "orders",
+      "pos",
+      "settings"
+    ],
+    "keywords": "shoppingcart shopping-cart carrito pos carrito compra venta pedido orden shoppingcart"
+  },
+  {
+    "id": "phos-arrowright",
+    "slug": "arrow-right",
+    "name": "ArrowRight",
+    "label": "Continuar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-right",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "ArrowRight"
+    ],
+    "posModules": [
+      "bugs",
+      "cash-register",
+      "driver",
+      "menu-v3"
+    ],
+    "keywords": "arrowright arrow-right continuar flecha derecha siguiente avanzar arrowright"
+  },
+  {
+    "id": "phos-bluetooth",
+    "slug": "bluetooth",
+    "name": "Bluetooth",
+    "label": "Impresora Bluetooth",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "bluetooth",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "Bluetooth"
+    ],
+    "posModules": [
+      "layout",
+      "settings"
+    ],
+    "keywords": "bluetooth bluetooth impresora bluetooth bluetooth inalambrico dispositivo bluetooth"
+  },
+  {
+    "id": "phos-chefhat",
+    "slug": "chef-hat",
+    "name": "ChefHat",
+    "label": "Cocina y preparación",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "chef-hat",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "ChefHat"
+    ],
+    "posModules": [
+      "kitchen",
+      "orders",
+      "pos"
+    ],
+    "keywords": "chefhat chef-hat cocina y preparación cocinero chef cocina horno preparacion chefhat"
+  },
+  {
+    "id": "phos-chevronleft",
+    "slug": "chevron-left",
+    "name": "ChevronLeft",
+    "label": "Anterior",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "caret-left",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "ChevronLeft",
+      "ChevronLeftIcon"
+    ],
+    "posModules": [
+      "menu-v3",
+      "payroll",
+      "sales",
+      "ui"
+    ],
+    "keywords": "chevronleft caret-left anterior anterior pagina izquierda chevronleft chevronlefticon"
+  },
+  {
+    "id": "phos-clipboardlist",
+    "slug": "clipboard-list",
+    "name": "ClipboardList",
+    "label": "Comanda y lista",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "clipboard",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "ClipboardList"
+    ],
+    "posModules": [
+      "admin",
+      "driver",
+      "inventory",
+      "layout"
+    ],
+    "keywords": "clipboardlist clipboard comanda y lista lista pedidos inventario bitacora clipboardlist"
+  },
+  {
+    "id": "phos-eyeoff",
+    "slug": "eye-off",
+    "name": "EyeOff",
+    "label": "Ocultar dato",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "eye-slash",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "EyeOff"
+    ],
+    "posModules": [
+      "auth",
+      "inventory",
+      "login",
+      "settings"
+    ],
+    "keywords": "eyeoff eye-slash ocultar dato ocultar contrasena privado ciego eyeoff"
+  },
+  {
+    "id": "phos-poweroff",
+    "slug": "power-off",
+    "name": "PowerOff",
+    "label": "Desconectar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "plugs",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "PowerOff"
+    ],
+    "posModules": [
+      "drivers",
+      "products"
+    ],
+    "keywords": "poweroff plugs desconectar apagar desconectar fuera linea poweroff"
+  },
+  {
+    "id": "phos-utensilscrossed",
+    "slug": "utensils-crossed",
+    "name": "UtensilsCrossed",
+    "label": "Restaurante y menú",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "fork-knife",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "UtensilsCrossed"
+    ],
+    "posModules": [
+      "auth",
+      "kitchen",
+      "onboarding",
+      "orders"
+    ],
+    "keywords": "utensilscrossed fork-knife restaurante y menú restaurante comida platillo menu utensilscrossed"
+  },
+  {
+    "id": "phos-xcircle",
+    "slug": "xcircle",
+    "name": "XCircle",
+    "label": "Limpiar o rechazar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "x-circle",
+    "inPos": true,
+    "posUses": 8,
+    "lucideAliases": [
+      "XCircle"
+    ],
+    "posModules": [
+      "bugs",
+      "driver",
+      "orders",
+      "products"
+    ],
+    "keywords": "xcircle x-circle limpiar o rechazar limpiar cancelar error circulo xcircle"
+  },
+  {
+    "id": "phos-barchart3",
+    "slug": "bar-chart-3",
+    "name": "BarChart3",
+    "label": "Gráfica de ventas",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "chart-bar",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "BarChart3"
+    ],
+    "posModules": [
+      "admin",
+      "layout",
+      "reports",
+      "settings"
+    ],
+    "keywords": "barchart3 chart-bar gráfica de ventas grafica barras reporte estadisticas ventas barchart3"
+  },
+  {
+    "id": "base-briefcase",
+    "slug": "briefcase",
+    "name": "Briefcase",
+    "label": "Portafolio",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "briefcase",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "Briefcase"
+    ],
+    "posModules": [
+      "payroll",
+      "settings"
+    ],
+    "keywords": "briefcase briefcase portafolio portafolio puesto trabajo negocio empresa briefcase"
+  },
+  {
+    "id": "base-bug",
+    "slug": "bug",
+    "name": "Bug",
+    "label": "Reporte de fallo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "bug",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "Bug"
+    ],
+    "posModules": [
+      "bugs",
+      "layout",
+      "settings"
+    ],
+    "keywords": "bug bug reporte de fallo bug error fallo soporte diagnostico bug"
+  },
+  {
+    "id": "phos-calendarclock",
+    "slug": "calendar-clock",
+    "name": "CalendarClock",
+    "label": "Cita programada",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "calendar-check",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "CalendarClock"
+    ],
+    "posModules": [
+      "orders",
+      "pos"
+    ],
+    "keywords": "calendarclock calendar-check cita programada programado horario fecha turno calendarclock"
+  },
+  {
+    "id": "phos-layers",
+    "slug": "layers",
+    "name": "Layers",
+    "label": "Capas y recetas",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "stack",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "Layers"
+    ],
+    "posModules": [
+      "bugs",
+      "catalog",
+      "inventory",
+      "settings"
+    ],
+    "keywords": "layers stack capas y recetas capas insumos niveles receta layers"
+  },
+  {
+    "id": "phos-logout",
+    "slug": "log-out",
+    "name": "LogOut",
+    "label": "Cerrar sesión",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "sign-out",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "LogOut"
+    ],
+    "posModules": [
+      "cash-register",
+      "driver",
+      "layout"
+    ],
+    "keywords": "logout sign-out cerrar sesión salir cerrar sesion turno logout"
+  },
+  {
+    "id": "phos-messagesquare",
+    "slug": "message-square",
+    "name": "MessageSquare",
+    "label": "Nota de comanda",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "chat-centered-text",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "MessageSquare"
+    ],
+    "posModules": [
+      "layout",
+      "menu-v3",
+      "orders",
+      "settings"
+    ],
+    "keywords": "messagesquare chat-centered-text nota de comanda comentario nota instruccion cliente messagesquare"
+  },
+  {
+    "id": "phos-minus",
+    "slug": "minus",
+    "name": "Minus",
+    "label": "Restar cantidad",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "minus",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "Minus"
+    ],
+    "posModules": [
+      "drivers",
+      "menu-v3",
+      "pos",
+      "tv"
+    ],
+    "keywords": "minus minus restar cantidad menos restar quitar disminuir minus"
+  },
+  {
+    "id": "phos-slidershorizontal",
+    "slug": "sliders-horizontal",
+    "name": "SlidersHorizontal",
+    "label": "Filtros de vista",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "sliders-horizontal",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "SlidersHorizontal"
+    ],
+    "posModules": [
+      "catalog",
+      "inventory",
+      "menu-v3",
+      "orders"
+    ],
+    "keywords": "slidershorizontal sliders-horizontal filtros de vista filtros deslizadores preferencias slidershorizontal"
+  },
+  {
+    "id": "base-star",
+    "slug": "star",
+    "name": "Star",
+    "label": "Destacado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "star",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "Star"
+    ],
+    "posModules": [
+      "customers",
+      "menu-v3",
+      "payroll",
+      "settings"
+    ],
+    "keywords": "star star destacado estrella favorito calificacion popular star"
+  },
+  {
+    "id": "phos-sun",
+    "slug": "sun",
+    "name": "Sun",
+    "label": "Modo claro",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "sun",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "Sun"
+    ],
+    "posModules": [
+      "drivers",
+      "payroll",
+      "settings"
+    ],
+    "keywords": "sun sun modo claro sol dia claro brillo sun"
+  },
+  {
+    "id": "phos-trendingdown",
+    "slug": "trending-down",
+    "name": "TrendingDown",
+    "label": "Baja o egreso",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "trend-down",
+    "inPos": true,
+    "posUses": 7,
+    "lucideAliases": [
+      "TrendingDown"
+    ],
+    "posModules": [
+      "inventory",
+      "payroll"
+    ],
+    "keywords": "trendingdown trend-down baja o egreso baja salida gasto disminucion trendingdown"
+  },
+  {
+    "id": "phos-chrome",
+    "slug": "chrome",
+    "name": "Chrome",
+    "label": "Extensión Chrome",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "google-chrome-logo",
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "Chrome"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "chrome google-chrome-logo extensión chrome chrome navegador extension web chrome"
+  },
+  {
+    "id": "base-globe",
+    "slug": "globe",
+    "name": "Globe",
+    "label": "Dominio web",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "globe-hemisphere-west",
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "Globe"
+    ],
+    "posModules": [
+      "drivers",
+      "menu-v3",
+      "orders",
+      "payroll"
+    ],
+    "keywords": "globe globe-hemisphere-west dominio web mundo web internet sitio publico globe"
+  },
+  {
+    "id": "phos-image",
+    "slug": "image",
+    "name": "Image",
+    "label": "Foto de producto",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "image",
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "Image",
+      "ImageIcon"
+    ],
+    "posModules": [
+      "menu-v3",
+      "onboarding",
+      "products",
+      "settings"
+    ],
+    "keywords": "image image foto de producto foto fotografia galeria catalogo image imageicon"
+  },
+  {
+    "id": "phos-monitor",
+    "slug": "monitor",
+    "name": "Monitor",
+    "label": "Pantalla TV / POS",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "monitor",
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "Monitor"
+    ],
+    "posModules": [
+      "drivers",
+      "settings"
+    ],
+    "keywords": "monitor monitor pantalla tv / pos monitor pantalla terminal escritorio tv monitor"
+  },
+  {
+    "id": "phos-settings",
+    "slug": "settings",
+    "name": "Settings",
+    "label": "Configuración",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "gear",
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "Settings"
+    ],
+    "posModules": [
+      "admin",
+      "layout",
+      "payroll",
+      "settings"
+    ],
+    "keywords": "settings gear configuración ajustes configuracion engrane sistema settings"
+  },
+  {
+    "id": "base-upload",
+    "slug": "upload",
+    "name": "Upload",
+    "label": "Subir archivo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "upload-simple",
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "Upload"
+    ],
+    "posModules": [
+      "onboarding",
+      "products",
+      "settings"
+    ],
+    "keywords": "upload upload-simple subir archivo subir cargar importar imagen upload"
+  },
+  {
+    "id": "phos-wifioff",
+    "slug": "wifi-off",
+    "name": "WifiOff",
+    "label": "Sin Wi-Fi",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "wifi-slash",
+    "inPos": true,
+    "posUses": 6,
+    "lucideAliases": [
+      "WifiOff"
+    ],
+    "posModules": [
+      "driver",
+      "settings",
+      "sync",
+      "whatsapp"
+    ],
+    "keywords": "wifioff wifi-slash sin wi-fi sin wifi desconectado red caida wifioff"
+  },
+  {
+    "id": "phos-ban",
+    "slug": "ban",
+    "name": "Ban",
+    "label": "Cancelar o bloquear",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "prohibit",
+    "inPos": true,
+    "posUses": 5,
+    "lucideAliases": [
+      "Ban"
+    ],
+    "posModules": [
+      "bugs",
+      "customers",
+      "drivers"
+    ],
+    "keywords": "ban prohibit cancelar o bloquear prohibido cancelar bloquear anular ban"
+  },
+  {
+    "id": "base-folderopen",
+    "slug": "folder-open",
+    "name": "FolderOpen",
+    "label": "Carpeta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "folder-open",
+    "inPos": true,
+    "posUses": 5,
+    "lucideAliases": [
+      "FolderOpen"
+    ],
+    "posModules": [
+      "catalog",
+      "categories",
+      "layout"
+    ],
+    "keywords": "folderopen folder-open carpeta carpeta categoria coleccion archivo folderopen"
+  },
+  {
+    "id": "base-moon",
+    "slug": "moon",
+    "name": "Moon",
+    "label": "Modo oscuro",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "moon",
+    "inPos": true,
+    "posUses": 5,
+    "lucideAliases": [
+      "Moon"
+    ],
+    "posModules": [
+      "driver",
+      "drivers",
+      "payroll",
+      "settings"
+    ],
+    "keywords": "moon moon modo oscuro luna noche modo oscuro nocturno moon"
+  },
+  {
+    "id": "base-palette",
+    "slug": "palette",
+    "name": "Palette",
+    "label": "Apariencia y tema",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "palette",
+    "inPos": true,
+    "posUses": 5,
+    "lucideAliases": [
+      "Palette"
+    ],
+    "posModules": [
+      "layout",
+      "menu-v3",
+      "settings"
+    ],
+    "keywords": "palette palette apariencia y tema paleta color tema diseno apariencia palette"
+  },
+  {
+    "id": "phos-timer",
+    "slug": "timer",
+    "name": "Timer",
+    "label": "Cronómetro SLA",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "timer",
+    "inPos": true,
+    "posUses": 5,
+    "lucideAliases": [
+      "Timer"
+    ],
+    "posModules": [
+      "driver",
+      "drivers",
+      "orders"
+    ],
+    "keywords": "timer timer cronómetro sla cronometro sla minutos cocina entrega timer"
+  },
+  {
+    "id": "phos-arrowrightleft",
+    "slug": "arrow-right-left",
+    "name": "ArrowRightLeft",
+    "label": "Intercambiar",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrows-left-right",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "ArrowRightLeft"
+    ],
+    "posModules": [
+      "cash-register",
+      "sales"
+    ],
+    "keywords": "arrowrightleft arrows-left-right intercambiar intercambiar transferencia cambio arrowrightleft"
+  },
+  {
+    "id": "phos-arrowupdown",
+    "slug": "arrow-up-down",
+    "name": "ArrowUpDown",
+    "label": "Ordenar columna",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrows-down-up",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "ArrowUpDown"
+    ],
+    "posModules": [
+      "orders",
+      "payroll",
+      "sales"
+    ],
+    "keywords": "arrowupdown arrows-down-up ordenar columna ordenar clasificar arriba abajo arrowupdown"
+  },
+  {
+    "id": "phos-chevronup",
+    "slug": "chevron-up",
+    "name": "ChevronUp",
+    "label": "Contraer arriba",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "caret-up",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "ChevronUp"
+    ],
+    "posModules": [
+      "drivers",
+      "inventory",
+      "pos",
+      "ui"
+    ],
+    "keywords": "chevronup caret-up contraer arriba contraer cerrar arriba chevronup"
+  },
+  {
+    "id": "phos-filter",
+    "slug": "filter",
+    "name": "Filter",
+    "label": "Filtrar vista",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "funnel",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "Filter"
+    ],
+    "posModules": [
+      "bugs",
+      "payroll",
+      "products",
+      "sales"
+    ],
+    "keywords": "filter funnel filtrar vista filtro embudo buscar refinar filter"
+  },
+  {
+    "id": "base-home",
+    "slug": "home",
+    "name": "Home",
+    "label": "Inicio",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "house",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "Home"
+    ],
+    "posModules": [
+      "kitchen",
+      "orders",
+      "whatsapp"
+    ],
+    "keywords": "home house inicio inicio casa portada tablero home"
+  },
+  {
+    "id": "base-map",
+    "slug": "map",
+    "name": "Map",
+    "label": "Mapa de zona",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "map-trifold",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "Map"
+    ],
+    "posModules": [
+      "driver",
+      "orders",
+      "settings"
+    ],
+    "keywords": "map map-trifold mapa de zona mapa plano calles reparto cobertura map"
+  },
+  {
+    "id": "phos-packageopen",
+    "slug": "package-open",
+    "name": "PackageOpen",
+    "label": "Insumo abierto",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "archive",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "PackageOpen"
+    ],
+    "posModules": [
+      "driver",
+      "orders"
+    ],
+    "keywords": "packageopen archive insumo abierto abierto contenedor archivo inventario packageopen"
+  },
+  {
+    "id": "base-send",
+    "slug": "send",
+    "name": "Send",
+    "label": "Enviar mensaje",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "paper-plane-tilt",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "Send"
+    ],
+    "posModules": [
+      "driver",
+      "orders",
+      "whatsapp"
+    ],
+    "keywords": "send paper-plane-tilt enviar mensaje enviar despachar mandar whatsapp send"
+  },
+  {
+    "id": "phos-settings2",
+    "slug": "settings-2",
+    "name": "Settings2",
+    "label": "Parámetros avanzados",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "sliders",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "Settings2"
+    ],
+    "posModules": [
+      "drivers",
+      "payroll",
+      "settings"
+    ],
+    "keywords": "settings2 sliders parámetros avanzados controles ajustes finos reglas settings2"
+  },
+  {
+    "id": "phos-splitsquarehorizontal",
+    "slug": "split-square-horizontal",
+    "name": "SplitSquareHorizontal",
+    "label": "Mitad y mitad",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "columns",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "SplitSquareHorizontal"
+    ],
+    "posModules": [
+      "catalog",
+      "pos",
+      "products"
+    ],
+    "keywords": "splitsquarehorizontal columns mitad y mitad dividir mitades dos columnas splitsquarehorizontal"
+  },
+  {
+    "id": "phos-stickynote",
+    "slug": "sticky-note",
+    "name": "StickyNote",
+    "label": "Nota adhesiva",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "note",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "StickyNote"
+    ],
+    "posModules": [
+      "customers",
+      "orders",
+      "whatsapp"
+    ],
+    "keywords": "stickynote note nota adhesiva nota recordatorio observacion cocina stickynote"
+  },
+  {
+    "id": "phos-usercheck",
+    "slug": "user-check",
+    "name": "UserCheck",
+    "label": "Asistencia confirmada",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "user-check",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "UserCheck"
+    ],
+    "posModules": [
+      "drivers",
+      "orders",
+      "payroll",
+      "settings"
+    ],
+    "keywords": "usercheck user-check asistencia confirmada presente activo verificado empleado usercheck"
+  },
+  {
+    "id": "phos-userplus",
+    "slug": "user-plus",
+    "name": "UserPlus",
+    "label": "Nuevo cliente",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "user-plus",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "UserPlus"
+    ],
+    "posModules": [
+      "drivers",
+      "payroll"
+    ],
+    "keywords": "userplus user-plus nuevo cliente registrar alta nuevo empleado cliente userplus"
+  },
+  {
+    "id": "phos-wifi",
+    "slug": "wifi",
+    "name": "Wifi",
+    "label": "Red Wi-Fi activa",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "wifi-high",
+    "inPos": true,
+    "posUses": 4,
+    "lucideAliases": [
+      "Wifi"
+    ],
+    "posModules": [
+      "settings",
+      "whatsapp"
+    ],
+    "keywords": "wifi wifi-high red wi-fi activa wifi internet red local wifi"
+  },
+  {
+    "id": "phos-alertoctagon",
+    "slug": "alert-octagon",
+    "name": "AlertOctagon",
+    "label": "Alerta crítica",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "warning-octagon",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "AlertOctagon"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "alertoctagon warning-octagon alerta crítica peligro bloqueo critico alto alertoctagon"
+  },
+  {
+    "id": "phos-arrowup",
+    "slug": "arrow-up",
+    "name": "ArrowUp",
+    "label": "Flecha arriba",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-up",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "ArrowUp"
+    ],
+    "posModules": [
+      "orders",
+      "settings"
+    ],
+    "keywords": "arrowup arrow-up flecha arriba flecha subir ascender arrowup"
+  },
+  {
+    "id": "base-bot",
+    "slug": "bot",
+    "name": "Bot",
+    "label": "Asistente IA",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "robot",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "Bot"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "bot robot asistente ia bot ia robot asistente automatico bot"
+  },
+  {
+    "id": "phos-checkcheck",
+    "slug": "check-check",
+    "name": "CheckCheck",
+    "label": "Leído doble",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "checks",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "CheckCheck"
+    ],
+    "posModules": [
+      "whatsapp"
+    ],
+    "keywords": "checkcheck checks leído doble doble check leido entregado whatsapp checkcheck"
+  },
+  {
+    "id": "phos-hourglass",
+    "slug": "hourglass",
+    "name": "Hourglass",
+    "label": "En espera",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "hourglass",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "Hourglass"
+    ],
+    "posModules": [
+      "orders"
+    ],
+    "keywords": "hourglass hourglass en espera espera tiempo preparacion reloj arena hourglass"
+  },
+  {
+    "id": "phos-landmark",
+    "slug": "landmark",
+    "name": "Landmark",
+    "label": "Transferencia bancaria",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "bank",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "Landmark"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "landmark bank transferencia bancaria banco spei transferencia cuenta landmark"
+  },
+  {
+    "id": "base-mail",
+    "slug": "mail",
+    "name": "Mail",
+    "label": "Correo electrónico",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "envelope-simple",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "Mail"
+    ],
+    "posModules": [
+      "auth",
+      "customers",
+      "drivers"
+    ],
+    "keywords": "mail envelope-simple correo electrónico correo email mensaje bandeja mail"
+  },
+  {
+    "id": "phos-maximize2",
+    "slug": "maximize-2",
+    "name": "Maximize2",
+    "label": "Pantalla completa",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrows-out-simple",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "Maximize2"
+    ],
+    "posModules": [
+      "orders",
+      "tv"
+    ],
+    "keywords": "maximize2 arrows-out-simple pantalla completa maximizar expandir tv pantalla completa maximize2"
+  },
+  {
+    "id": "phos-morehorizontal",
+    "slug": "more-horizontal",
+    "name": "MoreHorizontal",
+    "label": "Más acciones",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "dots-three",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "MoreHorizontal",
+      "MoreHorizontalIcon"
+    ],
+    "posModules": [
+      "orders",
+      "ui"
+    ],
+    "keywords": "morehorizontal dots-three más acciones mas opciones menu tres puntos morehorizontal morehorizontalicon"
+  },
+  {
+    "id": "base-rocket",
+    "slug": "rocket",
+    "name": "Rocket",
+    "label": "Despliegue rápido",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "rocket-launch",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "Rocket"
+    ],
+    "posModules": [
+      "onboarding",
+      "settings"
+    ],
+    "keywords": "rocket rocket-launch despliegue rápido cohete lanzar rapido inicio rocket"
+  },
+  {
+    "id": "phos-shieldx",
+    "slug": "shield-x",
+    "name": "ShieldX",
+    "label": "Sin autorización",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "shield-slash",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "ShieldX"
+    ],
+    "posModules": [
+      "layout",
+      "settings",
+      "unauthorized"
+    ],
+    "keywords": "shieldx shield-slash sin autorización bloqueado restringido sin acceso shieldx"
+  },
+  {
+    "id": "phos-trash",
+    "slug": "trash",
+    "name": "Trash",
+    "label": "Papelera simple",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "trash-simple",
+    "inPos": true,
+    "posUses": 3,
+    "lucideAliases": [
+      "Trash"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "trash trash-simple papelera simple borrar limpiar quitar trash"
+  },
+  {
+    "id": "phos-arrowdown",
+    "slug": "arrow-down",
+    "name": "ArrowDown",
+    "label": "Flecha abajo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-down",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "ArrowDown"
+    ],
+    "posModules": [
+      "orders",
+      "settings"
+    ],
+    "keywords": "arrowdown arrow-down flecha abajo flecha bajar descender orden arrowdown"
+  },
+  {
+    "id": "phos-arrowupcircle",
+    "slug": "arrow-up-circle",
+    "name": "ArrowUpCircle",
+    "label": "Subir nivel",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-circle-up",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "ArrowUpCircle"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "arrowupcircle arrow-circle-up subir nivel flecha circulo arriba entrada arrowupcircle"
+  },
+  {
+    "id": "phos-arrowupright",
+    "slug": "arrow-up-right",
+    "name": "ArrowUpRight",
+    "label": "Abrir externo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-up-right",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "ArrowUpRight"
+    ],
+    "posModules": [
+      "inventory",
+      "payroll"
+    ],
+    "keywords": "arrowupright arrow-up-right abrir externo flecha diagonal entrada crecimiento arrowupright"
+  },
+  {
+    "id": "phos-boxes",
+    "slug": "boxes",
+    "name": "Boxes",
+    "label": "Lotes e inventario",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "shipping-container",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Boxes"
+    ],
+    "posModules": [
+      "admin",
+      "layout"
+    ],
+    "keywords": "boxes shipping-container lotes e inventario cajas lotes almacen bodega boxes"
+  },
+  {
+    "id": "phos-calendaroff",
+    "slug": "calendar-off",
+    "name": "CalendarOff",
+    "label": "Día cerrado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "calendar-x",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "CalendarOff"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "calendaroff calendar-x día cerrado cerrado descanso inhabil calendaroff"
+  },
+  {
+    "id": "base-camera",
+    "slug": "camera",
+    "name": "Camera",
+    "label": "Cámara",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "camera",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Camera"
+    ],
+    "posModules": [
+      "driver",
+      "onboarding"
+    ],
+    "keywords": "camera camera cámara camara foto evidencia captura camera"
+  },
+  {
+    "id": "phos-cloud",
+    "slug": "cloud",
+    "name": "Cloud",
+    "label": "Sincronizado nube",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "cloud",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Cloud"
+    ],
+    "posModules": [
+      "sync"
+    ],
+    "keywords": "cloud cloud sincronizado nube nube respaldo conectado linea cloud"
+  },
+  {
+    "id": "phos-crosshair",
+    "slug": "crosshair",
+    "name": "Crosshair",
+    "label": "Centrar GPS",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "crosshair",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Crosshair"
+    ],
+    "posModules": [
+      "driver",
+      "settings"
+    ],
+    "keywords": "crosshair crosshair centrar gps mira centrar ubicacion exacta gps crosshair"
+  },
+  {
+    "id": "phos-gripvertical",
+    "slug": "grip-vertical",
+    "name": "GripVertical",
+    "label": "Arrastrar orden",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "dots-six-vertical",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "GripVertical"
+    ],
+    "posModules": [
+      "categories",
+      "settings"
+    ],
+    "keywords": "gripvertical dots-six-vertical arrastrar orden arrastrar mover reordenar puntos gripvertical"
+  },
+  {
+    "id": "phos-helpcircle",
+    "slug": "help-circle",
+    "name": "HelpCircle",
+    "label": "Ayuda contextual",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "question",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "HelpCircle"
+    ],
+    "posModules": [
+      "drivers"
+    ],
+    "keywords": "helpcircle question ayuda contextual ayuda duda pregunta soporte helpcircle"
+  },
+  {
+    "id": "phos-link2",
+    "slug": "link-2",
+    "name": "Link2",
+    "label": "Enlace público",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "link-simple",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Link2"
+    ],
+    "posModules": [
+      "drivers",
+      "settings"
+    ],
+    "keywords": "link2 link-simple enlace público enlace link url compartir link2"
+  },
+  {
+    "id": "phos-list",
+    "slug": "list",
+    "name": "List",
+    "label": "Vista de lista",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "list-bullets",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "List"
+    ],
+    "posModules": [
+      "menu-v3",
+      "products"
+    ],
+    "keywords": "list list-bullets vista de lista lista filas tabla renglones list"
+  },
+  {
+    "id": "phos-locatefixed",
+    "slug": "locate-fixed",
+    "name": "LocateFixed",
+    "label": "GPS activo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "gps-fix",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "LocateFixed"
+    ],
+    "posModules": [
+      "menu-v3",
+      "tv"
+    ],
+    "keywords": "locatefixed gps-fix gps activo gps ubicacion rastreo vivo moto locatefixed"
+  },
+  {
+    "id": "phos-mappinned",
+    "slug": "map-pinned",
+    "name": "MapPinned",
+    "label": "Zona confirmada",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "map-pin-line",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "MapPinned"
+    ],
+    "posModules": [
+      "whatsapp"
+    ],
+    "keywords": "mappinned map-pin-line zona confirmada ubicacion fijada domicilio verificado mappinned"
+  },
+  {
+    "id": "base-megaphone",
+    "slug": "megaphone",
+    "name": "Megaphone",
+    "label": "Aviso y campaña",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "megaphone",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Megaphone"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "megaphone megaphone aviso y campaña megafono aviso difusion promocion megaphone"
+  },
+  {
+    "id": "phos-menu",
+    "slug": "menu",
+    "name": "Menu",
+    "label": "Menú principal",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "list",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Menu"
+    ],
+    "posModules": [
+      "layout",
+      "onboarding"
+    ],
+    "keywords": "menu list menú principal menu navegacion hamburguesa opciones menu"
+  },
+  {
+    "id": "base-music",
+    "slug": "music",
+    "name": "Music",
+    "label": "Sonido de alerta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "music-notes",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Music"
+    ],
+    "posModules": [
+      "whatsapp"
+    ],
+    "keywords": "music music-notes sonido de alerta musica sonido timbre alerta notificacion music"
+  },
+  {
+    "id": "phos-packagecheck",
+    "slug": "package-check",
+    "name": "PackageCheck",
+    "label": "Recepción de compra",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "box-arrow-down",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "PackageCheck"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "packagecheck box-arrow-down recepción de compra recibir compra entrada almacen packagecheck"
+  },
+  {
+    "id": "phos-rotatecw",
+    "slug": "rotate-cw",
+    "name": "RotateCw",
+    "label": "Reintentar envío",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "arrow-clockwise",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "RotateCw"
+    ],
+    "posModules": [
+      "driver",
+      "orders"
+    ],
+    "keywords": "rotatecw arrow-clockwise reintentar envío reintentar repetir giro derecha rotatecw"
+  },
+  {
+    "id": "phos-shield",
+    "slug": "shield",
+    "name": "Shield",
+    "label": "Rol y permiso",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "shield",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Shield"
+    ],
+    "posModules": [
+      "payroll",
+      "settings"
+    ],
+    "keywords": "shield shield rol y permiso escudo seguridad permiso rol shield"
+  },
+  {
+    "id": "phos-table2",
+    "slug": "table-2",
+    "name": "Table2",
+    "label": "Vista tabular",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "table",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Table2"
+    ],
+    "posModules": [
+      "drivers",
+      "orders"
+    ],
+    "keywords": "table2 table vista tabular tabla celdas hoja reporte table2"
+  },
+  {
+    "id": "phos-type",
+    "slug": "type",
+    "name": "Type",
+    "label": "Tipografía de ticket",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "text-t",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Type"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "type text-t tipografía de ticket texto fuente letra tamano type"
+  },
+  {
+    "id": "phos-unlock",
+    "slug": "unlock",
+    "name": "Unlock",
+    "label": "Caja abierta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "lock-open",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "Unlock"
+    ],
+    "posModules": [
+      "cash-register"
+    ],
+    "keywords": "unlock lock-open caja abierta abierto desbloqueado turno activo unlock"
+  },
+  {
+    "id": "phos-usercircle",
+    "slug": "user-circle",
+    "name": "UserCircle",
+    "label": "Perfil de cuenta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "user-circle",
+    "inPos": true,
+    "posUses": 2,
+    "lucideAliases": [
+      "UserCircle"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "usercircle user-circle perfil de cuenta perfil avatar cuenta sesion usercircle"
+  },
+  {
+    "id": "phos-arrowdownright",
+    "slug": "arrow-down-right",
+    "name": "ArrowDownRight",
+    "label": "Salida diagonal",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrow-down-right",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "ArrowDownRight"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "arrowdownright arrow-down-right salida diagonal flecha diagonal salida egreso arrowdownright"
+  },
+  {
+    "id": "phos-blend",
+    "slug": "blend",
+    "name": "Blend",
+    "label": "Combinar mitades",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "intersect",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Blend"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "blend intersect combinar mitades combinar mezclar mitades fusion blend"
+  },
+  {
+    "id": "phos-bold",
+    "slug": "bold",
+    "name": "Bold",
+    "label": "Texto en negrita",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "text-b",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Bold"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "bold text-b texto en negrita negrita texto formato fuente bold"
+  },
+  {
+    "id": "base-building",
+    "slug": "building",
+    "name": "Building",
+    "label": "Sucursal",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "building-office",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Building"
+    ],
+    "posModules": [
+      "customers"
+    ],
+    "keywords": "building building-office sucursal sucursal edificio local matriz empresa building"
+  },
+  {
+    "id": "phos-building2",
+    "slug": "building-2",
+    "name": "Building2",
+    "label": "Multi-sucursal",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "buildings",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Building2"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "building2 buildings multi-sucursal edificios sucursales corporativo building2"
+  },
+  {
+    "id": "phos-chevronsupdown",
+    "slug": "chevrons-up-down",
+    "name": "ChevronsUpDown",
+    "label": "Selector desplegable",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "caret-up-down",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "ChevronsUpDown"
+    ],
+    "posModules": [
+      "layout"
+    ],
+    "keywords": "chevronsupdown caret-up-down selector desplegable selector opciones cambiar chevronsupdown"
+  },
+  {
+    "id": "phos-circle",
+    "slug": "circle",
+    "name": "Circle",
+    "label": "Indicador radio",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "circle",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Circle"
+    ],
+    "posModules": [
+      "ui"
+    ],
+    "keywords": "circle circle indicador radio circulo punto estado radio circle"
+  },
+  {
+    "id": "phos-clipboardcheck",
+    "slug": "clipboard-check",
+    "name": "ClipboardCheck",
+    "label": "Auditoría validada",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "clipboard-text",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "ClipboardCheck"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "clipboardcheck clipboard-text auditoría validada bitacora conteo fisico verificado clipboardcheck"
+  },
+  {
+    "id": "phos-cloudoff",
+    "slug": "cloud-off",
+    "name": "CloudOff",
+    "label": "Modo sin conexión",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "cloud-slash",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "CloudOff"
+    ],
+    "posModules": [
+      "sync"
+    ],
+    "keywords": "cloudoff cloud-slash modo sin conexión offline sin internet local desconectado cloudoff"
+  },
+  {
+    "id": "phos-coffee",
+    "slug": "coffee",
+    "name": "Coffee",
+    "label": "Bebidas calientes",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "coffee",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Coffee"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "coffee coffee bebidas calientes cafe bebida complemento desayuno coffee"
+  },
+  {
+    "id": "phos-coins",
+    "slug": "coins",
+    "name": "Coins",
+    "label": "Monedas y morralla",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "coins",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Coins"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "coins coins monedas y morralla monedas cambio morralla fondo caja coins"
+  },
+  {
+    "id": "phos-fileimage",
+    "slug": "file-image",
+    "name": "FileImage",
+    "label": "Archivo de imagen",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "file-image",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "FileImage"
+    ],
+    "posModules": [
+      "onboarding"
+    ],
+    "keywords": "fileimage file-image archivo de imagen imagen comprobante foto archivo fileimage"
+  },
+  {
+    "id": "base-gift",
+    "slug": "gift",
+    "name": "Gift",
+    "label": "Promoción y regalo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "gift",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Gift"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "gift gift promoción y regalo regalo promocion cortesia recompensa gift"
+  },
+  {
+    "id": "phos-grid2x2",
+    "slug": "grid-2-x-2",
+    "name": "Grid2X2",
+    "label": "Cuadrícula compacta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "squares-four",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Grid2X2"
+    ],
+    "posModules": [
+      "layout"
+    ],
+    "keywords": "grid2x2 squares-four cuadrícula compacta cuadricula mosaico dos por dos grid2x2"
+  },
+  {
+    "id": "phos-hash",
+    "slug": "hash",
+    "name": "Hash",
+    "label": "Folio numérico",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "hash",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Hash"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "hash hash folio numérico folio numero codigo identificador hash"
+  },
+  {
+    "id": "phos-inbox",
+    "slug": "inbox",
+    "name": "Inbox",
+    "label": "Bandeja de entrada",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "tray",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Inbox"
+    ],
+    "posModules": [
+      "drivers"
+    ],
+    "keywords": "inbox tray bandeja de entrada bandeja pedidos entrantes recepcion inbox"
+  },
+  {
+    "id": "phos-layoutdashboard",
+    "slug": "layout-dashboard",
+    "name": "LayoutDashboard",
+    "label": "Tablero operativo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "gauge",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "LayoutDashboard"
+    ],
+    "posModules": [
+      "layout"
+    ],
+    "keywords": "layoutdashboard gauge tablero operativo tablero dashboard resumen metricas layoutdashboard"
+  },
+  {
+    "id": "phos-minimize2",
+    "slug": "minimize-2",
+    "name": "Minimize2",
+    "label": "Reducir vista",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "arrows-in-simple",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Minimize2"
+    ],
+    "posModules": [
+      "tv"
+    ],
+    "keywords": "minimize2 arrows-in-simple reducir vista minimizar contraer ventana minimize2"
+  },
+  {
+    "id": "phos-morevertical",
+    "slug": "more-vertical",
+    "name": "MoreVertical",
+    "label": "Opciones de fila",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "dots-three-vertical",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "MoreVertical"
+    ],
+    "posModules": [
+      "whatsapp"
+    ],
+    "keywords": "morevertical dots-three-vertical opciones de fila opciones acciones contextual vertical morevertical"
+  },
+  {
+    "id": "phos-mousepointerclick",
+    "slug": "mouse-pointer-click",
+    "name": "MousePointerClick",
+    "label": "Selección rápida",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "cursor-click",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "MousePointerClick"
+    ],
+    "posModules": [
+      "orders"
+    ],
+    "keywords": "mousepointerclick cursor-click selección rápida clic seleccionar tocar interactivo mousepointerclick"
+  },
+  {
+    "id": "phos-notebooktext",
+    "slug": "notebook-text",
+    "name": "NotebookText",
+    "label": "Recetario BOM",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "notebook",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "NotebookText"
+    ],
+    "posModules": [
+      "onboarding"
+    ],
+    "keywords": "notebooktext notebook recetario bom recetario libreta ingredientes manual notebooktext"
+  },
+  {
+    "id": "phos-octagonx",
+    "slug": "octagon-x",
+    "name": "OctagonX",
+    "label": "Error bloqueante",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "x-square",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "OctagonX",
+      "OctagonXIcon"
+    ],
+    "posModules": [
+      "ui"
+    ],
+    "keywords": "octagonx x-square error bloqueante error fallo rechazo critico octagonx octagonxicon"
+  },
+  {
+    "id": "phos-packageminus",
+    "slug": "package-minus",
+    "name": "PackageMinus",
+    "label": "Merma o salida",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "cube-focus",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "PackageMinus"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "packageminus cube-focus merma o salida merma descuento baja inventario packageminus"
+  },
+  {
+    "id": "phos-packageplus",
+    "slug": "package-plus",
+    "name": "PackagePlus",
+    "label": "Alta de insumo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "box-arrow-up",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "PackagePlus"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "packageplus box-arrow-up alta de insumo agregar insumo entrada stock packageplus"
+  },
+  {
+    "id": "phos-paintbrush",
+    "slug": "paintbrush",
+    "name": "Paintbrush",
+    "label": "Personalizar estilo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "paint-brush",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Paintbrush"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "paintbrush paint-brush personalizar estilo pincel estilo diseno marca paintbrush"
+  },
+  {
+    "id": "phos-panelleft",
+    "slug": "panel-left",
+    "name": "PanelLeft",
+    "label": "Barra lateral",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "sidebar-simple",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "PanelLeft"
+    ],
+    "posModules": [
+      "layout"
+    ],
+    "keywords": "panelleft sidebar-simple barra lateral barra lateral panel menu colapsar panelleft"
+  },
+  {
+    "id": "phos-percent",
+    "slug": "percent",
+    "name": "Percent",
+    "label": "Descuento porcentual",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "percent",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Percent"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "percent percent descuento porcentual porcentaje descuento promocion margen percent"
+  },
+  {
+    "id": "phos-piechart",
+    "slug": "pie-chart",
+    "name": "PieChart",
+    "label": "Distribución de ventas",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "chart-pie-slice",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "PieChart"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "piechart chart-pie-slice distribución de ventas grafica pastel proporcion mix piechart"
+  },
+  {
+    "id": "base-pin",
+    "slug": "pin",
+    "name": "Pin",
+    "label": "Fijar marcador",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "push-pin",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Pin"
+    ],
+    "posModules": [
+      "orders"
+    ],
+    "keywords": "pin push-pin fijar marcador pin fijar chincheta nota pin"
+  },
+  {
+    "id": "phos-plug",
+    "slug": "plug",
+    "name": "Plug",
+    "label": "Conectar periférico",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "plug",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Plug"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "plug plug conectar periférico enchufe conectar servicio integracion plug"
+  },
+  {
+    "id": "phos-pluscircle",
+    "slug": "plus-circle",
+    "name": "PlusCircle",
+    "label": "Nuevo registro",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "plus-circle",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "PlusCircle"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "pluscircle plus-circle nuevo registro nuevo crear anadir circulo pluscircle"
+  },
+  {
+    "id": "base-puzzle",
+    "slug": "puzzle",
+    "name": "Puzzle",
+    "label": "Extensión",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "puzzle-piece",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Puzzle"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "puzzle puzzle-piece extensión extension complemento integracion modulo puzzle"
+  },
+  {
+    "id": "phos-radio",
+    "slug": "radio",
+    "name": "Radio",
+    "label": "Transmisión en vivo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "broadcast",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Radio"
+    ],
+    "posModules": [
+      "tv"
+    ],
+    "keywords": "radio broadcast transmisión en vivo vivo tiempo real senal reparto radio"
+  },
+  {
+    "id": "phos-route",
+    "slug": "route",
+    "name": "Route",
+    "label": "Trazo de ruta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "path",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Route"
+    ],
+    "posModules": [
+      "orders"
+    ],
+    "keywords": "route path trazo de ruta ruta trayecto recorrido calles entrega route"
+  },
+  {
+    "id": "phos-scale",
+    "slug": "scale",
+    "name": "Scale",
+    "label": "Báscula y gramaje",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "scales",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Scale"
+    ],
+    "posModules": [
+      "inventory"
+    ],
+    "keywords": "scale scales báscula y gramaje bascula peso gramos porcion receta scale"
+  },
+  {
+    "id": "phos-share2",
+    "slug": "share-2",
+    "name": "Share2",
+    "label": "Compartir enlace",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "share-network",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Share2"
+    ],
+    "posModules": [
+      "menu-v3"
+    ],
+    "keywords": "share2 share-network compartir enlace compartir difundir enviar liga share2"
+  },
+  {
+    "id": "phos-shieldalert",
+    "slug": "shield-alert",
+    "name": "ShieldAlert",
+    "label": "Alerta de seguridad",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "shield-warning",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "ShieldAlert"
+    ],
+    "posModules": [
+      "tv"
+    ],
+    "keywords": "shieldalert shield-warning alerta de seguridad auditoria permiso denegado alerta shieldalert"
+  },
+  {
+    "id": "phos-shuffle",
+    "slug": "shuffle",
+    "name": "Shuffle",
+    "label": "Orden aleatorio",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "shuffle",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Shuffle"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "shuffle shuffle orden aleatorio aleatorio mezclar combinar shuffle"
+  },
+  {
+    "id": "phos-signal",
+    "slug": "signal",
+    "name": "Signal",
+    "label": "Señal excelente",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "cell-signal-full",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Signal"
+    ],
+    "posModules": [
+      "driver"
+    ],
+    "keywords": "signal cell-signal-full señal excelente senal red cobertura conectado signal"
+  },
+  {
+    "id": "phos-signalzero",
+    "slug": "signal-zero",
+    "name": "SignalZero",
+    "label": "Sin señal móvil",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "cell-signal-none",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "SignalZero"
+    ],
+    "posModules": [
+      "driver"
+    ],
+    "keywords": "signalzero cell-signal-none sin señal móvil sin senal desconectado red cero signalzero"
+  },
+  {
+    "id": "phos-space",
+    "slug": "space",
+    "name": "Space",
+    "label": "Espaciado de ticket",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "brackets-square",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Space"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "space brackets-square espaciado de ticket espacio sangria margen impresion space"
+  },
+  {
+    "id": "phos-sunset",
+    "slug": "sunset",
+    "name": "Sunset",
+    "label": "Corte vespertino",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "sun-horizon",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Sunset"
+    ],
+    "posModules": [
+      "drivers"
+    ],
+    "keywords": "sunset sun-horizon corte vespertino tarde cierre turno vespertino sunset"
+  },
+  {
+    "id": "phos-target",
+    "slug": "target",
+    "name": "Target",
+    "label": "Meta de ventas",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "target",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Target"
+    ],
+    "posModules": [
+      "orders"
+    ],
+    "keywords": "target target meta de ventas meta objetivo precision alcance target"
+  },
+  {
+    "id": "phos-testtube",
+    "slug": "test-tube",
+    "name": "TestTube",
+    "label": "Prueba diagnóstica",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "flask",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "TestTube"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "testtube flask prueba diagnóstica prueba test laboratorio simulacion testtube"
+  },
+  {
+    "id": "base-toggleleft",
+    "slug": "toggle-left",
+    "name": "ToggleLeft",
+    "label": "Interruptor",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "toggle-left",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "ToggleLeft"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "toggleleft toggle-left interruptor interruptor switch activar opcion toggleleft"
+  },
+  {
+    "id": "phos-toggleright",
+    "slug": "toggle-right",
+    "name": "ToggleRight",
+    "label": "Opción activa",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "toggle-right",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "ToggleRight"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "toggleright toggle-right opción activa activo encendido switch toggleright"
+  },
+  {
+    "id": "phos-tv",
+    "slug": "tv",
+    "name": "Tv",
+    "label": "Pantalla TV cocina",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "television",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Tv"
+    ],
+    "posModules": [
+      "onboarding"
+    ],
+    "keywords": "tv television pantalla tv cocina television tv mapa cocina despacho tv"
+  },
+  {
+    "id": "phos-unplug",
+    "slug": "unplug",
+    "name": "Unplug",
+    "label": "Reconectar servicio",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "plugs-connected",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Unplug"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "unplug plugs-connected reconectar servicio cable reconectar sidecar whatsapp unplug"
+  },
+  {
+    "id": "phos-usb",
+    "slug": "usb",
+    "name": "Usb",
+    "label": "Puerto USB ESC/POS",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "usb",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Usb"
+    ],
+    "posModules": [
+      "settings"
+    ],
+    "keywords": "usb usb puerto usb esc/pos usb cable impresora directa usb"
+  },
+  {
+    "id": "phos-userx",
+    "slug": "user-x",
+    "name": "UserX",
+    "label": "Baja de usuario",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "user-minus",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "UserX"
+    ],
+    "posModules": [
+      "payroll"
+    ],
+    "keywords": "userx user-minus baja de usuario inactivo ausente baja userx"
+  },
+  {
+    "id": "base-utensils",
+    "slug": "utensils",
+    "name": "Utensils",
+    "label": "Cubiertos y comedor",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "bowl-food",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Utensils"
+    ],
+    "posModules": [
+      "menu-v3"
+    ],
+    "keywords": "utensils bowl-food cubiertos y comedor cubiertos plato comida comedor mesa utensils"
+  },
+  {
+    "id": "phos-zoomin",
+    "slug": "zoom-in",
+    "name": "ZoomIn",
+    "label": "Acercar vista",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "magnifying-glass-plus",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "ZoomIn"
+    ],
+    "posModules": [
+      "whatsapp"
+    ],
+    "keywords": "zoomin magnifying-glass-plus acercar vista acercar zoom ampliar lupa zoomin"
+  },
+  {
+    "id": "phos-cupsoda",
+    "slug": "cup-soda",
+    "name": "CupSoda",
+    "label": "Refrescos y bebidas",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "pint-glass",
+    "inPos": true,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "cupsoda pint-glass refrescos y bebidas refresco vaso bebida soda "
+  },
+  {
+    "id": "base-airplane",
+    "slug": "airplane",
+    "name": "Airplane",
+    "label": "Avión",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "airplane-tilt",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "airplane airplane-tilt avión avion vuelo viaje envio"
+  },
+  {
+    "id": "base-anchor",
+    "slug": "anchor",
+    "name": "Anchor",
+    "label": "Ancla",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "anchor",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "anchor anchor ancla ancla puerto fijo"
+  },
+  {
+    "id": "base-balloon",
+    "slug": "balloon",
+    "name": "Balloon",
+    "label": "Globo festivo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "balloon",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "balloon balloon globo festivo globo fiesta celebracion"
+  },
+  {
+    "id": "base-beach",
+    "slug": "beach",
+    "name": "Beach",
+    "label": "Sombrilla de playa",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "island",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "beach island sombrilla de playa playa descanso vacaciones"
+  },
+  {
+    "id": "base-bed",
+    "slug": "bed",
+    "name": "Bed",
+    "label": "Hospedaje",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "bed",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "bed bed hospedaje cama descanso hotel"
+  },
+  {
+    "id": "base-bell",
+    "slug": "bell",
+    "name": "Bell",
+    "label": "Campana de aviso",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "bell",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "bell bell campana de aviso campana notificacion timbre alerta comanda"
+  },
+  {
+    "id": "base-bone",
+    "slug": "bone",
+    "name": "Bone",
+    "label": "Mascota",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "bone",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "bone bone mascota hueso mascota"
+  },
+  {
+    "id": "base-book",
+    "slug": "book",
+    "name": "Book",
+    "label": "Manual operativo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "book-open",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "book book-open manual operativo libro manual guia documentacion"
+  },
+  {
+    "id": "base-bookmark",
+    "slug": "bookmark",
+    "name": "Bookmark",
+    "label": "Marcador guardado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "bookmark-simple",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "bookmark bookmark-simple marcador guardado marcador favorito guardar"
+  },
+  {
+    "id": "base-broom",
+    "slug": "broom",
+    "name": "Broom",
+    "label": "Limpieza de turno",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "broom",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "broom broom limpieza de turno escoba limpieza cierre orden"
+  },
+  {
+    "id": "base-campfire",
+    "slug": "campfire",
+    "name": "Campfire",
+    "label": "Fogata a la leña",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "campfire",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "campfire campfire fogata a la leña fogata fuego lena brasa"
+  },
+  {
+    "id": "base-confetti",
+    "slug": "confetti",
+    "name": "Confetti",
+    "label": "Celebración",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "confetti",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "confetti confetti celebración confeti fiesta meta lograda"
+  },
+  {
+    "id": "base-cube",
+    "slug": "cube",
+    "name": "Cube",
+    "label": "Cubo 3D",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "cube",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "cube cube cubo 3d cubo bloque unidad"
+  },
+  {
+    "id": "base-diamond",
+    "slug": "diamond",
+    "name": "Diamond",
+    "label": "Calidad premium",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "sketch-logo",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "diamond sketch-logo calidad premium diamante joya valor"
+  },
+  {
+    "id": "base-door",
+    "slug": "door",
+    "name": "Door",
+    "label": "Puerta de acceso",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Navegación",
+    "dslKey": null,
+    "phosphorSlug": "door-open",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "door door-open puerta de acceso puerta entrada salida local"
+  },
+  {
+    "id": "base-drop",
+    "slug": "drop",
+    "name": "Drop",
+    "label": "Gota e insumo líquido",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "drop",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "drop drop gota e insumo líquido gota agua salsa aceite liquido"
+  },
+  {
+    "id": "base-dumbbell",
+    "slug": "dumbbell",
+    "name": "Dumbbell",
+    "label": "Esfuerzo",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "barbell",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "dumbbell barbell esfuerzo pesa gimnasio"
+  },
+  {
+    "id": "base-earth",
+    "slug": "earth",
+    "name": "Earth",
+    "label": "Planeta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "globe",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "earth globe planeta tierra region global"
+  },
+  {
+    "id": "base-emoji",
+    "slug": "emoji",
+    "name": "Emoji",
+    "label": "Cliente satisfecho",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "smiley",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "emoji smiley cliente satisfecho sonrisa feliz calificacion"
+  },
+  {
+    "id": "base-emoji-laugh",
+    "slug": "emoji-laugh",
+    "name": "EmojiLaugh",
+    "label": "Reseña excelente",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "smiley-wink",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "emojilaugh smiley-wink reseña excelente risa contento excelente"
+  },
+  {
+    "id": "base-eraser",
+    "slug": "eraser",
+    "name": "Eraser",
+    "label": "Borrador",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "eraser",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "eraser eraser borrador borrador limpiar corregir"
+  },
+  {
+    "id": "base-fan",
+    "slug": "fan",
+    "name": "Fan",
+    "label": "Ventilación cocina",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "fan",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "fan fan ventilación cocina ventilador extractor aire"
+  },
+  {
+    "id": "base-feather",
+    "slug": "feather",
+    "name": "Feather",
+    "label": "Ligero",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "feather",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "feather feather ligero pluma suave nota"
+  },
+  {
+    "id": "base-flashlight",
+    "slug": "flashlight",
+    "name": "Flashlight",
+    "label": "Linterna nocturna",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "flashlight",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "flashlight flashlight linterna nocturna linterna luz noche repartidor"
+  },
+  {
+    "id": "base-gas",
+    "slug": "gas",
+    "name": "Gas",
+    "label": "Gasolina de moto",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "gas-pump",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "gas gas-pump gasolina de moto gasolina combustible bidon moto"
+  },
+  {
+    "id": "base-ghost",
+    "slug": "ghost",
+    "name": "Ghost",
+    "label": "Fantasma",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "ghost",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "ghost ghost fantasma fantasma vacio"
+  },
+  {
+    "id": "base-glasses",
+    "slug": "glasses",
+    "name": "Glasses",
+    "label": "Revisión y auditoría",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "eyeglasses",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "glasses eyeglasses revisión y auditoría lentes gafas revision"
+  },
+  {
+    "id": "base-handshake",
+    "slug": "handshake",
+    "name": "Handshake",
+    "label": "Acuerdo con proveedor",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "handshake",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "handshake handshake acuerdo con proveedor trato acuerdo socio cliente"
+  },
+  {
+    "id": "base-headphones",
+    "slug": "headphones",
+    "name": "Headphones",
+    "label": "Audio",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "headphones",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "headphones headphones audio audifonos escuchar"
+  },
+  {
+    "id": "base-headset",
+    "slug": "headset",
+    "name": "Headset",
+    "label": "Telefonista y soporte",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "headset",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "headset headset telefonista y soporte diadema telefonista call center pedidos"
+  },
+  {
+    "id": "base-heart",
+    "slug": "heart",
+    "name": "Heart",
+    "label": "Favorito del cliente",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "heart",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "heart heart favorito del cliente corazon favorito preferido"
+  },
+  {
+    "id": "base-ice-cream",
+    "slug": "ice-cream",
+    "name": "IceCream",
+    "label": "Postres y helados",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "ice-cream",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "icecream ice-cream postres y helados helado postre dulce"
+  },
+  {
+    "id": "base-laptop",
+    "slug": "laptop",
+    "name": "Laptop",
+    "label": "Consola portátil",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Usuarios y Ajustes",
+    "dslKey": null,
+    "phosphorSlug": "laptop",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "laptop laptop consola portátil laptop computadora administracion"
+  },
+  {
+    "id": "base-lasso",
+    "slug": "lasso",
+    "name": "Lasso",
+    "label": "Selección libre",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "lasso",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "lasso lasso selección libre lazo area poligono"
+  },
+  {
+    "id": "base-leaf",
+    "slug": "leaf",
+    "name": "Leaf",
+    "label": "Ingrediente fresco",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "leaf",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "leaf leaf ingrediente fresco hoja fresco albahaca natural"
+  },
+  {
+    "id": "base-lightbulb",
+    "slug": "lightbulb",
+    "name": "Lightbulb",
+    "label": "Idea y sugerencia",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "lightbulb",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "lightbulb lightbulb idea y sugerencia foco idea consejo luz"
+  },
+  {
+    "id": "base-magnet",
+    "slug": "magnet",
+    "name": "Magnet",
+    "label": "Retención de clientes",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "magnet",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "magnet magnet retención de clientes iman lealtad atraer"
+  },
+  {
+    "id": "base-parachute",
+    "slug": "parachute",
+    "name": "Parachute",
+    "label": "Entrega segura",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "parachute",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "parachute parachute entrega segura paracaidas entrega cuidado"
+  },
+  {
+    "id": "base-sailboat",
+    "slug": "sailboat",
+    "name": "Sailboat",
+    "label": "Velero",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "sailboat",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "sailboat sailboat velero velero barco"
+  },
+  {
+    "id": "base-saved",
+    "slug": "saved",
+    "name": "Saved",
+    "label": "Casilla verificada",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "check-square",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "saved check-square casilla verificada guardado check casilla listo"
+  },
+  {
+    "id": "base-scooter",
+    "slug": "scooter",
+    "name": "Scooter",
+    "label": "Patín de reparto",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "scooter",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "scooter scooter patín de reparto patin scooter urbano"
+  },
+  {
+    "id": "base-trophy",
+    "slug": "trophy",
+    "name": "Trophy",
+    "label": "Meta cumplida",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Caja y Comercio",
+    "dslKey": null,
+    "phosphorSlug": "trophy",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "trophy trophy meta cumplida trofeo premio lider"
+  },
+  {
+    "id": "base-umbrella",
+    "slug": "umbrella",
+    "name": "Umbrella",
+    "label": "Lluvia en ruta",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "umbrella",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "umbrella umbrella lluvia en ruta paraguas lluvia clima reparto"
+  },
+  {
+    "id": "base-windmill",
+    "slug": "windmill",
+    "name": "Windmill",
+    "label": "Molino artesanal",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "base",
+    "sourceLabel": "Esenciales Base",
+    "category": "Interfaz y Alertas",
+    "dslKey": null,
+    "phosphorSlug": "windmill",
+    "inPos": false,
+    "posUses": 0,
+    "lucideAliases": [],
+    "posModules": [],
+    "keywords": "windmill windmill molino artesanal molino harina trigo"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "@iusoft/icons",
+  "version": "1.0.0",
+  "description": "Librería vectorial de 243 iconos en 4 estilos (Glass, Outline, Solid y Duotone · 972 SVGs) con compilador geométrico determinista 0-tokens sobre Phosphor MIT y primitivas de dominio.",
+  "license": "MIT",
+  "main": "./dist/catalog.json",
+  "types": "./dist/iusoft-icons-react.tsx",
+  "files": [
+    "icons",
+    "dist",
+    "index.html",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "python3 compiler/build_suite.py",
+    "verify": "python3 compiler/verify_suite.py",
+    "serve": "python3 -m http.server 4321"
+  },
+  "devDependencies": {
+    "@phosphor-icons/core": "2.1.1"
+  }
+}
