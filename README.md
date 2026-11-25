@@ -1,9 +1,18 @@
 # IU-SOFT Icons
 
-Librería vectorial de **243 iconos × 4 estilos (`972` SVGs)** en `viewBox="0 0 24 24"`, diseñada para sistemas de punto de venta, comercio digital y aplicaciones web/móviles de alto contraste. Combina geometría analítica propia para iconos de dominio con un **compilador geométrico determinista (`0 tokens`, sin IA generativa)** sobre `@phosphor-icons/core` (`MIT`).
+Librería vectorial de **243 iconos × 4 estilos (`972` SVGs)** en `viewBox="0 0 24 24"`, diseñada para sistemas de punto de venta, comercio digital y aplicaciones web/móviles de alto contraste. Combina geometría analítica propia para iconos de dominio con el **compilador geométrico determinista Glass v2 (`0 tokens`, sin IA generativa)** sobre `@phosphor-icons/core` (`MIT`).
 
 - **Galería interactiva en vivo:** [https://iusoft-icons.vercel.app](https://iusoft-icons.vercel.app)
+- **Vista en superficies Sarchi POS:** [`./examples/04-sarchi-surfaces-preview.html`](./examples/04-sarchi-surfaces-preview.html)
 - **Licencia:** `MIT` (`IU-SOFT` + atribución `@phosphor-icons/core`)
+
+---
+
+## Novedades de Glass v2 y Superficies Adaptativas
+
+1. **Cero comodines *squircle* (`0/243`) y refracción garantizada (`243/243`):** El compilador v2 elimina por completo los marcos genéricos `rx=5` de v1, preserva vértices agudos (`> 46°` en estrellas, rayos, casas y llaves), calcula tangentes circulares exactas $\frac{4}{3}\tan(\theta/4)$ y genera capa trasera refractada bajo `feGaussianBlur` en el `100%` del catálogo.
+2. **Cuatro paletas ópticas adaptativas (`--iusoft-*`):** Todos los iconos `glass` leen variables CSS semánticas que conmutan automáticamente por cascada entre mostrador claro (`light`), cabeceras oscuras y modo nocturno OLED (`dark`), estado activo de reparto (`emerald`) e insignias sobre blanco (`emerald-light`).
+3. **Adaptador directo para Sarchi POS (`dist/sarchi-icons.tsx`):** Exporta **`215/215` símbolos** compatibles 1 a 1 con las importaciones de `lucide-react` (`Pizza`, `Bike`, `Flame`, `Printer`, `ArrowLeftRight`, `Loader2`, etc.) junto con `<SarchiIconProvider />`.
 
 ---
 
@@ -12,9 +21,9 @@ Librería vectorial de **243 iconos × 4 estilos (`972` SVGs)** en `viewBox="0 0
 | Bloque | Cantidad | Origen | Variantes incluidas |
 | :--- | ---: | :--- | :--- |
 | **Giro Pizzería y POS** | `6` iconos (`24` SVGs) | Primitivas analíticas (`compiler/domain_dsl.py`) | `glass`, `outline`, `solid`, `duotone` |
-| **Esenciales Base** | `80` iconos (`320` SVGs) | Compilador `0-tokens` sobre `@phosphor-icons/core` (`MIT`) | `glass`, `outline`, `solid`, `duotone` |
-| **Operación POS Extendida** | `157` iconos (`628` SVGs) | Compilador `0-tokens` sobre `@phosphor-icons/core` (`MIT`) | `glass`, `outline`, `solid`, `duotone` |
-| **Total librería** | **`243` iconos (`972` SVGs)** | **100% reproducible desde código (`npm run build`)** | **`197/197` equivalencias `lucide-react` cubiertas** |
+| **Esenciales Base** | `80` iconos (`320` SVGs) | Compilador v2 `0-tokens` sobre `@phosphor-icons/core` (`MIT`) | `glass`, `outline`, `solid`, `duotone` |
+| **Operación POS Extendida** | `157` iconos (`628` SVGs) | Compilador v2 `0-tokens` sobre `@phosphor-icons/core` (`MIT`) | `glass`, `outline`, `solid`, `duotone` |
+| **Total librería** | **`243` iconos (`972` SVGs)** | **100% reproducible desde código (`npm run build`)** | **`215/215` símbolos `lucide-react` exportados** |
 
 ---
 
@@ -22,29 +31,31 @@ Librería vectorial de **243 iconos × 4 estilos (`972` SVGs)** en `viewBox="0 0
 
 ```text
 iusoft-icons/
-├── index.html                        # Aplicación web interactiva autocontenida (0 peticiones externas)
-├── vercel.json                       # Configuración de despliegue estático en Vercel
-├── package.json                      # Scripts npm (build, verify, serve) + @phosphor-icons/core@2.1.1
-├── requirements.txt                  # Dependencia Python del compilador (Pillow>=10.0.0)
+├── index.html                            # Galería web interactiva con selector de superficie óptica
+├── vercel.json                           # Configuración de despliegue estático en Vercel
+├── package.json                          # Scripts npm (build, verify, serve) + @phosphor-icons/core@2.1.1
+├── requirements.txt                      # Dependencia Python del compilador (Pillow>=10.0.0)
 ├── icons/
-│   ├── glass/*.svg                   # 243 SVGs independientes con refracción feGaussianBlur y bisel 0.75u
-│   ├── outline/*.svg                 # 243 SVGs lineales (peso óptico 1.5u)
-│   ├── solid/*.svg                   # 243 SVGs sólidos
-│   └── duotone/*.svg                 # 243 SVGs en doble tono (opacidad secundaria 0.20)
+│   ├── glass/*.svg                       # 243 SVGs con refracción feGaussianBlur, bisel 0.75u y tokens --iusoft-*
+│   ├── outline/*.svg                     # 243 SVGs lineales (peso óptico 1.5u)
+│   ├── solid/*.svg                       # 243 SVGs sólidos
+│   └── duotone/*.svg                     # 243 SVGs en doble tono (opacidad secundaria 0.20)
 ├── dist/
-│   ├── catalog.json                  # Catálogo estructurado completo de los 243 iconos
-│   └── iusoft-icons-react.tsx        # Componente React/TypeScript <IuSoftIcon /> con física de resortes
+│   ├── catalog.json                      # Catálogo estructurado v2 de los 243 iconos
+│   ├── iusoft-icons-react.tsx            # Componente <IuSoftIcon /> + IUSOFT_SURFACE_TOKENS
+│   └── sarchi-icons.tsx                  # 215 componentes compatibles con lucide-react + <SarchiIconProvider />
 ├── compiler/
-│   ├── manifest.json                 # Declaración de los 243 iconos (punto único para agregar nuevos)
-│   ├── domain_dsl.py                 # Primitivas analíticas G¹/C¹ con offset interior exacto de 0.75u
-│   ├── glass_compiler.py             # Motor EDT + Patrones Topológicos A/B/C + Marching Squares + Bézier
-│   ├── template.html                 # Plantilla HTML limpia de la galería web
-│   ├── build_suite.py                # CLI de compilación completa o incremental (--only <slug>)
-│   └── verify_suite.py               # Auditor determinista de los 972 SVGs e higiene del repositorio
+│   ├── manifest.json                     # Declaración de los 243 iconos (punto único para agregar nuevos)
+│   ├── domain_dsl.py                     # Primitivas analíticas G¹/C¹ con offset interior exacto de 0.75u
+│   ├── glass_compiler.py                 # Motor v2: EDT + Apertura/Cierre Morfológico + Taubin con Esquinas + Bézier
+│   ├── template.html                     # Plantilla HTML limpia de la galería web
+│   ├── build_suite.py                    # CLI de compilación completa o incremental (--only <slug>)
+│   └── verify_suite.py                   # Auditor determinista v2 de los 972 SVGs, TSX e higiene pública
 ├── examples/
-│   ├── 01-pizza-glass-lab.html       # Laboratorio óptico de 3 iconos base (Rebanada, Entera, Cortador)
-│   ├── 02-domain-suite-lab.html      # Laboratorio de giro (Moto reparto, Ticket impresora, Horno y fuego)
-│   └── 03-compiler-before-after.html # Comparativa en vivo: SVG Duotone crudo vs. salida compilada Glass
+│   ├── 01-pizza-glass-lab.html           # Laboratorio óptico de 3 iconos base (Rebanada, Entera, Cortador)
+│   ├── 02-domain-suite-lab.html          # Laboratorio de giro (Moto reparto, Ticket impresora, Horno y fuego)
+│   ├── 03-compiler-before-after.html     # Comparativa en vivo: SVG Duotone crudo vs. salida compilada Glass
+│   └── 04-sarchi-surfaces-preview.html   # Comparador v1 vs v2 y prueba en las 3 superficies reales de Sarchi POS
 └── docs/
     ├── 01-ARQUITECTURA-OPTICA-GLASS.md
     ├── 02-ALGORITMO-COMPILADOR-0-TOKENS.md
@@ -68,10 +79,11 @@ npm run verify
 
 ```bash
 npm run serve
-# Galería principal:  http://localhost:4321/
-# Laboratorio 01:     http://localhost:4321/examples/01-pizza-glass-lab.html
-# Laboratorio 02:     http://localhost:4321/examples/02-domain-suite-lab.html
-# Laboratorio 03:     http://localhost:4321/examples/03-compiler-before-after.html
+# Galería principal:           http://localhost:4321/
+# Laboratorio 01 (Pizza):      http://localhost:4321/examples/01-pizza-glass-lab.html
+# Laboratorio 02 (Giro POS):   http://localhost:4321/examples/02-domain-suite-lab.html
+# Laboratorio 03 (Compilador): http://localhost:4321/examples/03-compiler-before-after.html
+# Vista Sarchi POS (v1 vs v2): http://localhost:4321/examples/04-sarchi-surfaces-preview.html
 ```
 
 ### 3. Agregar o recompilar un icono en menos de 1 segundo (`0 tokens`)
@@ -82,7 +94,7 @@ Edita `compiler/manifest.json` agregando cualquier icono de `@phosphor-icons/cor
 python3 compiler/build_suite.py --only credit-card
 ```
 
-Para regenerar los `972` archivos `.svg`, `dist/catalog.json`, `dist/iusoft-icons-react.tsx` e `index.html` desde cero en paralelo:
+Para regenerar los `972` archivos `.svg`, `dist/catalog.json`, `dist/iusoft-icons-react.tsx`, `dist/sarchi-icons.tsx` e `index.html` desde cero en paralelo:
 
 ```bash
 npm run build
@@ -90,11 +102,11 @@ npm run build
 
 ---
 
-## Uso en Proyectos Web y React
+## Uso en Proyectos Web, React y Sarchi POS
 
 ### A. Archivo SVG directo (`<img>`, Figma o HTML estático)
 
-Todos los archivos dentro de `icons/{glass,outline,solid,duotone}/` incluyen definiciones `<defs>` autocontenidas con IDs únicos por slug:
+Todos los archivos dentro de `icons/{glass,outline,solid,duotone}/` incluyen definiciones `<defs>` autocontenidas con valores de respaldo para fondo claro y variables `--iusoft-*`:
 
 ```html
 <img src="/icons/glass/pizza.svg" width="32" height="32" alt="Pizza" />
@@ -102,35 +114,49 @@ Todos los archivos dentro de `icons/{glass,outline,solid,duotone}/` incluyen def
 <img src="/icons/outline/credit-card.svg" width="24" height="24" alt="Pago con tarjeta" />
 ```
 
-### B. Componente React / Next.js (`dist/iusoft-icons-react.tsx`)
+### B. Reemplazo directo de `lucide-react` (`dist/sarchi-icons.tsx`)
 
-El componente `<IuSoftIcon />` usa `React.useId()` para evitar colisiones de máscaras SVG cuando se montan varios iconos en la misma vista, integra física de resortes amortiguados a `60fps` en hover y respeta `prefers-reduced-motion: reduce`:
+Envuelve tu árbol raíz con `<SarchiIconProvider />` para inyectar la hoja CSS de superficies adaptativas (`light`, `dark`, `emerald`, `emerald-light`) e importa cualquiera de los `215` símbolos con la misma firma de propiedades (`size`, `variant`, `surface`, `animate`):
 
 ```tsx
-import { IuSoftIcon } from "./dist/iusoft-icons-react";
+import {
+  SarchiIconProvider,
+  Pizza,
+  Bike,
+  Flame,
+  ArrowLeftRight,
+  Loader2,
+} from "./dist/sarchi-icons";
 
-export function BarraAccionesCaja() {
+export function CabeceraTurno() {
   return (
-    <div className="flex items-center gap-3">
-      {/* Puntos protagonistas (navegación, KPIs, cabeceras): variante Glass */}
-      <IuSoftIcon name="Pizza" variant="glass" size={28} animate="hover" />
-      <IuSoftIcon name="Printer" variant="glass" size={28} animate="hover" />
-      <IuSoftIcon name="Bike" variant="glass" size={28} animate="hover" />
+    <SarchiIconProvider defaultVariant="glass">
+      <div className="flex items-center gap-3">
+        {/* Insignia oscura (#18181B): activa plata-cromo automáticamente */}
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900" data-iusoft-surface="dark">
+          <Pizza size={22} animate="hover" />
+        </div>
 
-      {/* Listas densas o tablas operativas: variante Outline o Duotone (sin feGaussianBlur) */}
-      <IuSoftIcon name="CreditCard" variant="outline" size={20} className="text-zinc-900" />
-    </div>
+        {/* Estado de reparto activo en esmeralda */}
+        <Bike size={22} surface="emerald" animate="hover" />
+        <Flame size={22} />
+
+        {/* Tablas densas y spinners continuos usan outline (0 feGaussianBlur) */}
+        <ArrowLeftRight size={16} variant="outline" />
+        <Loader2 size={16} className="animate-spin" />
+      </div>
+    </SarchiIconProvider>
   );
 }
 ```
 
-> **Regla de rendimiento en producción:** Mantén un máximo de **`12–15` iconos `glass` simultáneos por pantalla** (barra lateral, tarjetas de resumen, estados vacíos o modales de confirmación). En tablas, comandas o catálogos con `50+` filas repetidas usa siempre `variant="outline"` o `variant="duotone"`, que no invocan `<feGaussianBlur>` en GPU y mantienen `60fps` estables en móviles de gama media.
+> **Regla de rendimiento en producción:** Mantén un máximo de **`12–15` iconos `glass` simultáneos por pantalla** (barra lateral, insignias de cabecera, tarjetas de indicadores o estados principales). En tablas de comandas, listados con decenas de filas o animaciones de giro continuo (`Loader2`) usa `variant="outline"` o `variant="duotone"`, que no invocan `<feGaussianBlur>` en GPU y conservan `60fps` estables en móviles.
 
 ---
 
 ## Documentación Técnica Detallada
 
-1. [**01 · Arquitectura Óptica Glass (`24×24`)**](./docs/01-ARQUITECTURA-OPTICA-GLASS.md): Receta exacta de las 4 capas vectoriales, gradientes, máscaras duales `userSpaceOnUse`, bisel `evenodd` de `0.75 u`, física de resortes y presupuesto de GPU.
-2. [**02 · Algoritmo del Compilador Geométrico `0-Tokens`**](./docs/02-ALGORITMO-COMPILADOR-0-TOKENS.md): Transformada de Distancia Euclidiana de Felzenszwalb-Huttenlocher, los 3 Patrones Topológicos (`A`, `B` y `C`), suavizado Taubin `λ/μ`, curvas de Bézier `C¹` y límites geométricos reales.
-3. [**03 · Guía de Mantenimiento y Extensión**](./docs/03-GUIA-DE-MANTENIMIENTO-Y-EXTENSION.md): Cómo incorporar cualquiera de los `1,512` iconos de Phosphor o programar iconos propios de industria en `domain_dsl.py`.
-4. [**04 · Inventario de Cobertura POS (`197/197`)**](./docs/04-INVENTARIO-COBERTURA-POS.md): Mapa completo 1 a 1 contra los símbolos de `lucide-react`.
+1. [**01 · Arquitectura Óptica Glass (`24×24`)**](./docs/01-ARQUITECTURA-OPTICA-GLASS.md): Receta de las 4 capas vectoriales, gradientes, máscaras duales `userSpaceOnUse`, bisel `evenodd` de `0.75 u`, física de resortes y presupuesto de GPU.
+2. [**02 · Algoritmo del Compilador Geométrico `0-Tokens` (v2)**](./docs/02-ALGORITMO-COMPILADOR-0-TOKENS.md): Transformada de Distancia Euclidiana `O(N)`, descomposición morfológica v2 (`0` squircles), preservación de vértices agudos y paralaje gemelo autoencuadrado.
+3. [**03 · Guía de Mantenimiento, Superficies `--iusoft-*` y Extensión**](./docs/03-GUIA-DE-MANTENIMIENTO-Y-EXTENSION.md): Cómo agregar iconos de Phosphor, configurar las 4 superficies ópticas, integrar `dist/sarchi-icons.tsx` y publicar en Vercel.
+4. [**04 · Inventario de Cobertura POS (`197/197` iconos · `215` símbolos)**](./docs/04-INVENTARIO-COBERTURA-POS.md): Mapa completo 1 a 1 contra los símbolos de `lucide-react`.

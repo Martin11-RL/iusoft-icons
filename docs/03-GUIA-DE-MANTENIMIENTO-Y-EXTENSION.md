@@ -1,24 +1,50 @@
-# 03 · Guía de Mantenimiento y Extensión
+# 03 · Guía de Mantenimiento, Superficies `--iusoft-*` y Extensión
 
-Esta guía explica paso a paso cómo mantener la librería, agregar nuevos iconos desde `@phosphor-icons/core` (`1,512` iconos disponibles bajo licencia `MIT`), diseñar iconos propios de industria y publicar actualizaciones en Vercel.
+Esta guía explica paso a paso cómo mantener la librería, configurar las **4 paletas ópticas adaptativas (`--iusoft-*`)**, integrar el adaptador directo **`dist/sarchi-icons.tsx`** (`215/215` símbolos), sumar nuevos iconos desde `@phosphor-icons/core` (`1,512` iconos `MIT`) y desplegar en Vercel.
 
 ---
 
-## Caso A · Agregar un Icono Nuevo desde Phosphor en `< 1 minuto` (`0 tokens`)
+## 1. Las 4 Paletas Ópticas Adaptativas (`--iusoft-*`)
 
-`@phosphor-icons/core@2.1.1` incluye `1,512` iconos en `node_modules/@phosphor-icons/core/assets/{duotone,regular,fill}/`. Para sumar cualquiera de ellos a **IU-SOFT Icons**:
+En Glass v1 los gradientes estaban fijos para fondo blanco (`#5b5b5e -> #161617`), por lo que al montar un icono sobre una cabecera oscura (`#18181B`) o una vista nocturna OLED (`#09090B`) el contraste caía a `1.04:1`.
 
-### Paso 1: Localizar el nombre (`phosphorSlug`) en Phosphor
+En **Glass v2**, los `243` archivos `icons/glass/*.svg`, `<IuSoftIcon />` y `<SarchiIconProvider />` consumen variables CSS `--iusoft-*` con respaldo automático a modo claro:
 
+| Superficie (`data-iusoft-surface`) | Escenario de uso real | Masa trasera / frontal (`obs`) | Lente esmerilada (`glass`) | Bisel especular (`bevel`) |
+| :--- | :--- | :--- | :--- | :--- |
+| **`light`** *(por defecto)* | Fondos `#FFFFFF` y `#FAFAFA` (consola POS, barra lateral, tarjetas KPI, menú `/pedir`) | Obsidiana `#52525B -> #18181B` | Cristal frío `#E4E4E7 (0.68) -> #A1A1AA (0.64)` | Blanco `#FFFFFF` (`0.94 / 0.44 / 0.80`) |
+| **`dark`** *(o ancestro `.dark`)* | Cabeceras `#18181B` y portal nocturno OLED `#09090B` (`/driver`) | Plata-cromo `#FAFAFA -> #A1A1AA` (`contraste > 7:1`) | Humo `#71717A (0.56) -> #3F3F46 (0.52)` | Luz cenital `#FFFFFF` (`0.94 / 0.32 / 0.08`) |
+| **`emerald`** | Indicadores GPS activos, cobro en ruta y barras oscuras de confirmación | Menta viva `#4ADE80 -> #10B981` | Esmeralda `#10B981 (0.42) -> #065F46 (0.56)` | Destello `#ECFDF5 -> #6EE7B7` |
+| **`emerald-light`** | Insignias verificadas sobre fondo claro (`#E7F8EE` / `#FFFFFF` en `/pedir`) | Bosque `#0D7A5C -> #052E16` | Jade translúcido `#6EE7B7 (0.58) -> #10B981 (0.48)` | Blanco puro `#FFFFFF` (`0.96 / 0.28 / 0`) |
+
+Puedes inspeccionar las 4 superficies en vivo abriendo [`../examples/04-sarchi-surfaces-preview.html`](../examples/04-sarchi-surfaces-preview.html).
+
+---
+
+## 2. Integración Drop-In en Sarchi POS (`dist/sarchi-icons.tsx`)
+
+`dist/sarchi-icons.tsx` exporta los **`215/215` símbolos** utilizados en el código de Sarchi POS (incluyendo alias exactos como `ArrowLeftRight`, `ArrowRightLeft`, `CheckCircle2`, `Trash2`, `Loader2`, `Pizza`, `Bike`, `Printer`, `Flame`):
+
+1. **Copia `dist/sarchi-icons.tsx` e `dist/iusoft-icons-react.tsx`** dentro de `src/components/ui/` en tu proyecto Next.js / React.
+2. **Monta `<SarchiIconProvider defaultVariant="glass">` en el layout raíz:** inyecta una sola vez la hoja CSS `IUSOFT_SURFACE_CSS` para que `.dark` y `[data-iusoft-surface="..."]` funcionen por cascada CSS sin re-renderizar componentes.
+3. **Respeta las 3 reglas operativas de presupuesto gráfico:**
+   - **Máximo `12–15` iconos `glass` simultáneos por vista** (navegación lateral, insignia de cabecera, tarjetas KPI, modales).
+   - **Tablas densas y filas repetidas con `variant="outline"`:** evita crear docenas de filtros `feGaussianBlur` en listados largos de comandas.
+   - **Spinners continuos sin desenfoque:** `Loader2` está preconfigurado por defecto en `variant="outline"` para que `animate-spin` corra en GPU sin recalcular máscaras en cada fotograma.
+
+---
+
+## 3. Agregar un Icono Nuevo desde Phosphor en `< 1 minuto` (`0 tokens`)
+
+`@phosphor-icons/core@2.1.1` incluye `1,512` iconos en `node_modules/@phosphor-icons/core/assets/{duotone,regular,fill}/`. Para sumar cualquiera de ellos:
+
+### Paso 1: Localizar el `phosphorSlug`
 ```bash
 ls node_modules/@phosphor-icons/core/assets/duotone/ | grep barcode
 # -> barcode-duotone.svg  (el phosphorSlug es "barcode")
 ```
 
-### Paso 2: Agregar la entrada en `compiler/manifest.json`
-
-Abre `compiler/manifest.json` y añade un objeto JSON al final del arreglo:
-
+### Paso 2: Declararlo en `compiler/manifest.json`
 ```json
   {
     "id": "phos-barcode",
@@ -39,63 +65,34 @@ Abre `compiler/manifest.json` y añade un objeto JSON al final del arreglo:
   }
 ```
 
-> **Nota sobre `verify_suite.py`:** Si incrementas el total de iconos por encima de `243`, actualiza la constante esperada en `compiler/verify_suite.py` (o déjala como `len(manifest) >= 243`).
-
-### Paso 3: Compilar solo ese icono en `< 1s`
-
+### Paso 3: Compilar de forma incremental y verificar
 ```bash
 python3 compiler/build_suite.py --only barcode
-```
-
-Este comando:
-1. Genera `icons/glass/barcode.svg`, `icons/outline/barcode.svg`, `icons/solid/barcode.svg` e `icons/duotone/barcode.svg`.
-2. Actualiza `dist/catalog.json` y el union type `IuSoftIconName` en `dist/iusoft-icons-react.tsx`.
-3. Regenera `index.html` a partir de `compiler/template.html`.
-
-### Paso 4: Validar con la puerta determinista
-
-```bash
 npm run verify
 ```
 
----
-
-## Caso B · Diseñar un Icono Insignia de Giro en `compiler/domain_dsl.py`
-
-Cuando lances un producto para otro sector (por ejemplo, **manufactura textil**, **logística**, **mensajería conversacional** o **punto de venta minorista**) y quieras entre `4` y `6` iconos protagonistas hechos a medida:
-
-1. **Abre `compiler/domain_dsl.py`** y compone las piezas usando las primitivas analíticas existentes:
-   - `circle_path(cx, cy, r)`
-   - `capsule_path(x1, y1, x2, y2, r)`
-   - `rounded_rect_path(x, y, w, h, r)`
-   - `rounded_polygon_path(pts, radii, ins=0.0)` y `rounded_polygon_path(pts, radii, ins=0.75)` para el bisel interior `evenodd`.
-   - `wedge_path(...)` / `inset_wedge_path(...)` / `oven_dome_path(...)`.
-2. **Respeta las 3 reglas geométricas del DSL:**
-   - Diseña siempre una pieza trasera (`back`) que **cruce parcialmente por detrás** del panel de cristal (`glass`) para que el desenfoque `feGaussianBlur` sea visible y aporte profundidad real.
-   - Genera el contorno interior del bisel (`inner`) pasando `ins=0.75` a la misma primitiva del cristal exterior (`glass`).
-   - Agrega también las salidas `outline` (`stroke-width="1.5"`), `solid` (`fill-rule="evenodd"` en recortes internos) y `duotone` (`fill-opacity="0.2"` + `outline`).
-3. **Registra la clave en `build_domain_icons()`** de `compiler/domain_dsl.py` y agrega su ficha en `compiler/manifest.json` con `"origin": "domain-dsl"` y `"dslKey": "<tu-clave>"`.
-4. Ejecuta `python3 compiler/build_suite.py --only <tu-clave>` e inspecciónalo a `24px`, `32px`, `40px`, `48px` y `96px` tanto en modo claro como en modo oscuro.
+Este flujo actualiza automáticamente `icons/{glass,outline,solid,duotone}/barcode.svg`, `dist/catalog.json`, `dist/iusoft-icons-react.tsx`, `dist/sarchi-icons.tsx` e `index.html`.
 
 ---
 
-## Caso C · Modificar la Interfaz Web de la Galería (`index.html`)
+## 4. Diseñar un Icono Insignia de Giro en `compiler/domain_dsl.py`
 
-Nunca edites `index.html` a mano directamente porque `npm run build` lo regenera desde `compiler/template.html`:
+Cuando lances un producto para otro sector y quieras entre `4` y `8` iconos protagonistas hechos a medida:
 
-1. Edita **`compiler/template.html`** (conservando la línea `const CATALOG = __IUSOFT_CATALOG_JSON__;`).
-2. Si agregas clases CSS nuevas en el HTML, decláralas dentro del bloque `<style>` de `compiler/template.html` para mantener **cero dependencias de CDN externas**.
-3. Ejecuta `python3 compiler/build_suite.py --only pizza` (tarda `< 0.5s`) para regenerar `index.html` y luego corre `npm run verify`.
+1. **Abre `compiler/domain_dsl.py`** y compone las piezas con las primitivas analíticas (`circle_path`, `capsule_path`, `rounded_rect_path`, `rounded_polygon_path`, `wedge_path`, `oven_dome_path`).
+2. **Asegura las 3 reglas ópticas:**
+   - Una pieza `back` que cruce parcialmente por detrás del panel `glass` para producir refracción real bajo `feGaussianBlur`.
+   - Contorno interior del bisel (`inner`) generado con `ins=0.75` sobre la misma primitiva exterior.
+   - Variantes hermanas `outline` (`stroke-width="1.5"`), `solid` y `duotone` (`fill-opacity="0.2"`).
+3. Registra la clave en `build_domain_icons()`, añádela en `compiler/manifest.json` con `"origin": "domain-dsl"` y ejecuta `python3 compiler/build_suite.py --only <slug>`.
 
 ---
 
-## Caso D · Despliegue a Producción en Vercel
+## 5. Modificar la Galería Web (`index.html`) y Desplegar en Vercel
 
-El proyecto es `100%` estático en la raíz (`index.html` + `icons/` + `examples/` + `vercel.json`), por lo que Vercel no necesita ejecutar Python durante el despliegue si los artefactos generados ya fueron confirmados en Git:
-
-1. Corre siempre antes de confirmar cambios:
+1. **Edita siempre `compiler/template.html`** (nunca `index.html` directamente) manteniendo cero dependencias de CDN externas.
+2. Regenera las salidas rápidas sin recompilar los 243 iconos ejecutando:
    ```bash
-   npm run verify
+   python3 -c 'import json, pathlib, sys; sys.path.insert(0, "compiler"); import build_suite; build_suite.regenerate_outputs(json.loads(pathlib.Path("dist/catalog.json").read_text(encoding="utf-8")))'
    ```
-2. Confirma en Git (`compiler/`, `icons/`, `dist/`, `index.html`, `docs/`).
-3. Al hacer `git push` a la rama principal de `Martin11-RL/iusoft-icons` (conectada a Vercel) o ejecutar `vercel deploy --prod`, la galería y las rutas estáticas (`/icons/glass/<slug>.svg`, `/examples/...`) quedan publicadas instantáneamente en el CDN global.
+3. Ejecuta siempre `npm run verify` antes de confirmar cambios en Git o desplegar en Vercel (`vercel deploy --prod`).

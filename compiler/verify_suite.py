@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-Validador Determinista de Integridad y Portabilidad (`compiler/verify_suite.py`).
+Validador Determinista de Integridad y Portabilidad v2 (`compiler/verify_suite.py`).
 
 Verifica con 0 tokens:
-1. `compiler/manifest.json` contiene los 243 iconos únicos (197 de cobertura POS).
+1. `compiler/manifest.json` contiene los 243 iconos únicos (197+ de cobertura POS).
 2. Existen los 972 archivos `.svg` en `icons/{glass,outline,solid,duotone}/`, todos son XML válido,
-   tienen `viewBox="0 0 24 24"` y `icons/glass/*.svg` tiene `0` atributos `stroke`.
-3. `dist/catalog.json`, `dist/iusoft-icons-react.tsx` e `index.html` están sincronizados, sin
+   tienen `viewBox="0 0 24 24"`, variables `--iusoft-*` y `icons/glass/*.svg` tiene `0` atributos `stroke`.
+3. `0` comodines *squircle* genéricos y `100%` (`243/243`) con capa `back` refractada en `dist/catalog.json`.
+4. `dist/iusoft-icons-react.tsx`, `dist/sarchi-icons.tsx` e `index.html` están sincronizados, sin
    marcadores pendientes ni URLs de CDN externas.
-4. Higiene de repositorio público: `0` rutas locales absolutas de máquina y `0` referencias a paquetes cerrados.
+5. Higiene de repositorio público: `0` rutas locales absolutas de máquina y `0` referencias a paquetes cerrados.
 """
 
 import json
@@ -19,6 +20,8 @@ import xml.etree.ElementTree as ET
 
 COMPILER_DIR = pathlib.Path(__file__).resolve().parent
 REPO_ROOT = COMPILER_DIR.parent
+
+OLD_SQUIRCLE_PREFIX = "M 7.75 2.75 L 16.25 2.75 A 5 5"
 
 
 def fail(msg: str):
@@ -63,12 +66,14 @@ def main():
             if not paths:
                 fail(f"SVG vacío sin geometría en icons/{variant}/{slug}.svg")
             if variant == "glass":
+                if "--iusoft-obs-top" not in raw:
+                    fail(f"Faltan tokens --iusoft-* en icons/glass/{slug}.svg")
                 for el in root.iter():
                     if "stroke" in el.attrib and el.attrib["stroke"] not in ("none", ""):
                         fail(f"Prohibido atributo stroke en estilo Glass: icons/glass/{slug}.svg")
             total_svgs += 1
 
-    # 2. Validar dist/catalog.json y dist/iusoft-icons-react.tsx
+    # 2. Validar dist/catalog.json, dist/iusoft-icons-react.tsx y dist/sarchi-icons.tsx
     cat_fp = REPO_ROOT / "dist" / "catalog.json"
     if not cat_fp.exists():
         fail("Falta dist/catalog.json")
@@ -77,29 +82,39 @@ def main():
         fail(f"dist/catalog.json ({len(cat)}) no coincide con manifest.json ({len(manifest)})")
     for item in cat:
         g = item["svg"]["glass"]
-        if len(g.get("back", [])) + len(g.get("front", [])) == 0:
-            fail(f"Icono Glass sin contraste de obsidiana: {item['slug']}")
+        if len(g.get("back", [])) == 0:
+            fail(f"Icono Glass v2 sin capa trasera refractada (back vacío): {item['slug']}")
+        if g.get("glass", "").startswith(OLD_SQUIRCLE_PREFIX):
+            fail(f"Comodín squircle residual detectado en v2: {item['slug']}")
 
     tsx_fp = REPO_ROOT / "dist" / "iusoft-icons-react.tsx"
     if not tsx_fp.exists():
         fail("Falta dist/iusoft-icons-react.tsx")
     tsx_txt = tsx_fp.read_text(encoding="utf-8")
-    if "export function IuSoftIcon" not in tsx_txt:
-        fail("dist/iusoft-icons-react.tsx no exporta IuSoftIcon")
+    if "export function IuSoftIcon" not in tsx_txt or "IUSOFT_SURFACE_TOKENS" not in tsx_txt:
+        fail("dist/iusoft-icons-react.tsx incompleto")
 
-    # 3. Validar index.html autocontenido
-    html_fp = REPO_ROOT / "index.html"
-    if not html_fp.exists():
-        fail("Falta index.html en la raíz")
-    html_txt = html_fp.read_text(encoding="utf-8")
-    if "__IUSOFT_CATALOG_JSON__" in html_txt:
-        fail("Marcador __IUSOFT_CATALOG_JSON__ sin reemplazar en index.html")
-    ext_urls = [
-        u for u in re.findall(r"https?://[^\s\"'<>]+", html_txt)
-        if u != "http://www.w3.org/2000/svg"
-    ]
-    if ext_urls:
-        fail(f"index.html contiene URLs externas prohibidas: {ext_urls[:5]}")
+    sarchi_fp = REPO_ROOT / "dist" / "sarchi-icons.tsx"
+    if not sarchi_fp.exists():
+        fail("Falta dist/sarchi-icons.tsx")
+    sarchi_txt = sarchi_fp.read_text(encoding="utf-8")
+    for required_sym in ("Pizza", "Bike", "Printer", "Flame", "ArrowLeftRight", "ArrowRightLeft", "Loader2", "SarchiIconProvider"):
+        if f"export const {required_sym}" not in sarchi_txt and f"export function {required_sym}" not in sarchi_txt:
+            fail(f"Falta símbolo requerido '{required_sym}' en dist/sarchi-icons.tsx")
+
+    # 3. Validar index.html y examples/*.html autocontenidos
+    for html_fp in [REPO_ROOT / "index.html"] + sorted((REPO_ROOT / "examples").glob("*.html")):
+        if not html_fp.exists():
+            fail(f"Falta {html_fp.relative_to(REPO_ROOT)}")
+        html_txt = html_fp.read_text(encoding="utf-8")
+        if "__IUSOFT_" in html_txt:
+            fail(f"Marcador sin reemplazar en {html_fp.relative_to(REPO_ROOT)}")
+        ext_urls = [
+            u for u in re.findall(r"https?://[^\s\"'<>]+", html_txt)
+            if u != "http://www.w3.org/2000/svg"
+        ]
+        if ext_urls:
+            fail(f"{html_fp.relative_to(REPO_ROOT)} contiene URLs externas prohibidas: {ext_urls[:5]}")
 
     # 4. Escaneo de higiene sobre todo el repositorio (excluyendo node_modules y .git)
     local_path_prefix = "/" + "Users/"
@@ -120,9 +135,11 @@ def main():
         if forbidden_pkg in txt.lower():
             fail(f"Referencia no permitida detectada en {fp.relative_to(REPO_ROOT)}")
 
+    exported_count = len(re.findall(r"^export const [A-Za-z0-9_]+:", sarchi_txt, re.M))
     print(
-        f"[PASS] Verificación exitosa: {len(manifest)} iconos · {total_svgs} archivos SVG válidos · "
-        f"0 strokes en Glass · 0 URLs externas en index.html · {checked_files} archivos auditados sin rutas locales."
+        f"[PASS] Verificación v2 exitosa: {len(manifest)} iconos · {total_svgs} SVGs válidos · "
+        f"0 squircles · 243/243 con refracción trasera · {exported_count} componentes Sarchi exportados · "
+        f"{checked_files} archivos auditados sin rutas locales."
     )
 
 

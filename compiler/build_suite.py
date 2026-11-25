@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """
-CLI Reproducible de Construcción (`compiler/build_suite.py`).
+CLI Reproducible de Construcción v2 (`compiler/build_suite.py`).
 
-Uso:
-- Compilar la librería completa (243 iconos × 4 estilos = 972 SVGs + React + Web):
-    python3 compiler/build_suite.py
-- Recompilar 1 solo icono en <1s tras editar `compiler/manifest.json` o `domain_dsl.py`:
-    python3 compiler/build_suite.py --only credit-card
+Genera de forma determinista:
+1. `icons/{glass,outline,solid,duotone}/*.svg` (972 archivos SVG autocontenidos con `--iusoft-*`)
+2. `dist/catalog.json` (catálogo completo de 243 iconos)
+3. `dist/iusoft-icons-react.tsx` (`<IuSoftIcon />` con soporte `surface="auto|light|dark|emerald|emerald-light"`)
+4. `dist/sarchi-icons.tsx` (adaptador drop-in 100% compatible con `lucide-react` para los 215+ símbolos de Sarchi POS,
+   con presupuesto GPU inteligente y soporte automático para SARCHI-UI v3, `/driver` OLED y `/pedir`)
+5. `index.html` (aplicación web autocontenida de librería)
 """
 
 import argparse
 import json
 import pathlib
+import re
 import subprocess
 import sys
 import time
@@ -29,11 +32,14 @@ ICONS_DIR = REPO_ROOT / "icons"
 DIST_DIR = REPO_ROOT / "dist"
 CATALOG_PATH = DIST_DIR / "catalog.json"
 REACT_TSX_PATH = DIST_DIR / "iusoft-icons-react.tsx"
+SARCHI_TSX_PATH = DIST_DIR / "sarchi-icons.tsx"
 INDEX_HTML_PATH = REPO_ROOT / "index.html"
+
+JS_IDENT_RE = re.compile(r"^[A-Za-z_$][A-Za-z0-9_$]*$")
 
 
 def generate_react_component_tsx(catalog: list[dict]) -> str:
-    """Genera el componente React/TypeScript autocontenido con tipado de los 243 iconos y física de resortes."""
+    """Genera el componente React/TypeScript autocontenido con soporte multi-superficie (`light`/`dark`/`emerald`)."""
     union_tokens = []
     seen = set()
     for item in catalog:
@@ -43,7 +49,6 @@ def generate_react_component_tsx(catalog: list[dict]) -> str:
                 union_tokens.append(f'  | "{key}"')
     union_block = "\n".join(union_tokens)
 
-    # Mapa ligero indexado por nombre/slug/alias
     icon_entries = {}
     alias_map = {}
     for item in catalog:
@@ -54,6 +59,7 @@ def generate_react_component_tsx(catalog: list[dict]) -> str:
         alias_map[item["name"].lower()] = slug
         for al in item.get("sarchiAliases", []):
             alias_map[al] = slug
+            alias_map[al.lower()] = slug
 
     entries_json = json.dumps(icon_entries, ensure_ascii=False, separators=(",", ":"))
     aliases_json = json.dumps(alias_map, ensure_ascii=False, separators=(",", ":"))
@@ -61,6 +67,7 @@ def generate_react_component_tsx(catalog: list[dict]) -> str:
     return f"""import * as React from "react";
 
 export type IuSoftIconVariant = "glass" | "outline" | "solid" | "duotone";
+export type IuSoftIconSurface = "auto" | "light" | "dark" | "emerald" | "emerald-light";
 
 export type IuSoftIconName =
 {union_block};
@@ -68,7 +75,9 @@ export type IuSoftIconName =
 export interface IuSoftIconProps extends Omit<React.SVGProps<SVGSVGElement>, "name"> {{
   name: IuSoftIconName;
   variant?: IuSoftIconVariant;
+  surface?: IuSoftIconSurface;
   size?: number | string;
+  strokeWidth?: number | string;
   animate?: "hover" | "none";
 }}
 
@@ -89,6 +98,113 @@ interface IconVariants {{
   duotone: string;
 }}
 
+export const IUSOFT_SURFACE_TOKENS: Record<Exclude<IuSoftIconSurface, "auto">, Record<string, string>> = {{
+  light: {{
+    "--iusoft-obs-top": "#5B5B5E",
+    "--iusoft-obs-bottom": "#161617",
+    "--iusoft-glass-top": "#D4D4D8",
+    "--iusoft-glass-top-op": "0.68",
+    "--iusoft-glass-bottom": "#A1A1AA",
+    "--iusoft-glass-bottom-op": "0.64",
+    "--iusoft-bevel-top": "#FFFFFF",
+    "--iusoft-bevel-top-op": "0.96",
+    "--iusoft-bevel-mid": "#FFFFFF",
+    "--iusoft-bevel-mid-op": "0.28",
+    "--iusoft-bevel-bottom": "#FFFFFF",
+    "--iusoft-bevel-bottom-op": "0",
+  }},
+  dark: {{
+    "--iusoft-obs-top": "#FAFAFA",
+    "--iusoft-obs-bottom": "#A1A1AA",
+    "--iusoft-glass-top": "#71717A",
+    "--iusoft-glass-top-op": "0.56",
+    "--iusoft-glass-bottom": "#3F3F46",
+    "--iusoft-glass-bottom-op": "0.52",
+    "--iusoft-bevel-top": "#FFFFFF",
+    "--iusoft-bevel-top-op": "0.94",
+    "--iusoft-bevel-mid": "#FFFFFF",
+    "--iusoft-bevel-mid-op": "0.32",
+    "--iusoft-bevel-bottom": "#FFFFFF",
+    "--iusoft-bevel-bottom-op": "0.08",
+  }},
+  emerald: {{
+    "--iusoft-obs-top": "#4ADE80",
+    "--iusoft-obs-bottom": "#10B981",
+    "--iusoft-glass-top": "#10B981",
+    "--iusoft-glass-top-op": "0.42",
+    "--iusoft-glass-bottom": "#065F46",
+    "--iusoft-glass-bottom-op": "0.56",
+    "--iusoft-bevel-top": "#ECFDF5",
+    "--iusoft-bevel-top-op": "0.94",
+    "--iusoft-bevel-mid": "#A7F3D0",
+    "--iusoft-bevel-mid-op": "0.30",
+    "--iusoft-bevel-bottom": "#6EE7B7",
+    "--iusoft-bevel-bottom-op": "0.10",
+  }},
+  "emerald-light": {{
+    "--iusoft-obs-top": "#0D7A5C",
+    "--iusoft-obs-bottom": "#052E16",
+    "--iusoft-glass-top": "#6EE7B7",
+    "--iusoft-glass-top-op": "0.58",
+    "--iusoft-glass-bottom": "#10B981",
+    "--iusoft-glass-bottom-op": "0.48",
+    "--iusoft-bevel-top": "#FFFFFF",
+    "--iusoft-bevel-top-op": "0.96",
+    "--iusoft-bevel-mid": "#FFFFFF",
+    "--iusoft-bevel-mid-op": "0.28",
+    "--iusoft-bevel-bottom": "#FFFFFF",
+    "--iusoft-bevel-bottom-op": "0",
+  }},
+}};
+
+/**
+ * Hoja CSS opcional para activar cascada automática en contenedores oscuros (`.dark`, `/driver`, `[data-iusoft-surface]`).
+ */
+export const IUSOFT_SURFACE_CSS = `
+.dark, [data-iusoft-surface="dark"], .driver-pwa {{
+  --iusoft-obs-top: #FAFAFA;
+  --iusoft-obs-bottom: #A1A1AA;
+  --iusoft-glass-top: #71717A;
+  --iusoft-glass-top-op: 0.56;
+  --iusoft-glass-bottom: #3F3F46;
+  --iusoft-glass-bottom-op: 0.52;
+  --iusoft-bevel-top: #FFFFFF;
+  --iusoft-bevel-top-op: 0.94;
+  --iusoft-bevel-mid: #FFFFFF;
+  --iusoft-bevel-mid-op: 0.32;
+  --iusoft-bevel-bottom: #FFFFFF;
+  --iusoft-bevel-bottom-op: 0.08;
+}}
+[data-iusoft-surface="emerald"] {{
+  --iusoft-obs-top: #4ADE80;
+  --iusoft-obs-bottom: #10B981;
+  --iusoft-glass-top: #10B981;
+  --iusoft-glass-top-op: 0.42;
+  --iusoft-glass-bottom: #065F46;
+  --iusoft-glass-bottom-op: 0.56;
+  --iusoft-bevel-top: #ECFDF5;
+  --iusoft-bevel-top-op: 0.94;
+  --iusoft-bevel-mid: #A7F3D0;
+  --iusoft-bevel-mid-op: 0.30;
+  --iusoft-bevel-bottom: #6EE7B7;
+  --iusoft-bevel-bottom-op: 0.10;
+}}
+[data-iusoft-surface="emerald-light"] {{
+  --iusoft-obs-top: #0D7A5C;
+  --iusoft-obs-bottom: #052E16;
+  --iusoft-glass-top: #6EE7B7;
+  --iusoft-glass-top-op: 0.58;
+  --iusoft-glass-bottom: #10B981;
+  --iusoft-glass-bottom-op: 0.48;
+  --iusoft-bevel-top: #FFFFFF;
+  --iusoft-bevel-top-op: 0.96;
+  --iusoft-bevel-mid: #FFFFFF;
+  --iusoft-bevel-mid-op: 0.28;
+  --iusoft-bevel-bottom: #FFFFFF;
+  --iusoft-bevel-bottom-op: 0;
+}}
+`;
+
 const ICON_DATA: Record<string, IconVariants> = {entries_json};
 const ICON_ALIASES: Record<string, string> = {aliases_json};
 
@@ -97,8 +213,11 @@ export const IUSOFT_ICON_SLUGS = Object.keys(ICON_DATA);
 export function IuSoftIcon({{
   name,
   variant = "glass",
+  surface = "auto",
   size = 24,
+  strokeWidth: _ignoredStrokeWidth,
   animate = "hover",
+  style,
   onMouseEnter,
   ...svgProps
 }}: IuSoftIconProps) {{
@@ -173,6 +292,11 @@ export function IuSoftIcon({{
   if (variant === "glass") {{
     const g = entry.glass;
     const bevelD = g.inner !== undefined ? (g.inner ? `${{g.glass}} ${{g.inner}}` : g.glass) : (g.bevel || g.glass);
+    const mergedStyle: React.CSSProperties | undefined =
+      surface === "auto"
+        ? style
+        : ({{ ...IUSOFT_SURFACE_TOKENS[surface], ...style }} as React.CSSProperties);
+
     return (
       <svg
         ref={{svgRef}}
@@ -181,22 +305,48 @@ export function IuSoftIcon({{
         height={{size}}
         viewBox="0 0 24 24"
         fill="none"
+        style={{mergedStyle}}
         onMouseEnter={{handleMouseEnter}}
         {{...svgProps}}
       >
         <defs>
           <linearGradient id={{`${{pfx}}-obs`}} x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#5b5b5e" />
-            <stop offset="100%" stopColor="#161617" />
+            <stop offset="0%" stopColor="#5B5B5E" style={{{{ stopColor: "var(--iusoft-obs-top, #5B5B5E)" }}}} />
+            <stop offset="100%" stopColor="#161617" style={{{{ stopColor: "var(--iusoft-obs-bottom, #161617)" }}}} />
           </linearGradient>
           <linearGradient id={{`${{pfx}}-glass`}} x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#e3e3e5" stopOpacity="0.64" />
-            <stop offset="100%" stopColor="#bbbbc0" stopOpacity="0.62" />
+            <stop
+              offset="0%"
+              stopColor="#D4D4D8"
+              stopOpacity="0.68"
+              style={{{{ stopColor: "var(--iusoft-glass-top, #D4D4D8)", stopOpacity: "var(--iusoft-glass-top-op, 0.68)" }}}}
+            />
+            <stop
+              offset="100%"
+              stopColor="#A1A1AA"
+              stopOpacity="0.64"
+              style={{{{ stopColor: "var(--iusoft-glass-bottom, #A1A1AA)", stopOpacity: "var(--iusoft-glass-bottom-op, 0.64)" }}}}
+            />
           </linearGradient>
           <linearGradient id={{`${{pfx}}-bevel`}} x1="12" y1={{g.y1}} x2="12" y2={{g.y2}} gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.96" />
-            <stop offset="58%" stopColor="#ffffff" stopOpacity="0.26" />
-            <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+            <stop
+              offset="0%"
+              stopColor="#FFFFFF"
+              stopOpacity="0.96"
+              style={{{{ stopColor: "var(--iusoft-bevel-top, #FFFFFF)", stopOpacity: "var(--iusoft-bevel-top-op, 0.96)" }}}}
+            />
+            <stop
+              offset="58%"
+              stopColor="#FFFFFF"
+              stopOpacity="0.28"
+              style={{{{ stopColor: "var(--iusoft-bevel-mid, #FFFFFF)", stopOpacity: "var(--iusoft-bevel-mid-op, 0.28)" }}}}
+            />
+            <stop
+              offset="100%"
+              stopColor="#FFFFFF"
+              stopOpacity="0"
+              style={{{{ stopColor: "var(--iusoft-bevel-bottom, #FFFFFF)", stopOpacity: "var(--iusoft-bevel-bottom-op, 0)" }}}}
+            />
           </linearGradient>
           <filter id={{`${{pfx}}-blur`}} x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
             <feGaussianBlur stdDeviation="1.6" />
@@ -250,6 +400,7 @@ export function IuSoftIcon({{
       height={{size}}
       viewBox="0 0 24 24"
       fill="currentColor"
+      style={{style}}
       onMouseEnter={{handleMouseEnter}}
       {{...svgProps}}
     >
@@ -257,6 +408,158 @@ export function IuSoftIcon({{
     </svg>
   );
 }}
+"""
+
+
+def generate_sarchi_adapter_tsx(catalog: list[dict]) -> str:
+    """Genera `dist/sarchi-icons.tsx`: adaptador drop-in compatible con `lucide-react` para Sarchi Pizza POS."""
+    exported_identifiers = []
+    seen = set()
+    for item in catalog:
+        candidates = []
+        if JS_IDENT_RE.match(item["name"]) and item["name"][0].isupper():
+            candidates.append(item["name"])
+        for al in item.get("sarchiAliases", []):
+            if JS_IDENT_RE.match(al) and al[0].isupper():
+                candidates.append(al)
+        for sym in candidates:
+            if sym not in seen:
+                seen.add(sym)
+                is_spinner = "loader" in item["slug"]
+                default_var = '"outline"' if is_spinner else "undefined"
+                exported_identifiers.append(
+                    f'export const {sym}: SarchiLucideIcon = createSarchiIcon("{item["slug"]}", "{sym}", {default_var});'
+                )
+
+    exports_block = "\n".join(exported_identifiers)
+    return f"""import * as React from "react";
+import {{
+  IuSoftIcon,
+  IUSOFT_SURFACE_CSS,
+  IUSOFT_SURFACE_TOKENS,
+  type IuSoftIconName,
+  type IuSoftIconSurface,
+  type IuSoftIconVariant,
+}} from "./iusoft-icons-react";
+
+export {{ IuSoftIcon, IUSOFT_SURFACE_CSS, IUSOFT_SURFACE_TOKENS }};
+export type {{ IuSoftIconName, IuSoftIconSurface, IuSoftIconVariant }};
+
+/**
+ * Propiedades 100% compatibles con `lucide-react` (`LucideProps`) + extensiones Glass/Superficie de Sarchi POS.
+ */
+export interface LucideProps extends Omit<React.SVGProps<SVGSVGElement>, "name"> {{
+  size?: string | number;
+  strokeWidth?: string | number;
+  absoluteStrokeWidth?: boolean;
+  variant?: IuSoftIconVariant | "auto";
+  surface?: IuSoftIconSurface;
+  animate?: "hover" | "none";
+}}
+
+export type SarchiLucideIcon = React.ForwardRefExoticComponent<
+  LucideProps & React.RefAttributes<SVGSVGElement>
+>;
+export type LucideIcon = SarchiLucideIcon;
+
+interface SarchiIconContextValue {{
+  defaultVariant: IuSoftIconVariant | "auto";
+  surface: IuSoftIconSurface;
+}}
+
+const SarchiIconContext = React.createContext<SarchiIconContextValue>({{
+  defaultVariant: "auto",
+  surface: "auto",
+}});
+
+export interface SarchiIconProviderProps {{
+  /**
+   * - `"auto"` (recomendado): `glass` en tamaños >= 18px (Sidebar, Headers, KPIs, Empty States) y `outline` ligero en
+   *   controles compactos (`<= 16px`), spinners (`animate-spin`) o dentro de botones sólidos.
+   * - `"glass"` / `"outline"` / `"solid"` / `"duotone"`: fuerza variante global salvo override por prop.
+   */
+  defaultVariant?: IuSoftIconVariant | "auto";
+  surface?: IuSoftIconSurface;
+  children: React.ReactNode;
+}}
+
+export function SarchiIconProvider({{
+  defaultVariant = "auto",
+  surface = "auto",
+  children,
+}}: SarchiIconProviderProps) {{
+  const value = React.useMemo(() => ({{ defaultVariant, surface }}), [defaultVariant, surface]);
+  return (
+    <SarchiIconContext.Provider value={{value}}>
+      <style dangerouslySetInnerHTML={{{{ __html: IUSOFT_SURFACE_CSS }}}} />
+      {{children}}
+    </SarchiIconContext.Provider>
+  );
+}}
+
+function resolveSmartVariant(
+  explicitVariant: IuSoftIconVariant | "auto" | undefined,
+  ctxVariant: IuSoftIconVariant | "auto",
+  forcedDefault: IuSoftIconVariant | undefined,
+  size: string | number | undefined,
+  className: string | undefined
+): IuSoftIconVariant {{
+  if (explicitVariant && explicitVariant !== "auto") return explicitVariant;
+  if (forcedDefault) return forcedDefault;
+  const cls = className || "";
+  if (cls.includes("animate-spin")) return "outline";
+  const targetMode = explicitVariant || ctxVariant;
+  if (targetMode !== "auto") return targetMode;
+
+  // Regla GPU Sarchi: iconos compactos (size <= 15 o clases size-3 / size-3.5 / w-3 / h-3) usan outline 0-blur
+  if (typeof size === "number" && size <= 15) return "outline";
+  if (/\\b(size-3(?:\\.5)?|[wh]-3(?:\\.5)?)\\b/.test(cls)) return "outline";
+  return "glass";
+}}
+
+function createSarchiIcon(
+  slug: IuSoftIconName,
+  displayName: string,
+  forcedDefault?: IuSoftIconVariant
+): SarchiLucideIcon {{
+  const Comp = React.forwardRef<SVGSVGElement, LucideProps>(function SarchiBoundIcon(
+    {{
+      variant,
+      surface,
+      size = 24,
+      className,
+      strokeWidth: _sw,
+      absoluteStrokeWidth: _asw,
+      animate = "hover",
+      ...rest
+    }},
+    _ref
+  ) {{
+    const ctx = React.useContext(SarchiIconContext);
+    const resolvedVariant = resolveSmartVariant(variant, ctx.defaultVariant, forcedDefault, size, className);
+    const resolvedSurface = surface || ctx.surface;
+    return (
+      <IuSoftIcon
+        name={{slug}}
+        variant={{resolvedVariant}}
+        surface={{resolvedSurface}}
+        size={{size}}
+        className={{className}}
+        animate={{clsHasSpin(className) ? "none" : animate}}
+        {{...rest}}
+      />
+    );
+  }});
+  Comp.displayName = displayName;
+  return Comp;
+}}
+
+function clsHasSpin(cls?: string): boolean {{
+  return Boolean(cls && cls.includes("animate-spin"));
+}}
+
+// === 215+ Símbolos Drop-In Compatibles con `lucide-react` para Sarchi Pizza POS ===
+{exports_block}
 """
 
 
@@ -294,6 +597,7 @@ def regenerate_outputs(catalog: list[dict]):
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     CATALOG_PATH.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     REACT_TSX_PATH.write_text(generate_react_component_tsx(catalog), encoding="utf-8")
+    SARCHI_TSX_PATH.write_text(generate_sarchi_adapter_tsx(catalog), encoding="utf-8")
 
     template = TEMPLATE_PATH.read_text(encoding="utf-8")
     assert "__IUSOFT_CATALOG_JSON__" in template, "Falta el marcador __IUSOFT_CATALOG_JSON__ en compiler/template.html"
@@ -314,7 +618,7 @@ def run_worker(worker_idx: int, num_workers: int):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Compilador reproducible de IU-SOFT Icons")
+    parser = argparse.ArgumentParser(description="Compilador reproducible v2 de IU-SOFT Icons")
     parser.add_argument("--only", type=str, default=None, help="Compila únicamente el icono indicado (<slug>, nombre o phosphorSlug) en <1s")
     parser.add_argument("--workers", type=int, default=8, help="Número de procesos paralelos para compilación completa")
     parser.add_argument("--worker-shard", nargs=2, type=int, metavar=("IDX", "TOTAL"), help=argparse.SUPPRESS)
@@ -360,18 +664,17 @@ def main():
             regenerate_outputs(ordered)
         print(
             f"[OK] Recompilado incremental ({', '.join(compiled_updates.keys())}) -> "
-            f"4 SVGs + dist/catalog.json + dist/iusoft-icons-react.tsx + index.html en {time.time() - t0:.2f}s"
+            f"4 SVGs + dist/catalog.json + dist/iusoft-icons-react.tsx + dist/sarchi-icons.tsx + index.html en {time.time() - t0:.2f}s"
         )
         return
 
-    # Compilación completa desde cero
-    print(f"[Build] Generando 6 iconos artesanales desde compiler/domain_dsl.py...")
+    print("[Build] Generando 6 iconos artesanales desde compiler/domain_dsl.py...")
     domain_icons = domain_dsl.build_domain_icons()
 
     phos_slugs = sorted({m["phosphorSlug"] for m in manifest if m["origin"] == "phosphor-0-token"})
-    print(f"[Build] Compilando {len(phos_slugs)} iconos desde node_modules/@phosphor-icons/core en {args.workers} procesos...")
+    print(f"[Build] Compilando {len(phos_slugs)} iconos v2 desde node_modules/@phosphor-icons/core en {args.workers} procesos...")
     procs = [
-        subprocess.Popen([sys.executable, str( pathlib.Path(__file__).resolve() ), "--worker-shard", str(k), str(args.workers)])
+        subprocess.Popen([sys.executable, str(pathlib.Path(__file__).resolve()), "--worker-shard", str(k), str(args.workers)])
         for k in range(args.workers)
     ]
     for p in procs:
@@ -397,7 +700,7 @@ def main():
     regenerate_outputs(catalog)
     print(
         f"[SUCCESS] {len(catalog)} iconos × 4 estilos = {len(catalog) * 4} SVGs escritos en icons/, "
-        f"dist/ e index.html en {time.time() - t0:.1f}s"
+        f"dist/ (incluyendo sarchi-icons.tsx) e index.html en {time.time() - t0:.1f}s"
     )
 
 

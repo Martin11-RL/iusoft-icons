@@ -2286,7 +2286,8 @@
     "inPos": true,
     "posUses": 4,
     "lucideAliases": [
-      "ArrowRightLeft"
+      "ArrowRightLeft",
+      "ArrowLeftRight"
     ],
     "posModules": [
       "cash-register",

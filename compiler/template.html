@@ -53,8 +53,9 @@
       display: none !important;
     }
     html {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
     }
     html, body, button, input {
       line-height: 20px;
@@ -68,6 +69,10 @@
     }
     h1, h2, h3, p {
       margin: 0;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
     }
     button, input {
       font-family: inherit;
@@ -107,7 +112,7 @@
       white-space: nowrap;
     }
     .font-mono {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-family: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     }
     .font-medium { font-weight: 500; }
     .font-semibold { font-weight: 600; }
@@ -142,12 +147,15 @@
     .px-4 { padding-left: 16px; padding-right: 16px; }
     .py-2 { padding-top: 8px; padding-bottom: 8px; }
     .pt-0\.5 { padding-top: 2px; }
+    .pt-2 { padding-top: 8px; }
     .pt-3 { padding-top: 12px; }
     .pt-4 { padding-top: 16px; }
+    .pb-2 { padding-bottom: 8px; }
     .pb-3 { padding-bottom: 12px; }
     .pb-36 { padding-bottom: 144px; }
 
     .space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 4px; }
+    .space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 6px; }
     .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 8px; }
     .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 10px; }
     .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 12px; }
@@ -192,6 +200,7 @@
     .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
     .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .gap-0\.5 { gap: 2px; }
+    .gap-1 { gap: 4px; }
     .gap-1\.5 { gap: 6px; }
     .gap-2 { gap: 8px; }
     .gap-2\.5 { gap: 10px; }
@@ -228,9 +237,11 @@
     @media not all and (min-width: 640px) {
       .max-sm\:min-h-\[44px\] { min-height: 44px; }
       .max-sm\:min-w-\[44px\] { min-width: 44px; }
+      .max-sm\:h-\[72px\] { height: 72px; aspect-ratio: auto; }
     }
 
     @media (min-width: 640px) {
+      .sm\:block { display: block; }
       .sm\:inline-flex { display: inline-flex; }
       .sm\:flex-row { flex-direction: row; }
       .sm\:flex-wrap { flex-wrap: wrap; }
@@ -402,6 +413,102 @@
       box-shadow: inset 0 0 0 1px #27272A;
     }
 
+    /* 5. Paletas Ópticas Adaptativas Glass v2 (--iusoft-*) */
+    :root, .app-light, [data-iusoft-surface="light"] {
+      --iusoft-obs-top: #5B5B5E;
+      --iusoft-obs-bottom: #161617;
+      --iusoft-glass-top: #D4D4D8;
+      --iusoft-glass-top-op: 0.68;
+      --iusoft-glass-bottom: #A1A1AA;
+      --iusoft-glass-bottom-op: 0.64;
+      --iusoft-bevel-top: #FFFFFF;
+      --iusoft-bevel-top-op: 0.96;
+      --iusoft-bevel-mid: #FFFFFF;
+      --iusoft-bevel-mid-op: 0.28;
+      --iusoft-bevel-bottom: #FFFFFF;
+      --iusoft-bevel-bottom-op: 0;
+    }
+    .app-dark, [data-iusoft-surface="dark"] {
+      --iusoft-obs-top: #FAFAFA;
+      --iusoft-obs-bottom: #A1A1AA;
+      --iusoft-glass-top: #71717A;
+      --iusoft-glass-top-op: 0.56;
+      --iusoft-glass-bottom: #3F3F46;
+      --iusoft-glass-bottom-op: 0.52;
+      --iusoft-bevel-top: #FFFFFF;
+      --iusoft-bevel-top-op: 0.94;
+      --iusoft-bevel-mid: #FFFFFF;
+      --iusoft-bevel-mid-op: 0.32;
+      --iusoft-bevel-bottom: #FFFFFF;
+      --iusoft-bevel-bottom-op: 0.08;
+    }
+    [data-iusoft-surface="emerald"] {
+      --iusoft-obs-top: #4ADE80;
+      --iusoft-obs-bottom: #10B981;
+      --iusoft-glass-top: #10B981;
+      --iusoft-glass-top-op: 0.42;
+      --iusoft-glass-bottom: #065F46;
+      --iusoft-glass-bottom-op: 0.56;
+      --iusoft-bevel-top: #ECFDF5;
+      --iusoft-bevel-top-op: 0.94;
+      --iusoft-bevel-mid: #A7F3D0;
+      --iusoft-bevel-mid-op: 0.30;
+      --iusoft-bevel-bottom: #6EE7B7;
+      --iusoft-bevel-bottom-op: 0.10;
+    }
+    [data-iusoft-surface="emerald-light"] {
+      --iusoft-obs-top: #0D7A5C;
+      --iusoft-obs-bottom: #052E16;
+      --iusoft-glass-top: #6EE7B7;
+      --iusoft-glass-top-op: 0.58;
+      --iusoft-glass-bottom: #10B981;
+      --iusoft-glass-bottom-op: 0.48;
+      --iusoft-bevel-top: #FFFFFF;
+      --iusoft-bevel-top-op: 0.96;
+      --iusoft-bevel-mid: #FFFFFF;
+      --iusoft-bevel-mid-op: 0.28;
+      --iusoft-bevel-bottom: #FFFFFF;
+      --iusoft-bevel-bottom-op: 0;
+    }
+
+    /* Celdas OLED en vivo cuando se selecciona OLED oscuro o Esmeralda en el selector de lienzo */
+    #icon-grid[data-iusoft-surface="dark"] .icon-tile,
+    #icon-grid[data-iusoft-surface="emerald"] .icon-tile,
+    #dock-preview[data-iusoft-surface="dark"],
+    #dock-preview[data-iusoft-surface="emerald"] {
+      background-color: #09090B;
+      color: #FAFAFA;
+      box-shadow: inset 0 0 0 1px #27272A;
+    }
+    #icon-grid[data-iusoft-surface="dark"] .icon-tile:hover,
+    #icon-grid[data-iusoft-surface="emerald"] .icon-tile:hover {
+      background-color: #18181B;
+    }
+    #icon-grid[data-iusoft-surface="dark"] .icon-tile-selected {
+      background-color: #18181B;
+      box-shadow: inset 0 0 0 1.5px #FAFAFA;
+    }
+    #icon-grid[data-iusoft-surface="emerald"] .icon-tile-selected {
+      background-color: #18181B;
+      box-shadow: inset 0 0 0 1.5px #10B981;
+    }
+    .surface-divider {
+      width: 1px;
+      height: 20px;
+      background-color: var(--border);
+      flex-shrink: 0;
+    }
+    .max-w-full {
+      max-width: 100%;
+    }
+    .dot-swatch {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      flex-shrink: 0;
+      display: inline-block;
+    }
+
     .ui-transition {
       transition: background-color 140ms ease, color 140ms ease, box-shadow 140ms ease;
     }
@@ -425,9 +532,9 @@
   </style>
 </head>
 <body id="app-root" class="app-light antialiased pb-36 sm:pb-28">
-  <div class="max-w-[1160px] mx-auto px-4 sm:px-6 pt-3 sm:pt-7 space-y-2.5 sm:space-y-5">
+  <div class="max-w-[1160px] mx-auto px-4 sm:px-6 pt-2 sm:pt-7 space-y-1.5 sm:space-y-5">
     <!-- Cabecera principal IU-SOFT Icons -->
-    <header class="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 pb-3 sm:pb-4 border-b hairline-b">
+    <header class="flex flex-wrap items-center justify-between gap-2 sm:gap-3 pb-2 sm:pb-4 border-b hairline-b">
       <div class="flex items-center gap-3">
         <span class="w-[32px] h-[32px] rounded-[9px] bg-[#18181B] text-[#FAFAFA] inline-flex items-center justify-center shrink-0 shadow-[inset_0_0_0_1px_#27272A]" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -440,13 +547,24 @@
         </div>
       </div>
 
-      <div class="flex flex-wrap items-center gap-2">
+      <div class="flex flex-nowrap items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar max-w-full">
+        <a
+          href="./examples/04-sarchi-surfaces-preview.html"
+          id="link-sarchi-surfaces"
+          class="control-surface focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] sm:text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z" />
+          </svg>
+          <span class="whitespace-nowrap">Vista Sarchi POS</span>
+        </a>
+
         <button
           type="button"
           id="btn-inventory"
           aria-expanded="false"
           aria-controls="inventory-panel"
-          class="control-surface focus-ring ui-transition text-[13px] lh-20 font-medium px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-2 cursor-pointer"
+          class="control-surface focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] sm:text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer"
         >
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4 5h16v2H4V5Zm0 6h16v2H4v-2Zm0 6h10v2H4v-2Z" />
@@ -458,7 +576,7 @@
           type="button"
           id="btn-theme"
           aria-pressed="false"
-          class="control-surface focus-ring ui-transition text-[13px] lh-20 font-medium px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-2 cursor-pointer"
+          class="control-surface focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] sm:text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer"
         >
           <svg id="theme-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
@@ -503,35 +621,54 @@
     </section>
 
     <!-- Controles de Estilo, Categoría, Búsqueda y Tamaño -->
-    <div class="space-y-2.5 sm:space-y-4">
+    <div class="space-y-1.5 sm:space-y-4">
       <div class="space-y-1 sm:space-y-1.5">
-        <div class="text-[13px] lh-20 font-medium muted-ink">Estilo</div>
-        <div role="radiogroup" aria-label="Estilo visual de iconos" class="flex flex-nowrap sm:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar" id="style-bar">
-          <button type="button" role="radio" aria-checked="true" data-style="glass" class="style-pill pill-selected focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
-            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="glass" aria-hidden="true"></span>
-            <span>Glass</span>
-          </button>
-          <button type="button" role="radio" aria-checked="false" data-style="outline" class="style-pill pill-idle focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
-            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="outline" aria-hidden="true"></span>
-            <span>Outline</span>
-          </button>
-          <button type="button" role="radio" aria-checked="false" data-style="solid" class="style-pill pill-idle focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
-            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="solid" aria-hidden="true"></span>
-            <span>Solid</span>
-          </button>
-          <button type="button" role="radio" aria-checked="false" data-style="duotone" class="style-pill pill-idle focus-ring ui-transition shrink-0 text-[13px] lh-20 font-medium px-3 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
-            <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="duotone" aria-hidden="true"></span>
-            <span>Duotone</span>
-          </button>
+        <div class="hidden sm:block text-[13px] lh-20 font-medium muted-ink">Estilo y lienzo óptico</div>
+        <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-1.5 sm:gap-2 max-w-full">
+          <div role="radiogroup" aria-label="Estilo visual de iconos" class="flex flex-nowrap items-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar max-w-full" id="style-bar">
+            <button type="button" role="radio" aria-checked="true" data-style="glass" class="style-pill pill-selected focus-ring ui-transition shrink-0 whitespace-nowrap text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+              <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="glass" aria-hidden="true"></span>
+              <span>Glass</span>
+            </button>
+            <button type="button" role="radio" aria-checked="false" data-style="outline" class="style-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+              <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="outline" aria-hidden="true"></span>
+              <span>Outline</span>
+            </button>
+            <button type="button" role="radio" aria-checked="false" data-style="solid" class="style-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+              <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="solid" aria-hidden="true"></span>
+              <span>Solid</span>
+            </button>
+            <button type="button" role="radio" aria-checked="false" data-style="duotone" class="style-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+              <span class="w-[18px] h-[18px] inline-flex items-center justify-center shrink-0" data-style-preview="duotone" aria-hidden="true"></span>
+              <span>Duotone</span>
+            </button>
+          </div>
+
+          <span id="surface-sep" class="surface-divider hidden sm:inline-flex" aria-hidden="true"></span>
+
+          <div role="radiogroup" aria-label="Superficie óptica Glass" class="flex flex-nowrap items-center gap-1.5 overflow-x-auto no-scrollbar max-w-full" id="surface-bar">
+            <button type="button" role="radio" aria-checked="true" data-surface="light" class="surface-pill pill-selected focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+              <span class="dot-swatch" style="background-color:#D4D4D8;" aria-hidden="true"></span>
+              <span class="whitespace-nowrap">Fondo claro</span>
+            </button>
+            <button type="button" role="radio" aria-checked="false" data-surface="dark" class="surface-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+              <span class="dot-swatch" style="background-color:#09090B;" aria-hidden="true"></span>
+              <span class="whitespace-nowrap">OLED oscuro</span>
+            </button>
+            <button type="button" role="radio" aria-checked="false" data-surface="emerald" class="surface-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+              <span class="dot-swatch" style="background-color:#10B981;" aria-hidden="true"></span>
+              <span class="whitespace-nowrap">Esmeralda</span>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="space-y-1 sm:space-y-1.5">
-        <div class="text-[13px] lh-20 font-medium muted-ink">Categoría</div>
-        <div role="radiogroup" aria-label="Filtrar por categoría" class="flex flex-nowrap sm:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar" id="category-bar"></div>
+        <div class="hidden sm:block text-[13px] lh-20 font-medium muted-ink">Categoría</div>
+        <div role="radiogroup" aria-label="Filtrar por categoría" class="flex flex-nowrap sm:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar max-w-full" id="category-bar"></div>
       </div>
 
-      <div class="flex flex-wrap items-center justify-between gap-2 sm:gap-2.5 pt-0.5 sm:pt-1">
+      <div class="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2.5 pt-0.5 sm:pt-1">
         <div class="search-box ui-transition rounded-full min-h-[40px] max-sm:min-h-[44px] px-3.5 flex items-center gap-2.5 flex-1 min-w-[240px] max-w-[460px]">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="muted-ink shrink-0" aria-hidden="true">
             <path d="M10.5 3a7.5 7.5 0 1 0 4.65 13.38l4.23 4.24a1 1 0 0 0 1.42-1.42l-4.24-4.23A7.5 7.5 0 0 0 10.5 3Zm-5.5 7.5a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Z" />
@@ -570,6 +707,7 @@
     <main aria-label="Galería de iconos vectoriales">
       <div
         id="icon-grid"
+        data-iusoft-surface="light"
         class="space-y-2 sm:space-y-3"
       ></div>
 
@@ -601,7 +739,7 @@
   >
     <div class="dock-shell rounded-[22px] sm:rounded-full px-3 sm:px-4 py-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-2.5">
       <div class="flex items-center gap-2.5 min-w-0 w-full sm:w-auto sm:flex-1">
-        <span id="dock-preview" class="w-[36px] h-[36px] rounded-full icon-tile inline-flex items-center justify-center shrink-0" aria-hidden="true"></span>
+        <span id="dock-preview" data-iusoft-surface="light" class="w-[36px] h-[36px] rounded-full icon-tile inline-flex items-center justify-center shrink-0" aria-hidden="true"></span>
         <div class="min-w-0 flex-1">
           <div class="flex items-center gap-1.5">
             <span id="dock-title" class="text-[14px] lh-20 font-semibold truncate">Ticket impresora</span>
@@ -655,6 +793,15 @@
       const CATALOG = __IUSOFT_CATALOG_JSON__;
 
       let activeStyle = "glass";
+      let activeSurface = "light";
+      const initSurfParam = (new URLSearchParams(window.location.search).get("surface") || "").toLowerCase();
+      if (initSurfParam === "dark" || initSurfParam === "oled") {
+        activeSurface = "dark";
+      } else if (initSurfParam === "emerald") {
+        activeSurface = "emerald";
+      } else if (initSurfParam === "light") {
+        activeSurface = "light";
+      }
       let activeCategory = "Todos";
       let activeSize = 40;
       let searchQuery = "";
@@ -706,9 +853,9 @@
           return [
             `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="none">`,
             `<defs>`,
-            `<linearGradient id="${pfx}-obs" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5b5b5e"/><stop offset="100%" stop-color="#161617"/></linearGradient>`,
-            `<linearGradient id="${pfx}-glass" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#e3e3e5" stop-opacity="0.64"/><stop offset="100%" stop-color="#bbbbc0" stop-opacity="0.62"/></linearGradient>`,
-            `<linearGradient id="${pfx}-bevel" x1="12" y1="${g.y1}" x2="12" y2="${g.y2}" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/><stop offset="58%" stop-color="#ffffff" stop-opacity="0.26"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient>`,
+            `<linearGradient id="${pfx}-obs" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5B5B5E" style="stop-color:var(--iusoft-obs-top,#5B5B5E)"/><stop offset="100%" stop-color="#161617" style="stop-color:var(--iusoft-obs-bottom,#161617)"/></linearGradient>`,
+            `<linearGradient id="${pfx}-glass" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D4D4D8" stop-opacity="0.68" style="stop-color:var(--iusoft-glass-top,#D4D4D8);stop-opacity:var(--iusoft-glass-top-op,0.68)"/><stop offset="100%" stop-color="#A1A1AA" stop-opacity="0.64" style="stop-color:var(--iusoft-glass-bottom,#A1A1AA);stop-opacity:var(--iusoft-glass-bottom-op,0.64)"/></linearGradient>`,
+            `<linearGradient id="${pfx}-bevel" x1="12" y1="${g.y1}" x2="12" y2="${g.y2}" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.96" style="stop-color:var(--iusoft-bevel-top,#FFFFFF);stop-opacity:var(--iusoft-bevel-top-op,0.96)"/><stop offset="58%" stop-color="#FFFFFF" stop-opacity="0.28" style="stop-color:var(--iusoft-bevel-mid,#FFFFFF);stop-opacity:var(--iusoft-bevel-mid-op,0.28)"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" style="stop-color:var(--iusoft-bevel-bottom,#FFFFFF);stop-opacity:var(--iusoft-bevel-bottom-op,0)"/></linearGradient>`,
             `<filter id="${pfx}-blur" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox"><feGaussianBlur stdDeviation="1.6"/></filter>`,
             `<mask id="${pfx}-out" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#ffffff"/><g${gCls}><path d="${g.glass}" fill="#000000"/></g></mask>`,
             `<mask id="${pfx}-in" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#000000"/><g${gCls}><path d="${g.glass}" fill="#ffffff"/></g></mask>`,
@@ -873,7 +1020,7 @@
             const isSel = selectedItem && selectedItem.id === item.id;
             const selCls = isSel ? "icon-tile-selected" : "";
             const sarchiHint = item.inSarchi ? ` · Sarchi: ${item.name} (${item.sarchiUses})` : "";
-            return `<button type="button" data-idx="${c + idx}" data-id="${item.id}" aria-label="${item.label} (${item.name})" title="${item.label}${sarchiHint}" class="icon-tile ${selCls} focus-ring ui-transition aspect-square w-full min-h-[64px] rounded-[18px] flex items-center justify-center p-2 cursor-pointer">${renderSVG(item, activeStyle, activeSize, false)}</button>`;
+            return `<button type="button" data-idx="${c + idx}" data-id="${item.id}" aria-label="${item.label} (${item.name})" title="${item.label}${sarchiHint}" class="icon-tile ${selCls} focus-ring ui-transition aspect-square max-sm:h-[72px] w-full min-h-[64px] rounded-[18px] flex items-center justify-center p-2 cursor-pointer">${renderSVG(item, activeStyle, activeSize, false)}</button>`;
           }).join("");
           chunks.push(`<div class="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-10 gap-2 sm:gap-3">${rowHtml}</div>`);
         }
@@ -893,6 +1040,30 @@
         });
       }
 
+      const surfaceBar = document.getElementById("surface-bar");
+      const surfaceSep = document.getElementById("surface-sep");
+
+      function syncSurfaceAttributes() {
+        const eff = activeStyle === "glass" ? activeSurface : (isDark ? "dark" : "light");
+        gridEl.setAttribute("data-iusoft-surface", eff);
+        dockPreview.setAttribute("data-iusoft-surface", eff);
+        surfaceBar.hidden = activeStyle !== "glass";
+        surfaceSep.hidden = activeStyle !== "glass";
+        document.querySelectorAll(".surface-pill").forEach((b) => {
+          const on = b.getAttribute("data-surface") === activeSurface;
+          b.setAttribute("aria-checked", on ? "true" : "false");
+          b.classList.toggle("pill-selected", on);
+          b.classList.toggle("pill-idle", !on);
+        });
+      }
+
+      document.querySelectorAll(".surface-pill").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeSurface = btn.getAttribute("data-surface");
+          syncSurfaceAttributes();
+        });
+      });
+
       document.querySelectorAll(".style-pill").forEach((btn) => {
         btn.addEventListener("click", () => {
           activeStyle = btn.getAttribute("data-style");
@@ -902,6 +1073,7 @@
             b.classList.toggle("pill-selected", on);
             b.classList.toggle("pill-idle", !on);
           });
+          syncSurfaceAttributes();
           renderGrid();
           updateSelectionDock();
         });
@@ -965,12 +1137,15 @@
         appRoot.classList.toggle("app-dark", isDark);
         appRoot.classList.toggle("app-light", !isDark);
         if (isDark) {
+          if (activeSurface === "light") activeSurface = "dark";
           themeLabel.textContent = "Fondo claro";
           themeIcon.innerHTML = `<path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 16a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1ZM4.22 5.64a1 1 0 0 1 1.42-1.42l1.41 1.42a1 1 0 1 1-1.41 1.41L4.22 5.64Zm12.73 12.72a1 1 0 0 1 1.41-1.41l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42ZM2 12a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm16 0a1 1 0 0 1 1-1h2a1 1 0 1 1 0 2h-2a1 1 0 0 1-1-1ZM5.64 19.78a1 1 0 0 1-1.42-1.42l1.42-1.41a1 1 0 1 1 1.41 1.41l-1.41 1.42ZM18.36 7.05a1 1 0 0 1-1.41-1.41l1.41-1.42a1 1 0 1 1 1.42 1.42l-1.42 1.41Z" />`;
         } else {
+          if (activeSurface === "dark") activeSurface = "light";
           themeLabel.textContent = "Fondo oscuro";
           themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />`;
         }
+        syncSurfaceAttributes();
       });
 
       function fallbackCopyText(text) {
@@ -1031,6 +1206,7 @@
         setTimeout(() => URL.revokeObjectURL(url), 1000);
       });
 
+      syncSurfaceAttributes();
       renderCategories();
       renderGrid();
       updateSelectionDock();
