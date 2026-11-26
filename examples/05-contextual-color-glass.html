@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IU-SOFT Icons · Refracción Cromática Contextual Glass</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: #FFFFFF;
+      color: #18181B;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100%;
+      caret-color: #18181B;
+    }
+
+    ::selection {
+      background-color: #E4E4E7;
+      color: #18181B;
+    }
+
+    a, button {
+      font: inherit;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid #18181B;
+      outline-offset: 2px;
+    }
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    .mono {
+      font-family: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .cell-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .page-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    @media (max-width: 640px) {
+      .page-shell {
+        padding: 0 16px 48px;
+      }
+      button, a {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    /* ── Cabecera editorial ── */
+    .site-header {
+      padding: 24px 0;
+      border-bottom: 1px solid #E4E4E7;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .header-top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 36px;
+      padding: 0 12px;
+      border-radius: 8px;
+      background-color: #F4F4F5;
+      color: #18181B;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+      transition: background-color 150ms ease;
+    }
+    .back-link:hover {
+      background-color: #E4E4E7;
+    }
+
+    .header-meta-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background-color: #F4F4F5;
+      color: #52525B;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+
+    .header-main-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-title-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      min-width: 0;
+      flex: 1 1 420px;
+    }
+
+    .brand-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background-color: #18181B;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .page-h1 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #09090B;
+    }
+
+    .page-subtitle {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 22px;
+      color: #52525B;
+      max-width: 65ch;
+    }
+
+    /* Único CTA primario sólido (#18181B) en toda la vista */
+    .btn-primary-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 8px;
+      border: 0;
+      background-color: #18181B;
+      color: #FAFAFA;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color 150ms ease;
+    }
+    .btn-primary-cta:hover {
+      background-color: #27272A;
+    }
+
+    .btn-secondary-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 8px;
+      border: 1px solid #E4E4E7;
+      background-color: #FFFFFF;
+      color: #18181B;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: background-color 150ms ease;
+    }
+    .btn-secondary-outline:hover {
+      background-color: #F4F4F5;
+    }
+
+    /* ── Secciones ── */
+    .section-block {
+      padding: 36px 0;
+      border-bottom: 1px solid #E4E4E7;
+    }
+    .section-block:last-child {
+      border-bottom: 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .section-h2 {
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: #09090B;
+    }
+
+    .section-desc {
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #52525B;
+      max-width: 65ch;
+    }
+
+    /* ── Barra de controles ópticos (0 bordes anidados) ── */
+    .controls-cluster {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .seg-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 10px;
+      background-color: #F4F4F5;
+      flex-wrap: wrap;
+    }
+
+    .seg-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background-color: transparent;
+      color: #52525B;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: background-color 150ms ease, color 150ms ease;
+    }
+    .seg-btn:hover {
+      color: #09090B;
+    }
+    .seg-btn[aria-pressed="true"] {
+      background-color: #FFFFFF;
+      color: #09090B;
+      border-color: #E4E4E7;
+      font-weight: 600;
+    }
+
+    .swatch-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      flex-shrink: 0;
+    }
+
+    /* ── Sección 1: Grilla Protagonista de 5 Iconos Contextuales ── */
+    .hero-five-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    @media (max-width: 980px) {
+      .hero-five-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .hero-five-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .hero-five-grid > :last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .hero-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid #E4E4E7;
+      background-color: #FFFFFF;
+      text-align: left;
+      transition: border-color 150ms ease, background-color 150ms ease;
+    }
+    .hero-card:hover {
+      border-color: #D4D4D8;
+      background-color: #FAFAFA;
+    }
+    .hero-card[aria-pressed="true"] {
+      border-color: #18181B;
+      background-color: #FAFAFA;
+    }
+
+    /* Escenario interior tonal (0 bordes para preservar nestedBorderedBoxes = 0) */
+    .hero-stage {
+      border-radius: 10px;
+      padding: 18px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+    .stage-light {
+      background-color: #F4F4F5;
+      color: #52525B;
+    }
+    .stage-oled {
+      background-color: #09090B;
+      color: #A1A1AA;
+    }
+
+    .hero-main-glyph {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-compare-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 8px;
+    }
+
+    .hero-mini-pair {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      width: 100%;
+    }
+
+    .hero-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px 8px;
+      flex-wrap: wrap;
+    }
+
+    .hero-domain {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 600;
+      color: #09090B;
+    }
+
+    .hero-slug {
+      font-size: 11px;
+      line-height: 16px;
+      color: #71717A;
+      white-space: nowrap;
+    }
+
+    .hero-recipe-desc {
+      font-size: 12px;
+      line-height: 18px;
+      color: #52525B;
+    }
+
+    /* ── Sección 2: Desglose Anatómico de las 4 Capas Ópticas (72px) ── */
+    .anatomy-panel {
+      border: 0;
+      box-shadow: 0 0 0 1px #E4E4E7;
+      border-radius: 16px;
+      background-color: #FAFAFA;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .anatomy-panel {
+        padding: 14px;
+      }
+    }
+
+    .anatomy-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .anatomy-h3 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      color: #09090B;
+    }
+
+    .anatomy-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background-color: #E4E4E7;
+      color: #18181B;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+
+    .anatomy-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    @media (max-width: 960px) {
+      .anatomy-steps-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .anatomy-steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .anatomy-steps-grid > :last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .anatomy-step {
+      border-radius: 12px;
+      padding: 16px 12px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 168px;
+      text-align: center;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+    .anatomy-step.stage-light {
+      background-color: #FFFFFF;
+      color: #18181B;
+    }
+    /* En la etapa 4 (bisel blanco #FFFFFF) usamos #F4F4F5 en claro para hacer visible el destello 0.75u */
+    .anatomy-step.stage-light.bevel-contrast {
+      background-color: #F4F4F5;
+      color: #18181B;
+    }
+    .anatomy-step.stage-oled {
+      background-color: #09090B;
+      color: #FAFAFA;
+    }
+
+    .anatomy-step-title {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+
+    .anatomy-step-spec {
+      font-size: 11px;
+      line-height: 16px;
+      color: #71717A;
+    }
+    .stage-oled .anatomy-step-spec {
+      color: #A1A1AA;
+    }
+
+    /* ── Sección 3: Prueba de Hermandad en Interfaz Real (Sidebar + 5 KPI Cards) ── */
+    .sibling-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 216px minmax(0, 1fr);
+      background-color: #FAFAFA;
+      color: #18181B;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+    .sibling-frame.is-oled {
+      background-color: #09090B;
+      color: #FAFAFA;
+    }
+    @media (max-width: 900px) {
+      .sibling-frame {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .sibling-sidebar {
+      padding: 16px 12px;
+      border-right: 1px solid #E4E4E7;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sibling-frame.is-oled .sibling-sidebar {
+      border-right-color: #27272A;
+    }
+    @media (max-width: 900px) {
+      .sibling-sidebar {
+        border-right: 0;
+        border-bottom: 1px solid #E4E4E7;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+      .sibling-frame.is-oled .sibling-sidebar {
+        border-bottom-color: #27272A;
+      }
+    }
+    @media (max-width: 560px) {
+      .sibling-sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .sib-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 38px;
+      padding: 0 10px;
+      border-radius: 8px;
+      border: 0;
+      background-color: transparent;
+      color: #52525B;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+      text-align: left;
+      white-space: nowrap;
+      transition: background-color 150ms ease, color 150ms ease;
+    }
+    .sib-nav-btn:hover {
+      background-color: #F4F4F5;
+      color: #09090B;
+    }
+    .sib-nav-btn[aria-current="page"] {
+      background-color: #E4E4E7;
+      color: #09090B;
+      font-weight: 600;
+    }
+
+    .sibling-frame.is-oled .sib-nav-btn {
+      color: #A1A1AA;
+    }
+    .sibling-frame.is-oled .sib-nav-btn:hover {
+      background-color: #18181B;
+      color: #FAFAFA;
+    }
+    .sibling-frame.is-oled .sib-nav-btn[aria-current="page"] {
+      background-color: #18181B;
+      color: #FAFAFA;
+      font-weight: 600;
+    }
+    .sibling-frame.is-oled .sib-nav-btn:focus-visible {
+      outline-color: #FAFAFA;
+    }
+
+    .sibling-main {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+    @media (max-width: 640px) {
+      .sibling-main {
+        padding: 14px;
+      }
+    }
+
+    .sibling-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .sibling-h3 {
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 600;
+    }
+
+    .sibling-sub {
+      font-size: 12px;
+      line-height: 16px;
+      color: #71717A;
+    }
+    .sibling-frame.is-oled .sibling-sub {
+      color: #A1A1AA;
+    }
+
+    .status-pill-pos {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 28px;
+      padding: 0 10px;
+      border-radius: 9999px;
+      background-color: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: #15803D;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .sibling-frame.is-oled .status-pill-pos {
+      background-color: #18181B;
+      border-color: #27272A;
+      color: #FAFAFA;
+    }
+
+    .sibling-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    @media (max-width: 1040px) {
+      .sibling-kpi-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .sibling-kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .sibling-kpi-grid > :last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .sibling-kpi-card {
+      border-radius: 12px;
+      padding: 14px;
+      background-color: #FFFFFF;
+      border: 0;
+      box-shadow: 0 0 0 1px #E4E4E7;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background-color 180ms ease, box-shadow 180ms ease;
+    }
+    .sibling-frame.is-oled .sibling-kpi-card {
+      background-color: #18181B;
+      box-shadow: 0 0 0 1px #27272A;
+    }
+
+    .sib-kpi-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .sib-kpi-label {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+      color: #71717A;
+    }
+    .sibling-frame.is-oled .sib-kpi-label {
+      color: #A1A1AA;
+    }
+
+    .sib-kpi-val {
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .sib-kpi-foot {
+      font-size: 11px;
+      line-height: 16px;
+      color: #71717A;
+      text-align: right;
+    }
+    .sibling-frame.is-oled .sib-kpi-foot {
+      color: #A1A1AA;
+    }
+
+    .copy-toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background-color: #18181B;
+      color: #FAFAFA;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 160ms ease, transform 160ms ease;
+      z-index: 40;
+    }
+    .copy-toast.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Cabecera -->
+    <header class="site-header">
+      <div class="header-top-nav">
+        <a href="../index.html" class="back-link">
+          <span id="nav-back-icon" class="cell-inline"></span>
+          <span>Volver al catálogo</span>
+        </a>
+        <span class="header-meta-pill tabular">5 recetas ópticas · 2 canales (obs-back + obs-front) · Cristal tintado 8–14%</span>
+      </div>
+
+      <div class="header-main-row">
+        <div class="header-title-group">
+          <div class="brand-icon-box" id="header-pizza-jewel"></div>
+          <div>
+            <h1 class="page-h1">Refracción cromática contextual en iconos Glass</h1>
+            <p class="page-subtitle">
+              Separación óptica en dos canales independientes para luz trasera refractada y detalle frontal sobre una lente esmerilada de baja saturación (8–14%), preservando bisel especular blanco de 0.75 unidades.
+            </p>
+          </div>
+        </div>
+
+        <button type="button" id="btn-copy-recipe" class="btn-primary-cta">
+          <span id="cta-copy-icon" class="cell-inline"></span>
+          <span id="cta-copy-label">Copiar receta SVG</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sección 1: Grilla Protagonista de los 5 Iconos Contextuales -->
+      <section class="section-block" aria-labelledby="h2-hero-five">
+        <div class="section-head">
+          <div>
+            <h2 id="h2-hero-five" class="section-h2">Cinco iconos contextuales por dominio operativo</h2>
+            <p class="section-desc">
+              Cada tarjeta muestra el icono protagonista a 56px junto a su escala real de 24px y una miniatura comparativa del modo alterno para evaluar el aporte semántico sin perder sobriedad editorial.
+            </p>
+          </div>
+
+          <div class="controls-cluster">
+            <div class="seg-track" role="group" aria-label="Modo cromático">
+              <button type="button" class="seg-btn" data-mode-btn="color" aria-pressed="true">Color Contextual</button>
+              <button type="button" class="seg-btn" data-mode-btn="mono" aria-pressed="false">Monocromo</button>
+            </div>
+
+            <div class="seg-track" role="group" aria-label="Superficie de fondo">
+              <button type="button" class="seg-btn" data-surf-btn="light" aria-pressed="true">
+                <span class="swatch-dot" style="background-color:#D4D4D8;"></span>
+                <span class="tabular">Claro #FFFFFF</span>
+              </button>
+              <button type="button" class="seg-btn" data-surf-btn="oled" aria-pressed="false">
+                <span class="swatch-dot" style="background-color:#09090B;"></span>
+                <span class="tabular">OLED #09090B</span>
+              </button>
+            </div>
+
+            <button type="button" id="btn-spring-wave" class="btn-secondary-outline">
+              <span id="spring-btn-icon" class="cell-inline"></span>
+              <span>Probar resorte</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="hero-five-grid" class="hero-five-grid" role="list" aria-label="Iconos contextuales"></div>
+      </section>
+
+      <!-- Sección 2: Desglose Anatómico de las 4 Capas Ópticas (72px) -->
+      <section class="section-block" aria-labelledby="h2-anatomy">
+        <div class="section-head">
+          <div>
+            <h2 id="h2-anatomy" class="section-h2">Desglose anatómico de las cuatro capas ópticas a 72px</h2>
+            <p class="section-desc">
+              Selecciona cualquiera de los cinco iconos superiores para inspeccionar cómo el emisor trasero atraviesa el filtro gaussiano y tiñe sutilmente el vidrio sin saturar el contorno.
+            </p>
+          </div>
+        </div>
+
+        <div class="anatomy-panel" aria-live="polite">
+          <div class="anatomy-topbar">
+            <h3 id="anatomy-title" class="anatomy-h3">Producto · Terracota y queso horneado</h3>
+            <span id="anatomy-badge" class="anatomy-tag mono tabular">pizza · stdDeviation="1.6" · bisel 0.75u</span>
+          </div>
+
+          <div id="anatomy-steps-grid" class="anatomy-steps-grid"></div>
+        </div>
+      </section>
+
+      <!-- Sección 3: Prueba de Hermandad en Interfaz Real (Sidebar + 5 KPI Cards) -->
+      <section class="section-block" aria-labelledby="h2-sibling">
+        <div class="section-head">
+          <div>
+            <h2 id="h2-sibling" class="section-h2">Prueba de hermandad en consola con barra lateral y cinco indicadores</h2>
+            <p class="section-desc">
+              La interfaz circundante permanece 100% neutra en escala Zinc mientras los cinco acentos de vidrio comunican área operativa en barra lateral y tarjetas de métricas.
+            </p>
+          </div>
+        </div>
+
+        <div id="sibling-frame" class="sibling-frame">
+          <nav id="sibling-sidebar" class="sibling-sidebar" aria-label="Módulos operativos"></nav>
+
+          <div class="sibling-main">
+            <div class="sibling-header">
+              <div>
+                <h3 class="sibling-h3">Indicadores en tiempo real · Sucursal Centro</h3>
+                <p class="sibling-sub tabular">Presupuesto cromático controlado: superficie neutra Zinc + 5 joyas ópticas</p>
+              </div>
+              <span class="status-pill-pos tabular">Turno matutino activo · Caja 01</span>
+            </div>
+
+            <div id="sibling-kpi-grid" class="sibling-kpi-grid"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="copy-toast" class="copy-toast" role="status" aria-live="polite">SVG contextual copiado al portapapeles</div>
+
+  <script>
+    const ICONS_GEOM = {"pizza":{"slug":"pizza","name":"Pizza","label":"Rebanada de pizza","glass":{"back":["M 6.37 5.65 L 6.6 4.92 A 1.72 1.72 0 0 1 8.89 3.83 A 20.6 20.6 0 0 1 20.17 15.11 A 1.72 1.72 0 0 1 19.08 17.4 L 18.35 17.63 A 1.72 1.72 0 0 1 16.26 16.64 A 16.4 16.4 0 0 0 7.36 7.74 A 1.72 1.72 0 0 1 6.37 5.65 Z","M 5.06 20.38 A 1.85 1.85 0 0 1 2.28 18.35 L 4.91 8.19 A 1.25 1.25 0 0 1 6.53 7.32 A 16.5 16.5 0 0 1 14.24 13.34 A 1.25 1.25 0 0 1 13.92 15.12 Z"],"glass":"M 4.05 21.91 A 1.55 1.55 0 0 1 2.09 19.95 L 6.33 7.27 A 1.45 1.45 0 0 1 8.29 6.4 A 18 18 0 0 1 17.6 16.71 A 1.45 1.45 0 0 1 16.73 18.58 Z","inner":"M 3.81 21.2 A 0.8 0.8 0 0 1 2.8 20.19 L 7.04 7.5 A 0.7 0.7 0 0 1 7.99 7.08 A 17.25 17.25 0 0 1 16.92 16.97 A 0.7 0.7 0 0 1 16.5 17.87 Z","front":["M 7.35 15.81 A 1.24 1.24 0 1 1 7.35 18.29 A 1.24 1.24 0 1 1 7.35 15.81 Z","M 8.75 10.48 A 1.34 1.34 0 1 1 8.75 13.16 A 1.34 1.34 0 1 1 8.75 10.48 Z","M 12.78 14.14 A 1.28 1.28 0 1 1 12.78 16.7 A 1.28 1.28 0 1 1 12.78 14.14 Z"],"y1":3.4,"y2":21.6},"outline":"<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 4.05 21.91 A 1.55 1.55 0 0 1 2.09 19.95 L 6.33 7.27 A 1.45 1.45 0 0 1 8.29 6.4 A 18 18 0 0 1 17.6 16.71 A 1.45 1.45 0 0 1 16.73 18.58 Z\"/><path d=\"M 6.9 4.4 A 19.6 19.6 0 0 1 19.6 17.1\"/><circle cx=\"7.35\" cy=\"17.05\" r=\"1.15\"/><circle cx=\"8.75\" cy=\"11.82\" r=\"1.2\"/><circle cx=\"12.78\" cy=\"15.42\" r=\"1.15\"/></g>"},"flame":{"slug":"flame","name":"Flame","label":"Horno y fuego","glass":{"back":["M 4.35 17 L 19.65 17 A 1.85 1.85 0 0 1 21.5 18.85 L 21.5 18.85 A 1.85 1.85 0 0 1 19.65 20.7 L 4.35 20.7 A 1.85 1.85 0 0 1 2.5 18.85 L 2.5 18.85 A 1.85 1.85 0 0 1 4.35 17 Z","M 16.85 2.6 L 17.35 2.6 A 1.45 1.45 0 0 1 18.8 4.05 L 18.8 7.15 A 1.45 1.45 0 0 1 17.35 8.6 L 16.85 8.6 A 1.45 1.45 0 0 1 15.4 7.15 L 15.4 4.05 A 1.45 1.45 0 0 1 16.85 2.6 Z"],"glass":"M 3.5 12.7 A 8.5 8.5 0 0 1 20.5 12.7 L 20.5 16.75 A 1.65 1.65 0 0 1 18.85 18.4 L 5.15 18.4 A 1.65 1.65 0 0 1 3.5 16.75 Z","inner":"M 4.25 12.7 A 7.75 7.75 0 0 1 19.75 12.7 L 19.75 16.75 A 0.9 0.9 0 0 1 18.85 17.65 L 5.15 17.65 A 0.9 0.9 0 0 1 4.25 16.75 Z","front":["M 12.05 16.65 C 10.02 16.65 8.95 15.28 8.95 13.60 C 8.95 12.42 9.44 11.45 10.08 10.78 C 10.32 10.52 10.72 10.68 10.69 11.05 C 10.66 11.46 10.80 11.86 11.12 11.90 C 11.42 11.94 11.58 11.52 11.70 11.00 C 11.90 10.02 12.24 8.98 12.70 8.38 C 12.95 8.06 13.42 8.20 13.48 8.62 C 13.75 10.42 15.05 11.68 15.05 13.62 C 15.05 15.32 13.92 16.65 12.05 16.65 Z"],"y1":4.2,"y2":18.4},"outline":"<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 3.5 12.7 A 8.5 8.5 0 0 1 20.5 12.7 L 20.5 16.75 A 1.65 1.65 0 0 1 18.85 18.4 L 5.15 18.4 A 1.65 1.65 0 0 1 3.5 16.75 Z\"/><path d=\"M 2.8 20.4 H 21.2\"/><path d=\"M 15.6 5.6 V 3.6 A 1.2 1.2 0 0 1 18.0 3.6 V 7.2\"/><path d=\"M 12.05 16.65 C 10.02 16.65 8.95 15.28 8.95 13.60 C 8.95 12.42 9.44 11.45 10.08 10.78 C 10.32 10.52 10.72 10.68 10.69 11.05 C 10.66 11.46 10.80 11.86 11.12 11.90 C 11.42 11.94 11.58 11.52 11.70 11.00 C 11.90 10.02 12.24 8.98 12.70 8.38 C 12.95 8.06 13.42 8.20 13.48 8.62 C 13.75 10.42 15.05 11.68 15.05 13.62 C 15.05 15.32 13.92 16.65 12.05 16.65 Z\"/></g>"},"message-circle":{"slug":"message-circle","name":"MessageCircle","label":"Chat WhatsApp","glass":{"back":["M 6.11 18.91 C 6.18 18.94 6.26 18.96 6.34 18.96 L 6.97 18.94 L 9.72 18.04 L 10.33 18.34 L 11.43 18.72 L 12.01 18.84 L 12.72 18.95 L 14.47 18.96 L 15.22 18.84 L 15.77 18.72 L 16.86 18.34 L 17.71 17.93 L 18.35 17.51 L 18.76 17.22 C 18.83 17.17 18.88 17.1 18.95 17.04 C 19 16.99 19.08 16.96 19.13 16.91 L 19.91 16.13 L 20.47 15.39 L 20.81 14.84 L 21.04 14.39 L 21.44 13.47 L 21.63 12.84 C 21.68 12.7 21.72 12.56 21.74 12.41 L 21.86 11.6 C 21.88 11.45 21.85 11.3 21.87 11.16 C 21.87 11.07 21.91 10.99 21.91 10.91 C 21.93 10.78 21.93 10.66 21.92 10.53 C 21.91 10.42 21.87 10.32 21.86 10.22 C 21.85 10.07 21.88 9.93 21.86 9.78 C 21.85 9.7 21.82 9.62 21.81 9.53 C 21.8 9.45 21.82 9.36 21.8 9.28 L 21.47 8.01 L 21.22 7.38 L 20.73 6.42 L 20.31 5.79 L 19.87 5.23 C 19.8 5.15 19.73 5.08 19.65 5.01 L 19.02 4.38 L 18.53 4 L 18.01 3.65 C 17.91 3.58 17.8 3.52 17.69 3.47 L 16.9 3.07 L 16.27 2.84 L 15.22 2.55 L 14.53 2.44 C 14.41 2.43 14.28 2.44 14.16 2.44 L 12.72 2.44 L 11.97 2.55 L 11.47 2.67 C 11.32 2.7 11.17 2.74 11.03 2.79 L 10.29 3.08 L 9.5 3.47 C 9.39 3.53 9.29 3.59 9.19 3.66 L 8.42 4.2 C 8.32 4.27 8.26 4.37 8.17 4.45 C 8.11 4.5 8.04 4.53 7.98 4.58 L 7.4 5.17 L 6.91 5.76 C 6.82 5.88 6.74 6 6.66 6.13 L 6.35 6.64 L 5.98 7.39 C 5.91 7.52 5.86 7.65 5.82 7.78 L 5.58 8.53 L 5.4 9.37 C 5.37 9.51 5.34 9.66 5.34 9.81 L 5.34 11.6 C 5.34 11.75 5.38 11.9 5.41 12.05 L 5.59 12.9 L 5.97 13.99 L 6.26 14.59 L 5.36 17.34 L 5.34 17.96 C 5.34 18.03 5.36 18.09 5.38 18.16 C 5.41 18.26 5.45 18.37 5.53 18.44 L 5.87 18.78 C 5.94 18.85 6.02 18.88 6.11 18.91 Z"],"glass":"M 3.15 21.64 C 3.19 21.66 3.23 21.68 3.28 21.7 C 3.32 21.71 3.36 21.72 3.41 21.72 L 4.03 21.72 C 4.1 21.72 4.16 21.72 4.22 21.7 L 7.41 20.64 C 7.43 20.63 7.46 20.64 7.49 20.66 L 8.11 20.97 C 8.22 21.02 8.32 21.06 8.43 21.1 L 9.47 21.45 L 10.09 21.59 C 10.16 21.6 10.23 21.58 10.29 21.6 C 10.35 21.61 10.41 21.64 10.47 21.65 C 10.55 21.66 10.64 21.64 10.72 21.66 C 10.79 21.67 10.84 21.71 10.91 21.71 L 13.03 21.72 C 13.11 21.72 13.19 21.67 13.28 21.66 C 13.36 21.65 13.45 21.66 13.53 21.65 C 13.59 21.64 13.65 21.61 13.71 21.6 C 13.77 21.58 13.84 21.6 13.91 21.59 L 14.53 21.45 L 15.47 21.14 C 15.61 21.09 15.75 21.04 15.88 20.97 L 16.92 20.46 L 17.79 19.89 C 17.84 19.86 17.87 19.8 17.92 19.77 C 17.97 19.73 18.03 19.71 18.08 19.67 C 18.16 19.61 18.21 19.52 18.29 19.46 C 18.34 19.42 18.41 19.4 18.45 19.36 L 19.42 18.39 C 19.46 18.35 19.48 18.28 19.52 18.23 C 19.57 18.16 19.64 18.11 19.7 18.04 C 19.79 17.92 19.86 17.79 19.96 17.67 C 19.99 17.62 20.04 17.59 20.07 17.54 L 20.52 16.79 L 20.96 15.92 L 21.32 14.97 L 21.57 14.03 C 21.59 13.97 21.58 13.9 21.6 13.83 C 21.61 13.77 21.64 13.72 21.65 13.66 C 21.67 13.55 21.64 13.44 21.66 13.34 C 21.67 13.26 21.72 13.18 21.72 13.09 L 21.72 12.53 C 21.72 12.45 21.78 12.37 21.78 12.28 L 21.78 11.72 C 21.78 11.63 21.72 11.55 21.72 11.47 L 21.72 10.91 C 21.72 10.82 21.67 10.74 21.66 10.66 C 21.64 10.56 21.67 10.45 21.65 10.34 L 21.26 8.84 L 20.97 8.12 L 20.39 6.96 L 19.89 6.21 C 19.85 6.16 19.8 6.13 19.77 6.08 C 19.73 6.03 19.71 5.97 19.67 5.92 C 19.61 5.84 19.52 5.78 19.46 5.71 C 19.41 5.65 19.38 5.57 19.33 5.52 L 18.39 4.58 C 18.35 4.54 18.28 4.52 18.23 4.48 C 18.18 4.44 18.13 4.38 18.08 4.33 C 18.03 4.29 17.97 4.27 17.92 4.23 C 17.87 4.2 17.84 4.15 17.79 4.11 L 17.23 3.74 L 16.79 3.48 L 15.88 3.03 L 14.72 2.62 L 13.91 2.41 C 13.84 2.4 13.77 2.42 13.71 2.4 C 13.65 2.39 13.59 2.36 13.53 2.35 C 13.45 2.34 13.36 2.36 13.28 2.34 C 13.21 2.33 13.16 2.3 13.09 2.29 C 12.97 2.27 12.85 2.28 12.72 2.28 L 10.97 2.28 C 10.88 2.28 10.81 2.33 10.72 2.34 C 10.64 2.35 10.55 2.34 10.47 2.35 C 10.41 2.36 10.35 2.39 10.29 2.4 C 10.23 2.42 10.16 2.4 10.09 2.41 C 9.95 2.44 9.81 2.5 9.67 2.53 C 9.6 2.54 9.53 2.54 9.47 2.55 C 9.37 2.58 9.27 2.63 9.17 2.66 C 9.13 2.67 9.08 2.66 9.03 2.68 L 8.12 3.03 L 7.09 3.55 L 6.21 4.11 C 6.16 4.14 6.13 4.2 6.08 4.23 C 6.04 4.26 5.99 4.27 5.96 4.3 L 5.58 4.67 C 5.54 4.71 5.47 4.73 5.42 4.77 L 4.71 5.48 C 4.66 5.53 4.65 5.59 4.61 5.64 C 4.54 5.72 4.46 5.78 4.39 5.86 C 4.36 5.91 4.33 5.97 4.29 6.02 C 4.24 6.09 4.16 6.14 4.11 6.21 L 3.74 6.77 L 3.48 7.21 L 3.04 8.08 L 2.8 8.66 C 2.78 8.7 2.8 8.75 2.78 8.8 L 2.55 9.47 L 2.35 10.41 C 2.33 10.49 2.36 10.58 2.34 10.66 C 2.33 10.72 2.3 10.78 2.29 10.84 C 2.28 10.88 2.28 10.93 2.28 10.97 L 2.28 13.09 C 2.28 13.18 2.33 13.25 2.34 13.33 C 2.35 13.42 2.33 13.51 2.35 13.59 L 2.55 14.53 L 2.9 15.57 C 2.94 15.68 2.98 15.78 3.03 15.89 L 3.34 16.51 C 3.36 16.54 3.37 16.57 3.36 16.59 L 2.3 19.78 L 2.28 20.5 C 2.28 20.57 2.28 20.65 2.3 20.72 C 2.34 20.86 2.39 21 2.49 21.1 L 2.86 21.48 C 2.94 21.56 3.05 21.6 3.15 21.64 Z","inner":"M 3.34 20.88 C 3.4 20.92 3.46 20.95 3.53 20.97 C 3.68 21 3.83 21.01 3.97 20.97 L 7.03 19.95 C 7.11 19.92 7.2 19.91 7.28 19.91 C 7.39 19.9 7.49 19.9 7.59 19.91 C 7.66 19.92 7.72 19.92 7.78 19.95 L 8.45 20.28 C 8.55 20.33 8.65 20.37 8.76 20.4 L 9.7 20.72 L 10.28 20.84 C 10.34 20.85 10.41 20.84 10.47 20.85 C 10.53 20.86 10.59 20.89 10.66 20.9 C 10.74 20.92 10.82 20.9 10.91 20.92 C 10.97 20.93 11.03 20.97 11.09 20.97 L 12.91 20.97 C 12.97 20.97 13.03 20.93 13.09 20.92 C 13.18 20.9 13.26 20.92 13.34 20.9 C 13.41 20.89 13.47 20.86 13.53 20.85 C 13.59 20.84 13.66 20.85 13.72 20.84 L 14.3 20.72 L 15.21 20.42 C 15.33 20.38 15.44 20.33 15.55 20.28 L 16.64 19.73 L 17.64 19.04 C 17.73 18.99 17.78 18.9 17.86 18.83 C 17.92 18.79 17.99 18.76 18.05 18.71 L 18.77 17.99 L 19.42 17.14 L 19.82 16.47 L 20.28 15.55 L 20.54 14.9 L 20.72 14.3 L 20.9 13.47 C 20.93 13.37 20.9 13.26 20.92 13.16 C 20.93 13.09 20.97 13.03 20.97 12.97 L 20.97 12.41 C 20.97 12.32 21.02 12.24 21.03 12.16 C 21.04 12.07 21.04 11.99 21.03 11.91 C 21.02 11.8 20.97 11.7 20.97 11.59 L 20.97 11.03 C 20.97 10.97 20.93 10.91 20.92 10.84 C 20.9 10.74 20.93 10.63 20.9 10.53 L 20.65 9.51 C 20.62 9.37 20.58 9.22 20.53 9.08 L 20.28 8.45 L 19.76 7.4 L 19.23 6.61 C 19.17 6.51 19.1 6.42 19.02 6.33 C 18.96 6.26 18.89 6.21 18.83 6.14 C 18.79 6.08 18.76 6.01 18.71 5.95 L 17.99 5.23 L 17.39 4.77 L 16.83 4.4 C 16.72 4.32 16.6 4.24 16.47 4.18 L 15.55 3.72 C 15.44 3.67 15.33 3.62 15.21 3.58 L 14.49 3.35 L 13.96 3.21 L 13.34 3.1 C 13.26 3.08 13.18 3.09 13.09 3.08 C 13.01 3.07 12.93 3.03 12.84 3.03 L 11.16 3.03 C 11.07 3.03 10.99 3.07 10.91 3.08 C 10.82 3.09 10.74 3.08 10.66 3.1 C 10.59 3.11 10.53 3.14 10.47 3.15 C 10.41 3.16 10.34 3.15 10.28 3.16 C 10.15 3.18 10.03 3.23 9.91 3.26 C 9.84 3.27 9.77 3.27 9.71 3.28 C 9.56 3.32 9.41 3.36 9.26 3.41 L 8.79 3.58 C 8.68 3.63 8.56 3.67 8.45 3.72 L 7.53 4.18 L 6.61 4.77 C 6.51 4.83 6.42 4.9 6.33 4.98 C 6.22 5.08 6.13 5.2 6.02 5.29 C 5.96 5.34 5.88 5.36 5.83 5.42 L 5.36 5.89 C 5.3 5.94 5.28 6.02 5.23 6.08 C 5.17 6.15 5.1 6.2 5.04 6.26 C 5 6.32 4.96 6.39 4.92 6.45 C 4.88 6.5 4.82 6.53 4.79 6.58 L 4.18 7.53 L 3.72 8.45 C 3.69 8.51 3.68 8.57 3.66 8.64 C 3.62 8.72 3.56 8.8 3.53 8.89 L 3.22 9.96 L 3.1 10.59 C 3.08 10.68 3.09 10.76 3.08 10.84 C 3.07 10.93 3.03 11.01 3.03 11.09 L 3.03 12.91 L 3.16 13.73 L 3.28 14.3 L 3.58 15.21 C 3.62 15.33 3.67 15.44 3.72 15.55 L 4.03 16.18 C 4.08 16.27 4.09 16.37 4.09 16.47 C 4.1 16.62 4.12 16.77 4.07 16.91 L 3.03 20.03 C 2.99 20.15 3.02 20.28 3.03 20.41 C 3.03 20.45 3.04 20.49 3.06 20.53 C 3.08 20.61 3.12 20.68 3.17 20.74 C 3.22 20.79 3.28 20.84 3.34 20.88 Z","front":["M 7.65 13.12 C 7.78 13.14 7.91 13.14 8.03 13.13 C 8.14 13.12 8.25 13.1 8.34 13.06 C 8.43 13.03 8.5 12.97 8.57 12.91 C 8.65 12.85 8.72 12.77 8.78 12.7 C 8.83 12.64 8.88 12.58 8.91 12.51 C 8.95 12.44 8.98 12.36 8.99 12.28 C 9.01 12.2 9.01 12.12 9.01 12.03 C 9.01 11.93 9.02 11.82 8.99 11.72 C 8.95 11.57 8.88 11.43 8.78 11.3 C 8.73 11.22 8.65 11.15 8.57 11.09 C 8.44 11 8.3 10.93 8.16 10.88 C 8.14 10.87 8.12 10.87 8.1 10.87 L 7.59 10.88 C 7.44 10.88 7.31 11 7.18 11.09 C 7.1 11.15 7.03 11.23 6.97 11.3 C 6.91 11.38 6.85 11.45 6.81 11.53 C 6.78 11.61 6.76 11.69 6.76 11.78 L 6.76 12.28 C 6.76 12.44 6.87 12.57 6.97 12.7 C 7.02 12.78 7.1 12.85 7.18 12.91 C 7.27 12.97 7.37 13.02 7.47 13.06 C 7.53 13.08 7.59 13.11 7.65 13.12 Z","M 11.78 13.12 C 11.9 13.14 12.03 13.14 12.16 13.13 C 12.26 13.12 12.37 13.1 12.47 13.06 C 12.55 13.03 12.62 12.97 12.7 12.91 C 12.77 12.85 12.85 12.77 12.91 12.7 C 12.96 12.64 13 12.58 13.04 12.51 C 13.07 12.44 13.1 12.36 13.12 12.28 C 13.14 12.2 13.14 12.12 13.14 12.03 C 13.14 11.93 13.15 11.82 13.12 11.72 C 13.08 11.57 13 11.43 12.91 11.3 C 12.85 11.22 12.78 11.15 12.7 11.09 C 12.57 11 12.43 10.93 12.28 10.88 C 12.26 10.87 12.24 10.87 12.22 10.87 L 11.72 10.88 C 11.56 10.88 11.43 11 11.3 11.09 C 11.22 11.15 11.15 11.23 11.09 11.3 C 11.03 11.38 10.98 11.45 10.94 11.53 C 10.9 11.61 10.88 11.69 10.88 11.78 L 10.88 12.28 C 10.88 12.44 11 12.57 11.09 12.7 C 11.15 12.78 11.22 12.85 11.3 12.91 C 11.39 12.97 11.49 13.02 11.59 13.06 C 11.65 13.08 11.72 13.11 11.78 13.12 Z","M 15.9 13.12 C 16.03 13.14 16.16 13.14 16.28 13.13 C 16.39 13.12 16.5 13.1 16.59 13.06 C 16.68 13.03 16.75 12.97 16.82 12.91 C 16.9 12.85 16.97 12.77 17.03 12.7 C 17.08 12.64 17.13 12.58 17.16 12.51 C 17.2 12.44 17.23 12.36 17.24 12.28 C 17.26 12.2 17.26 12.12 17.26 12.03 C 17.26 11.93 17.27 11.82 17.24 11.72 C 17.2 11.57 17.13 11.43 17.03 11.3 C 16.98 11.22 16.9 11.15 16.82 11.09 C 16.69 11 16.55 10.93 16.41 10.88 C 16.39 10.87 16.37 10.87 16.35 10.87 L 15.84 10.88 C 15.69 10.88 15.56 11 15.43 11.09 C 15.35 11.15 15.28 11.23 15.22 11.3 C 15.16 11.38 15.1 11.45 15.06 11.53 C 15.03 11.61 15.01 11.69 15.01 11.78 L 15.01 12.28 C 15.01 12.44 15.12 12.57 15.22 12.7 C 15.27 12.78 15.35 12.85 15.43 12.91 C 15.52 12.97 15.62 13.02 15.72 13.06 C 15.78 13.08 15.84 13.11 15.9 13.12 Z"],"y1":2.25,"y2":21.69},"outline":"<path d=\"M 13.12 12 a 1.12 1.12 0 1 1 -1.12 -1.12 A 1.12 1.12 0 0 1 13.12 12 Z M 7.88 10.88 a 1.12 1.12 0 1 0 1.12 1.12 A 1.12 1.12 0 0 0 7.88 10.88 Z m 8.25 0 a 1.12 1.12 0 1 0 1.12 1.12 A 1.12 1.12 0 0 0 16.12 10.88 Z m 5.62 1.12 A 9.75 9.75 0 0 1 7.42 20.61 L 4.23 21.67 a 1.5 1.5 0 0 1 -1.9 -1.9 l 1.06 -3.19 A 9.75 9.75 0 1 1 21.75 12 Z m -1.5 0 A 8.25 8.25 0 1 0 4.86 16.13 a 0.75 0.75 0 0 1 0.06 0.61 L 3.75 20.25 7.26 19.08 a 0.74 0.74 0 0 1 0.24 -0.04 0.75 0.75 0 0 1 0.38 0.1 A 8.25 8.25 0 0 0 20.25 12 Z\" fill=\"currentColor\"/>"},"wallet":{"slug":"wallet","name":"Wallet","label":"Fondo de caja","glass":{"back":["M 3.02 4.91 L 3.12 4.97 C 3.12 4.97 3.08 5 3.06 5.03 C 3.05 5.05 3.05 5.07 3.06 5.09 C 3.07 5.11 3.08 5.12 3.09 5.12 C 3.11 5.13 3.13 5.12 3.15 5.13 C 3.18 5.14 3.2 5.17 3.22 5.18 C 3.26 5.2 3.3 5.18 3.34 5.19 C 3.37 5.2 3.38 5.23 3.41 5.24 C 3.45 5.26 3.49 5.24 3.53 5.26 C 3.55 5.27 3.57 5.3 3.6 5.31 C 3.7 5.34 3.8 5.33 3.91 5.31 C 3.97 5.3 4.03 5.26 4.09 5.25 C 4.22 5.23 4.35 5.3 4.47 5.25 C 4.48 5.24 4.49 5.23 4.5 5.22 C 4.52 5.18 4.5 5.13 4.51 5.09 C 4.53 4.99 4.58 4.89 4.65 4.8 C 4.71 4.72 4.78 4.64 4.87 4.59 C 4.95 4.54 5.05 4.5 5.15 4.5 L 18.09 4.5 C 18.18 4.5 18.26 4.46 18.33 4.42 C 18.43 4.37 18.51 4.31 18.58 4.23 C 18.65 4.15 18.69 4.06 18.72 3.96 C 18.75 3.88 18.75 3.8 18.75 3.72 C 18.75 3.66 18.74 3.6 18.72 3.54 C 18.68 3.43 18.63 3.32 18.55 3.23 C 18.5 3.17 18.43 3.14 18.37 3.1 C 18.32 3.07 18.28 3.05 18.24 3.04 C 18.17 3.01 18.1 3 18.03 3 L 5.03 3 C 4.91 3 4.79 3.05 4.67 3.08 C 4.53 3.12 4.4 3.16 4.27 3.22 C 4.16 3.28 4.05 3.34 3.95 3.41 C 3.86 3.47 3.78 3.53 3.7 3.6 C 3.59 3.71 3.5 3.83 3.41 3.95 C 3.36 4.02 3.3 4.09 3.27 4.17 L 3.09 4.61 C 3.04 4.72 3.02 4.91 3.02 4.91 Z"],"glass":"M 21.51 18.85 C 21.61 18.75 21.65 18.6 21.7 18.47 C 21.73 18.37 21.76 18.26 21.77 18.16 C 21.78 18.11 21.78 18.07 21.78 18.03 L 21.78 7.47 C 21.78 7.43 21.78 7.39 21.77 7.34 C 21.76 7.24 21.73 7.13 21.7 7.03 C 21.67 6.94 21.63 6.85 21.58 6.77 C 21.55 6.71 21.53 6.65 21.48 6.61 L 21.1 6.24 C 21 6.14 20.86 6.09 20.72 6.05 C 20.65 6.03 20.57 6.03 20.49 6.03 L 5.47 6.03 C 5.4 6.03 5.35 5.99 5.28 5.98 C 5.2 5.96 5.11 5.98 5.03 5.95 C 4.93 5.91 4.83 5.85 4.75 5.78 C 4.69 5.71 4.64 5.64 4.59 5.55 C 4.56 5.49 4.55 5.42 4.53 5.36 C 4.52 5.27 4.53 5.18 4.51 5.09 C 4.48 5 4.44 4.91 4.39 4.83 C 4.34 4.77 4.29 4.72 4.23 4.68 C 4.19 4.65 4.15 4.63 4.1 4.61 C 4.06 4.59 4.02 4.56 3.97 4.55 C 3.91 4.54 3.84 4.53 3.78 4.53 C 3.72 4.53 3.65 4.53 3.59 4.55 C 3.48 4.59 3.39 4.64 3.3 4.71 C 3.25 4.74 3.21 4.79 3.18 4.83 C 3.15 4.87 3.13 4.92 3.11 4.96 C 3.09 5 3.07 5.05 3.05 5.09 C 3.04 5.13 3.03 5.18 3.03 5.22 L 3.03 17.65 C 3.03 17.72 3.04 17.78 3.05 17.85 C 3.07 17.91 3.09 17.97 3.11 18.03 L 3.36 18.54 L 3.96 19.14 C 4.07 19.25 4.22 19.29 4.36 19.35 C 4.46 19.39 4.55 19.43 4.65 19.45 C 4.76 19.47 4.87 19.45 4.97 19.47 C 5.04 19.48 5.09 19.51 5.16 19.52 C 5.2 19.53 5.24 19.53 5.28 19.53 L 20.28 19.53 C 20.32 19.53 20.36 19.53 20.41 19.52 C 20.51 19.51 20.62 19.48 20.72 19.45 C 20.81 19.42 20.9 19.38 20.98 19.33 C 21.04 19.3 21.1 19.28 21.14 19.23 L 21.51 18.85 Z","inner":"M 3.78 5.66 L 3.78 17.53 C 3.78 17.61 3.81 17.69 3.83 17.77 C 3.88 17.9 3.92 18.04 4.02 18.14 L 4.36 18.48 C 4.45 18.57 4.58 18.6 4.7 18.65 C 4.74 18.67 4.79 18.69 4.84 18.7 C 4.95 18.72 5.05 18.71 5.16 18.73 C 5.24 18.74 5.32 18.78 5.41 18.78 L 20.16 18.78 C 20.27 18.78 20.38 18.75 20.49 18.72 C 20.56 18.69 20.64 18.65 20.71 18.6 C 20.76 18.56 20.81 18.51 20.85 18.46 C 20.9 18.39 20.94 18.31 20.97 18.24 C 21 18.13 21.03 18.02 21.03 17.91 L 21.03 7.59 C 21.03 7.48 21 7.37 20.97 7.26 C 20.94 7.19 20.9 7.11 20.85 7.04 C 20.81 6.99 20.76 6.94 20.71 6.9 C 20.65 6.86 20.6 6.83 20.53 6.81 C 20.49 6.79 20.45 6.78 20.41 6.78 L 5.34 6.78 L 4.78 6.68 C 4.69 6.66 4.62 6.6 4.54 6.56 C 4.44 6.51 4.35 6.45 4.27 6.38 C 4.21 6.33 4.15 6.26 4.09 6.19 C 4.02 6.11 3.96 6.01 3.92 5.92 C 3.88 5.85 3.89 5.77 3.84 5.7 C 3.83 5.68 3.78 5.66 3.78 5.66 Z","front":["M 17.16 13.49 C 17.31 13.49 17.44 13.38 17.57 13.28 C 17.65 13.23 17.72 13.15 17.78 13.07 C 17.84 13 17.9 12.93 17.94 12.84 C 17.98 12.75 17.99 12.64 18 12.53 C 18.02 12.39 18.03 12.24 17.99 12.09 C 17.96 11.94 17.88 11.81 17.78 11.68 C 17.73 11.6 17.65 11.53 17.57 11.47 C 17.48 11.4 17.38 11.36 17.28 11.32 C 17.22 11.29 17.16 11.27 17.1 11.26 C 16.97 11.24 16.84 11.24 16.72 11.25 C 16.61 11.26 16.5 11.27 16.41 11.31 C 16.32 11.35 16.25 11.41 16.18 11.47 C 16.1 11.53 16.03 11.6 15.97 11.68 C 15.92 11.74 15.87 11.8 15.84 11.87 C 15.8 11.94 15.76 12.01 15.76 12.09 L 15.76 12.66 C 15.76 12.81 15.87 12.94 15.97 13.07 C 16.04 13.16 16.13 13.24 16.22 13.31 C 16.34 13.39 16.45 13.49 16.59 13.49 L 17.16 13.49 Z"],"y1":4.56,"y2":19.44},"outline":"<path d=\"M 20.25 6 H 5.25 a 0.75 0.75 0 0 1 0 -1.5 H 18 a 0.75 0.75 0 0 0 0 -1.5 H 5.25 A 2.25 2.25 0 0 0 3 5.25 V 17.25 a 2.25 2.25 0 0 0 2.25 2.25 H 20.25 a 1.5 1.5 0 0 0 1.5 -1.5 V 7.5 A 1.5 1.5 0 0 0 20.25 6 Z m 0 12 H 5.25 a 0.75 0.75 0 0 1 -0.75 -0.75 V 7.37 A 2.23 2.23 0 0 0 5.25 7.5 H 20.25 Z m -4.5 -5.62 a 1.12 1.12 0 1 1 1.12 1.12 A 1.12 1.12 0 0 1 15.75 12.38 Z\" fill=\"currentColor\"/>"},"bike":{"slug":"bike","name":"Bike","label":"Moto de reparto","glass":{"back":["M 6.3 14.85 A 2.65 2.65 0 1 1 6.3 20.15 A 2.65 2.65 0 1 1 6.3 14.85 Z","M 17.7 14.85 A 2.65 2.65 0 1 1 17.7 20.15 A 2.65 2.65 0 1 1 17.7 14.85 Z","M 13 6.22 L 15.2 6.22 A 0.98 0.98 0 0 1 16.15 6.98 L 18.25 16.08 A 0.98 0.98 0 0 1 16.35 16.52 L 14.5 8.53 A 0.45 0.45 0 0 0 14.06 8.18 L 13 8.18 A 0.98 0.98 0 0 1 13 6.22 Z","M 15.5 7.65 L 16.95 7.65 A 0.85 0.85 0 0 1 16.95 9.35 L 15.5 9.35 A 0.85 0.85 0 0 1 15.5 7.65 Z","M 4.65 6.8 L 7.85 6.8 A 1.55 1.55 0 0 1 9.4 8.35 L 9.4 10.85 A 1.55 1.55 0 0 1 7.85 12.4 L 4.65 12.4 A 1.55 1.55 0 0 1 3.1 10.85 L 3.1 8.35 A 1.55 1.55 0 0 1 4.65 6.8 Z"],"glass":"M 4.6 17.2 A 1.4 1.4 0 0 1 3.2 15.8 L 3.2 13.45 A 2.05 2.05 0 0 1 5.25 11.4 L 8.95 11.4 A 1.35 1.35 0 0 1 10.3 12.75 L 10.3 13.85 A 0.95 0.95 0 0 0 11.25 14.8 L 12.92 14.8 A 1.05 1.05 0 0 0 13.92 14.05 L 14.59 11.83 A 1.55 1.55 0 0 1 16.95 11 L 19.49 12.74 A 2.55 2.55 0 0 1 20.6 14.84 L 20.6 15.85 A 1.35 1.35 0 0 1 19.25 17.2 Z","inner":"M 4.6 16.45 A 0.65 0.65 0 0 1 3.95 15.8 L 3.95 13.45 A 1.3 1.3 0 0 1 5.25 12.15 L 8.95 12.15 A 0.6 0.6 0 0 1 9.55 12.75 L 9.55 13.85 A 1.7 1.7 0 0 0 11.25 15.55 L 12.92 15.55 A 1.8 1.8 0 0 0 14.64 14.27 L 15.31 12.05 A 0.8 0.8 0 0 1 16.53 11.62 L 19.07 13.36 A 1.8 1.8 0 0 1 19.85 14.84 L 19.85 15.85 A 0.6 0.6 0 0 1 19.25 16.45 Z","front":["M 5.1 12.85 L 8.2 12.85 A 0.65 0.65 0 0 1 8.2 14.15 L 5.1 14.15 A 0.65 0.65 0 0 1 5.1 12.85 Z"],"y1":9.8,"y2":17.2},"outline":"<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3.2\" y=\"6.8\" width=\"6.1\" height=\"4.6\" rx=\"1.4\"/><path d=\"M 4.6 17.2 A 1.4 1.4 0 0 1 3.2 15.8 L 3.2 13.45 A 2.05 2.05 0 0 1 5.25 11.4 L 8.95 11.4 A 1.35 1.35 0 0 1 10.3 12.75 L 10.3 13.85 A 0.95 0.95 0 0 0 11.25 14.8 L 12.92 14.8 A 1.05 1.05 0 0 0 13.92 14.05 L 14.59 11.83 A 1.55 1.55 0 0 1 16.95 11 L 19.49 12.74 A 2.55 2.55 0 0 1 20.6 14.84 L 20.6 15.85 A 1.35 1.35 0 0 1 19.25 17.2 Z\"/><circle cx=\"6.3\" cy=\"17.5\" r=\"2.4\"/><circle cx=\"17.7\" cy=\"17.5\" r=\"2.4\"/><path d=\"M 13.2 7.2 H 15.3 L 16.4 11.2\"/></g>"}};
+    const UI_OUTLINES = {"arrow-left":"<path d=\"M 21 12 a 0.75 0.75 0 0 1 -0.75 0.75 H 5.56 l 5.47 5.47 a 0.75 0.75 0 0 1 -1.06 1.06 l -6.75 -6.75 a 0.75 0.75 0 0 1 0 -1.06 l 6.75 -6.75 a 0.75 0.75 0 0 1 1.06 1.06 L 5.56 11.25 H 20.25 A 0.75 0.75 0 0 1 21 12 Z\" fill=\"currentColor\"/>","copy":"<path d=\"M 20.25 3 H 8.25 a 0.75 0.75 0 0 0 -0.75 0.75 V 7.5 H 3.75 a 0.75 0.75 0 0 0 -0.75 0.75 V 20.25 a 0.75 0.75 0 0 0 0.75 0.75 H 15.75 a 0.75 0.75 0 0 0 0.75 -0.75 V 16.5 h 3.75 a 0.75 0.75 0 0 0 0.75 -0.75 V 3.75 A 0.75 0.75 0 0 0 20.25 3 Z M 15 19.5 H 4.5 V 9 H 15 Z m 4.5 -4.5 H 16.5 V 8.25 a 0.75 0.75 0 0 0 -0.75 -0.75 H 9 V 4.5 H 19.5 Z\" fill=\"currentColor\"/>","sparkles":"<path d=\"M 18.52 12.1 13.69 10.31 l -1.78 -4.84 a 1.49 1.49 0 0 0 -2.8 0 L 7.31 10.31 l -4.84 1.78 a 1.49 1.49 0 0 0 0 2.8 L 7.31 16.69 l 1.78 4.84 a 1.49 1.49 0 0 0 2.8 0 L 13.69 16.69 l 4.84 -1.78 a 1.49 1.49 0 0 0 0 -2.8 Z M 12.84 15.4 a 0.75 0.75 0 0 0 -0.44 0.44 L 10.5 20.99 8.6 15.84 A 0.75 0.75 0 0 0 8.16 15.4 L 3.01 13.5 8.16 11.6 A 0.75 0.75 0 0 0 8.6 11.16 L 10.5 6.01 12.4 11.16 a 0.75 0.75 0 0 0 0.44 0.44 L 17.99 13.5 Z M 13.5 3.75 a 0.75 0.75 0 0 1 0.75 -0.75 h 1.5 V 1.5 a 0.75 0.75 0 0 1 1.5 0 V 3 h 1.5 a 0.75 0.75 0 0 1 0 1.5 H 17.25 V 6 a 0.75 0.75 0 0 1 -1.5 0 V 4.5 H 14.25 A 0.75 0.75 0 0 1 13.5 3.75 Z M 23.25 8.25 a 0.75 0.75 0 0 1 -0.75 0.75 h -0.75 v 0.75 a 0.75 0.75 0 0 1 -1.5 0 V 9 h -0.75 a 0.75 0.75 0 0 1 0 -1.5 h 0.75 V 6.75 a 0.75 0.75 0 0 1 1.5 0 v 0.75 h 0.75 A 0.75 0.75 0 0 1 23.25 8.25 Z\" fill=\"currentColor\"/>"};
+
+    const ICON_SPECS = [
+      {
+        slug: 'pizza',
+        domain: 'Producto',
+        navLabel: 'Productos',
+        subtitle: 'Terracota y queso',
+        kpiLabel: 'Especialidades hoy',
+        kpiValue: '142',
+        kpiFoot: '$26,840.00 acumulados',
+        palettes: {
+          light: {
+            obsBack: ['#D97706', '#78350F'],
+            glass: ['#F7EFE2', 0.72, '#E2CEAE', 0.66],
+            obsFront: ['#C2410C', '#7C2D12'],
+            bevel: ['#FFFFFF', 0.96, 0.30, 0.06]
+          },
+          oled: {
+            obsBack: ['#FBBF24', '#D97706'],
+            glass: ['#786954', 0.56, '#443A2E', 0.52],
+            obsFront: ['#FB923C', '#EA580C'],
+            bevel: ['#FFFFFF', 0.94, 0.34, 0.10]
+          }
+        }
+      },
+      {
+        slug: 'flame',
+        domain: 'Horno KDS',
+        navLabel: 'Cocina KDS',
+        subtitle: 'Ámbar-carmesí',
+        kpiLabel: 'Tiempo en horno',
+        kpiValue: '16 min',
+        kpiFoot: '4 comandas activas',
+        palettes: {
+          light: {
+            obsBack: ['#9A3412', '#292524'],
+            glass: ['#E5DCD7', 0.68, '#B8ACA6', 0.64],
+            obsFront: ['#EA580C', '#B91C1C'],
+            bevel: ['#FFFFFF', 0.96, 0.30, 0.06]
+          },
+          oled: {
+            obsBack: ['#FDBA74', '#D97706'],
+            glass: ['#6B5B53', 0.56, '#3F3530', 0.52],
+            obsFront: ['#FDE047', '#EF4444'],
+            bevel: ['#FFFFFF', 0.94, 0.34, 0.10]
+          }
+        }
+      },
+      {
+        slug: 'message-circle',
+        domain: 'WhatsApp',
+        navLabel: 'WhatsApp',
+        subtitle: 'Verde jade',
+        kpiLabel: 'Pedidos WhatsApp',
+        kpiValue: '31',
+        kpiFoot: '94% conversión directa',
+        palettes: {
+          light: {
+            obsBack: ['#0D7A5C', '#052E16'],
+            glass: ['#DCF2EA', 0.70, '#A8D8C8', 0.64],
+            obsFront: ['#0D7A5C', '#052E16'],
+            bevel: ['#FFFFFF', 0.96, 0.30, 0.06]
+          },
+          oled: {
+            obsBack: ['#34D399', '#059669'],
+            glass: ['#2A594B', 0.56, '#17362D', 0.52],
+            obsFront: ['#ECFDF5', '#6EE7B7'],
+            bevel: ['#FFFFFF', 0.94, 0.34, 0.10]
+          }
+        }
+      },
+      {
+        slug: 'wallet',
+        domain: 'Caja',
+        navLabel: 'Caja y Corte',
+        subtitle: 'Esmeralda tesorería',
+        kpiLabel: 'Efectivo en caja',
+        kpiValue: '$8,420.00',
+        kpiFoot: 'Fondo inicial $1,500.00',
+        palettes: {
+          light: {
+            obsBack: ['#16A34A', '#14532D'],
+            glass: ['#DCE8E0', 0.70, '#AFC5B7', 0.64],
+            obsFront: ['#52525B', '#18181B'],
+            bevel: ['#FFFFFF', 0.96, 0.30, 0.06]
+          },
+          oled: {
+            obsBack: ['#4ADE80', '#16A34A'],
+            glass: ['#4B5850', 0.56, '#2C3530', 0.52],
+            obsFront: ['#FAFAFA', '#A1A1AA'],
+            bevel: ['#FFFFFF', 0.94, 0.34, 0.10]
+          }
+        }
+      },
+      {
+        slug: 'bike',
+        domain: 'Reparto',
+        navLabel: 'Reparto GPS',
+        subtitle: 'Azul cobalto ruta',
+        kpiLabel: 'Motos en ruta',
+        kpiValue: '4 activas',
+        kpiFoot: 'Entrega prom. 11 min',
+        palettes: {
+          light: {
+            obsBack: ['#3B82F6', '#1E3A8A'],
+            glass: ['#DCE6FA', 0.70, '#AEBEE6', 0.64],
+            obsFront: ['#1D4ED8', '#1E3A8A'],
+            bevel: ['#FFFFFF', 0.96, 0.30, 0.06]
+          },
+          oled: {
+            obsBack: ['#60A5FA', '#3B82F6'],
+            glass: ['#354B75', 0.56, '#202D47', 0.52],
+            obsFront: ['#DBEAFE', '#60A5FA'],
+            bevel: ['#FFFFFF', 0.94, 0.34, 0.10]
+          }
+        }
+      }
+    ];
+
+    const MONO_PALETTES = {
+      light: {
+        obsBack: ['#52525B', '#18181B'],
+        glass: ['#E4E4E7', 0.68, '#A1A1AA', 0.64],
+        obsFront: ['#52525B', '#18181B'],
+        bevel: ['#FFFFFF', 0.94, 0.44, 0.80]
+      },
+      oled: {
+        obsBack: ['#FAFAFA', '#A1A1AA'],
+        glass: ['#71717A', 0.56, '#3F3F46', 0.52],
+        obsFront: ['#FAFAFA', '#A1A1AA'],
+        bevel: ['#FFFFFF', 0.94, 0.32, 0.08]
+      }
+    };
+
+    let uidSeq = 0;
+    function nextPrefix(slug) {
+      uidSeq += 1;
+      return 'cg-' + slug + '-' + uidSeq;
+    }
+
+    function getSpec(slug) {
+      return ICON_SPECS.find(function(s) { return s.slug === slug; }) || ICON_SPECS[0];
+    }
+
+    function resolvePalette(slug, mode, surface) {
+      if (mode === 'mono') {
+        return MONO_PALETTES[surface];
+      }
+      return getSpec(slug).palettes[surface];
+    }
+
+    /**
+     * Renderizador SVG de 2 canales ópticos (`obs-back` + `obs-front` + `glass` + `bevel` 0.75u).
+     * Soporta `stagePart`: 'full' | 'back-raw' | 'refraction' | 'glass-only' | 'bevel-front'
+     */
+    function renderContextualGlass(slug, size, mode, surface, stagePart, springEnabled) {
+      const geom = ICONS_GEOM[slug].glass;
+      const pal = resolvePalette(slug, mode, surface);
+      const pfx = nextPrefix(slug);
+      const part = stagePart || 'full';
+
+      const backPaths = (geom.back || []).map(function(d) { return '<path d="' + d + '"/>'; }).join('');
+      const frontPaths = (geom.front || []).map(function(d) { return '<path d="' + d + '"/>'; }).join('');
+      const clsAttr = springEnabled ? ' class="js-spring-svg"' : '';
+
+      const defs = (
+        '<defs>' +
+          '<linearGradient id="' + pfx + '-obs-back" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">' +
+            '<stop offset="0%" stop-color="' + pal.obsBack[0] + '"/>' +
+            '<stop offset="100%" stop-color="' + pal.obsBack[1] + '"/>' +
+          '</linearGradient>' +
+          '<linearGradient id="' + pfx + '-obs-front" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">' +
+            '<stop offset="0%" stop-color="' + pal.obsFront[0] + '"/>' +
+            '<stop offset="100%" stop-color="' + pal.obsFront[1] + '"/>' +
+          '</linearGradient>' +
+          '<linearGradient id="' + pfx + '-glass" x1="4" y1="' + geom.y1 + '" x2="20" y2="' + geom.y2 + '" gradientUnits="userSpaceOnUse">' +
+            '<stop offset="0%" stop-color="' + pal.glass[0] + '" stop-opacity="' + pal.glass[1] + '"/>' +
+            '<stop offset="100%" stop-color="' + pal.glass[2] + '" stop-opacity="' + pal.glass[3] + '"/>' +
+          '</linearGradient>' +
+          '<linearGradient id="' + pfx + '-bevel" x1="3" y1="' + geom.y1 + '" x2="21" y2="' + geom.y2 + '" gradientUnits="userSpaceOnUse">' +
+            '<stop offset="0%" stop-color="' + pal.bevel[0] + '" stop-opacity="' + pal.bevel[1] + '"/>' +
+            '<stop offset="58%" stop-color="' + pal.bevel[0] + '" stop-opacity="' + pal.bevel[2] + '"/>' +
+            '<stop offset="100%" stop-color="' + pal.bevel[0] + '" stop-opacity="' + pal.bevel[3] + '"/>' +
+          '</linearGradient>' +
+          '<filter id="' + pfx + '-blur" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">' +
+            '<feGaussianBlur stdDeviation="1.6"/>' +
+          '</filter>' +
+          '<mask id="' + pfx + '-mask-in" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">' +
+            '<rect width="24" height="24" fill="#000000"/>' +
+            '<path d="' + geom.glass + '" fill="#ffffff"/>' +
+          '</mask>' +
+          '<mask id="' + pfx + '-mask-out" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">' +
+            '<rect width="24" height="24" fill="#ffffff"/>' +
+            '<path d="' + geom.glass + '" fill="#000000"/>' +
+          '</mask>' +
+        '</defs>'
+      );
+
+      let bodyLayers = '';
+      if (part === 'back-raw') {
+        bodyLayers = '<g fill="url(#' + pfx + '-obs-back)">' + backPaths + '</g>';
+      } else if (part === 'refraction') {
+        bodyLayers = (
+          '<g mask="url(#' + pfx + '-mask-out)" fill="url(#' + pfx + '-obs-back)">' + backPaths + '</g>' +
+          '<g mask="url(#' + pfx + '-mask-in)">' +
+            '<g filter="url(#' + pfx + '-blur)" fill="url(#' + pfx + '-obs-back)" opacity="0.88">' + backPaths + '</g>' +
+          '</g>'
+        );
+      } else if (part === 'glass-only') {
+        bodyLayers = '<path d="' + geom.glass + '" fill="url(#' + pfx + '-glass)"/>';
+      } else if (part === 'bevel-front') {
+        bodyLayers = (
+          '<path fill-rule="evenodd" clip-rule="evenodd" d="' + geom.glass + ' ' + geom.inner + '" fill="url(#' + pfx + '-bevel)"/>' +
+          '<g fill="url(#' + pfx + '-obs-front)">' + frontPaths + '</g>'
+        );
+      } else {
+        bodyLayers = (
+          '<g class="layer-back" mask="url(#' + pfx + '-mask-out)" fill="url(#' + pfx + '-obs-back)">' + backPaths + '</g>' +
+          '<g mask="url(#' + pfx + '-mask-in)">' +
+            '<g class="layer-back" filter="url(#' + pfx + '-blur)" fill="url(#' + pfx + '-obs-back)" opacity="0.88">' + backPaths + '</g>' +
+          '</g>' +
+          '<g class="layer-glass">' +
+            '<path d="' + geom.glass + '" fill="url(#' + pfx + '-glass)"/>' +
+            '<path fill-rule="evenodd" clip-rule="evenodd" d="' + geom.glass + ' ' + geom.inner + '" fill="url(#' + pfx + '-bevel)"/>' +
+          '</g>' +
+          '<g class="layer-front" fill="url(#' + pfx + '-obs-front)">' + frontPaths + '</g>'
+        );
+      }
+
+      return (
+        '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" aria-hidden="true"' + clsAttr + '>' +
+          defs +
+          bodyLayers +
+        '</svg>'
+      );
+    }
+
+    function renderUiOutline(slug, size) {
+      return '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" aria-hidden="true">' + UI_OUTLINES[slug] + '</svg>';
+    }
+
+    /* ── Motor de física de resortes a 60fps ── */
+    const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const springControllers = [];
+
+    function attachSpring(hostEl) {
+      if (REDUCED_MOTION || !hostEl) return;
+      const svg = hostEl.querySelector('svg.js-spring-svg');
+      if (!svg) return;
+      const backs = svg.querySelectorAll('.layer-back');
+      const glass = svg.querySelector('.layer-glass');
+      const front = svg.querySelector('.layer-front');
+      let pos = 0, vel = 0, target = 0, raf = 0;
+
+      function step() {
+        const force = (target - pos) * 0.21;
+        vel = (vel + force) * 0.74;
+        pos += vel;
+        const bTx = (-1.25 * pos).toFixed(3);
+        const bTy = (-0.85 * pos).toFixed(3);
+        const gSc = (1 + 0.05 * pos).toFixed(4);
+        const fTx = (0.85 * pos).toFixed(3);
+        const fTy = (-0.70 * pos).toFixed(3);
+
+        backs.forEach(function(el) {
+          el.setAttribute('transform', 'translate(' + bTx + ' ' + bTy + ')');
+        });
+        if (glass) {
+          glass.setAttribute('transform', 'translate(12 12) scale(' + gSc + ') translate(-12 -12)');
+        }
+        if (front) {
+          front.setAttribute('transform', 'translate(' + fTx + ' ' + fTy + ')');
+        }
+        if (Math.abs(target - pos) > 0.002 || Math.abs(vel) > 0.002) {
+          raf = requestAnimationFrame(step);
+        } else {
+          raf = 0;
+        }
+      }
+
+      function impulse() {
+        vel = 0.42;
+        if (!raf) raf = requestAnimationFrame(step);
+      }
+
+      hostEl.addEventListener('pointerenter', function() {
+        target = 1;
+        if (!raf) raf = requestAnimationFrame(step);
+      });
+      hostEl.addEventListener('pointerleave', function() {
+        target = 0;
+        if (!raf) raf = requestAnimationFrame(step);
+      });
+
+      springControllers.push(impulse);
+    }
+
+    /* ── Estado reactivo del laboratorio ── */
+    let activeMode = 'color';     // 'color' | 'mono'
+    let activeSurface = 'light';  // 'light' | 'oled'
+    let selectedSlug = 'pizza';
+
+    function parseUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      const surf = (params.get('surface') || '').toLowerCase();
+      const mode = (params.get('mode') || '').toLowerCase();
+      if (surf === 'oled' || surf === 'dark') {
+        activeSurface = 'oled';
+      } else if (surf === 'light') {
+        activeSurface = 'light';
+      }
+      if (mode === 'mono' || mode === 'monochrome') {
+        activeMode = 'mono';
+      } else if (mode === 'color') {
+        activeMode = 'color';
+      }
+    }
+
+    function syncControlButtons() {
+      document.querySelectorAll('[data-mode-btn]').forEach(function(btn) {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-mode-btn') === activeMode ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-surf-btn]').forEach(function(btn) {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-surf-btn') === activeSurface ? 'true' : 'false');
+      });
+    }
+
+    function renderAll() {
+      springControllers.length = 0;
+      const stageCls = activeSurface === 'oled' ? 'stage-oled' : 'stage-light';
+      const altMode = activeMode === 'color' ? 'mono' : 'color';
+      const altLabel = activeMode === 'color' ? 'Mono' : 'Color';
+
+      // Cabecera joya pizza sobre #18181B
+      const headerJewel = document.getElementById('header-pizza-jewel');
+      headerJewel.innerHTML = renderContextualGlass('pizza', 24, 'color', 'oled', 'full', true);
+      attachSpring(headerJewel);
+
+      // Sección 1: 5 tarjetas protagonistas
+      const heroGrid = document.getElementById('hero-five-grid');
+      heroGrid.innerHTML = ICON_SPECS.map(function(spec) {
+        const isSel = spec.slug === selectedSlug;
+        return (
+          '<button type="button" class="hero-card" role="listitem" data-hero-slug="' + spec.slug + '" aria-pressed="' + (isSel ? 'true' : 'false') + '">' +
+            '<div class="hero-stage ' + stageCls + '">' +
+              '<div class="hero-main-glyph">' +
+                renderContextualGlass(spec.slug, 56, activeMode, activeSurface, 'full', true) +
+              '</div>' +
+              '<div class="hero-compare-bar tabular">' +
+                '<span class="hero-mini-pair">' +
+                  renderContextualGlass(spec.slug, 24, activeMode, activeSurface, 'full', false) +
+                  '<span>24px</span>' +
+                '</span>' +
+                '<span class="hero-mini-pair">' +
+                  renderContextualGlass(spec.slug, 24, altMode, activeSurface, 'full', false) +
+                  '<span>' + altLabel + '</span>' +
+                '</span>' +
+              '</div>' +
+            '</div>' +
+            '<div class="hero-meta">' +
+              '<div class="hero-meta-top">' +
+                '<span class="hero-domain">' + spec.domain + '</span>' +
+                '<span class="hero-slug mono">' + spec.slug + '</span>' +
+              '</div>' +
+              '<span class="hero-recipe-desc">' + spec.subtitle + '</span>' +
+            '</div>' +
+          '</button>'
+        );
+      }).join('');
+
+      heroGrid.querySelectorAll('[data-hero-slug]').forEach(function(card) {
+        attachSpring(card);
+        card.addEventListener('click', function() {
+          selectedSlug = card.getAttribute('data-hero-slug');
+          renderAll();
+        });
+      });
+
+      // Sección 2: Desglose anatómico de 4 capas + resultado final a 72px
+      const selSpec = getSpec(selectedSlug);
+      const pal = resolvePalette(selectedSlug, activeMode, activeSurface);
+      document.getElementById('anatomy-title').textContent = selSpec.domain + ' · ' + selSpec.subtitle;
+      document.getElementById('anatomy-badge').textContent = (
+        selectedSlug + ' · ' + (activeMode === 'color' ? '2 canales cromáticos' : 'monocromo Zinc') +
+        ' · ' + (activeSurface === 'oled' ? 'OLED #09090B' : 'Claro #FFFFFF')
+      );
+
+      const steps = [
+        {
+          title: '1. Luz trasera obs-back',
+          spec: pal.obsBack[0] + ' → ' + pal.obsBack[1],
+          part: 'back-raw',
+          extraCls: '',
+          spring: false
+        },
+        {
+          title: '2. Refracción blur 1.6',
+          spec: 'mask-in + feGaussianBlur 1.6',
+          part: 'refraction',
+          extraCls: '',
+          spring: false
+        },
+        {
+          title: '3. Cristal tintado 8–14%',
+          spec: pal.glass[0] + ' @ ' + pal.glass[1].toFixed(2),
+          part: 'glass-only',
+          extraCls: '',
+          spring: false
+        },
+        {
+          title: '4. Bisel 0.75u + Detalle',
+          spec: pal.obsFront[0] + ' → ' + pal.obsFront[1],
+          part: 'bevel-front',
+          extraCls: 'bevel-contrast',
+          spring: false
+        },
+        {
+          title: '= Resultado final',
+          spec: 'Ensamble óptico completo',
+          part: 'full',
+          extraCls: '',
+          spring: true
+        }
+      ];
+
+      const anatomyGrid = document.getElementById('anatomy-steps-grid');
+      anatomyGrid.innerHTML = steps.map(function(st) {
+        return (
+          '<div class="anatomy-step ' + stageCls + (st.extraCls ? ' ' + st.extraCls : '') + '">' +
+            '<span class="anatomy-step-title tabular">' + st.title + '</span>' +
+            renderContextualGlass(selectedSlug, 72, activeMode, activeSurface, st.part, st.spring) +
+            '<span class="anatomy-step-spec mono tabular">' + st.spec + '</span>' +
+          '</div>'
+        );
+      }).join('');
+      const lastAnatomyStep = anatomyGrid.lastElementChild;
+      if (lastAnatomyStep) attachSpring(lastAnatomyStep);
+
+      // Sección 3: Prueba de Hermandad (Sidebar + 5 KPI Cards)
+      const sibFrame = document.getElementById('sibling-frame');
+      sibFrame.classList.toggle('is-oled', activeSurface === 'oled');
+
+      const sibSidebar = document.getElementById('sibling-sidebar');
+      sibSidebar.innerHTML = ICON_SPECS.map(function(spec) {
+        const isCurrent = spec.slug === selectedSlug;
+        return (
+          '<button type="button" class="sib-nav-btn" data-sib-slug="' + spec.slug + '"' + (isCurrent ? ' aria-current="page"' : '') + '>' +
+            renderContextualGlass(spec.slug, 18, activeMode, activeSurface, 'full', false) +
+            '<span>' + spec.navLabel + '</span>' +
+          '</button>'
+        );
+      }).join('');
+
+      sibSidebar.querySelectorAll('[data-sib-slug]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          selectedSlug = btn.getAttribute('data-sib-slug');
+          renderAll();
+        });
+      });
+
+      const sibKpiGrid = document.getElementById('sibling-kpi-grid');
+      sibKpiGrid.innerHTML = ICON_SPECS.map(function(spec) {
+        return (
+          '<div class="sibling-kpi-card" data-kpi-slug="' + spec.slug + '">' +
+            '<div class="sib-kpi-top">' +
+              '<span class="sib-kpi-label">' + spec.kpiLabel + '</span>' +
+              renderContextualGlass(spec.slug, 24, activeMode, activeSurface, 'full', true) +
+            '</div>' +
+            '<div>' +
+              '<div class="sib-kpi-val tabular nowrap">' + spec.kpiValue + '</div>' +
+              '<div class="sib-kpi-foot tabular nowrap">' + spec.kpiFoot + '</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }).join('');
+
+      sibKpiGrid.querySelectorAll('.sibling-kpi-card').forEach(attachSpring);
+    }
+
+    /* ── Copiado de receta SVG limpia del icono seleccionado ── */
+    let toastTimer = 0;
+    function copySelectedSvg() {
+      const cleanSvg = renderContextualGlass(selectedSlug, 24, activeMode, activeSurface, 'full', false);
+      function showDone() {
+        const toast = document.getElementById('copy-toast');
+        const label = document.getElementById('cta-copy-label');
+        toast.textContent = 'Receta SVG (' + selectedSlug + ') copiada';
+        toast.classList.add('is-visible');
+        label.textContent = 'Receta SVG copiada';
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function() {
+          toast.classList.remove('is-visible');
+          label.textContent = 'Copiar receta SVG';
+        }, 2000);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(cleanSvg).then(showDone).catch(function() {
+          fallbackCopy(cleanSvg);
+          showDone();
+        });
+      } else {
+        fallbackCopy(cleanSvg);
+        showDone();
+      }
+    }
+
+    function fallbackCopy(txt) {
+      const ta = document.createElement('textarea');
+      ta.value = txt;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (_e) {}
+      document.body.removeChild(ta);
+    }
+
+    /* ── Inicialización de eventos ── */
+    document.getElementById('nav-back-icon').innerHTML = renderUiOutline('arrow-left', 16);
+    document.getElementById('cta-copy-icon').innerHTML = renderUiOutline('copy', 16);
+    document.getElementById('spring-btn-icon').innerHTML = renderUiOutline('sparkles', 16);
+
+    document.querySelectorAll('[data-mode-btn]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        activeMode = btn.getAttribute('data-mode-btn');
+        syncControlButtons();
+        renderAll();
+      });
+    });
+
+    document.querySelectorAll('[data-surf-btn]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        activeSurface = btn.getAttribute('data-surf-btn');
+        syncControlButtons();
+        renderAll();
+      });
+    });
+
+    document.getElementById('btn-spring-wave').addEventListener('click', function() {
+      springControllers.forEach(function(fn, idx) {
+        setTimeout(fn, idx * 45);
+      });
+    });
+
+    document.getElementById('btn-copy-recipe').addEventListener('click', copySelectedSvg);
+
+    parseUrlParams();
+    syncControlButtons();
+    renderAll();
+  </script>
+</body>
+</html>
