@@ -4597,7 +4597,9 @@
     "phosphorSlug": "bone",
     "inPos": false,
     "posUses": 0,
-    "lucideAliases": [],
+    "lucideAliases": [
+      "Drumstick"
+    ],
     "posModules": [],
     "keywords": "bone bone mascota hueso mascota"
   },
@@ -5229,5 +5231,362 @@
     "lucideAliases": [],
     "posModules": [],
     "keywords": "windmill windmill molino artesanal molino harina trigo"
+  },
+  {
+    "id": "phos-cookie",
+    "slug": "cookie",
+    "name": "Cookie",
+    "label": "Galletas y postres",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "cookie",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Cookie"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "cookie cookie galletas y postres categoria comida bebida cookie"
+  },
+  {
+    "id": "phos-beer",
+    "slug": "beer",
+    "name": "Beer",
+    "label": "Cerveza y tarro",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "beer-stein",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Beer"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "beer beer-stein cerveza y tarro categoria comida bebida beer"
+  },
+  {
+    "id": "phos-wine",
+    "slug": "wine",
+    "name": "Wine",
+    "label": "Vino y copa",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "wine",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Wine"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "wine wine vino y copa categoria comida bebida wine"
+  },
+  {
+    "id": "phos-soup",
+    "slug": "soup",
+    "name": "Soup",
+    "label": "Sopa caliente",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "bowl-steam",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Soup"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "soup bowl-steam sopa caliente categoria comida bebida soup"
+  },
+  {
+    "id": "phos-sandwich",
+    "slug": "sandwich",
+    "name": "Sandwich",
+    "label": "Hamburguesa o sándwich",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "hamburger",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Sandwich"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "sandwich hamburger hamburguesa o sándwich categoria comida bebida sandwich"
+  },
+  {
+    "id": "phos-cake",
+    "slug": "cake",
+    "name": "Cake",
+    "label": "Pastel y rebanada",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "cake",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Cake"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "cake cake pastel y rebanada categoria comida bebida cake"
+  },
+  {
+    "id": "phos-salad",
+    "slug": "salad",
+    "name": "Salad",
+    "label": "Ensalada fresca",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "bowl-food",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Salad"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "salad bowl-food ensalada fresca categoria comida bebida salad"
+  },
+  {
+    "id": "phos-fish",
+    "slug": "fish",
+    "name": "Fish",
+    "label": "Mariscos y pescado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "fish",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Fish"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "fish fish mariscos y pescado categoria comida bebida fish"
+  },
+  {
+    "id": "phos-beef",
+    "slug": "beef",
+    "name": "Beef",
+    "label": "Especialidad picante / carne",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "pepper",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Beef"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "beef pepper especialidad picante / carne categoria comida bebida beef"
+  },
+  {
+    "id": "phos-milk",
+    "slug": "milk",
+    "name": "Milk",
+    "label": "Botella y lácteos",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "beer-bottle",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Milk"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "milk beer-bottle botella y lácteos categoria comida bebida milk"
+  },
+  {
+    "id": "phos-apple",
+    "slug": "apple",
+    "name": "Apple",
+    "label": "Fruta y manzana",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "apple-logo",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Apple"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "apple apple-logo fruta y manzana categoria comida bebida apple"
+  },
+  {
+    "id": "phos-cherry",
+    "slug": "cherry",
+    "name": "Cherry",
+    "label": "Cerezas y toppings",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "cherries",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Cherry"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "cherry cherries cerezas y toppings categoria comida bebida cherry"
+  },
+  {
+    "id": "phos-citrus",
+    "slug": "citrus",
+    "name": "Citrus",
+    "label": "Cítricos y rodaja",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "orange-slice",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Citrus"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "citrus orange-slice cítricos y rodaja categoria comida bebida citrus"
+  },
+  {
+    "id": "phos-grape",
+    "slug": "grape",
+    "name": "Grape",
+    "label": "Vegetales e ingredientes",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "carrot",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Grape"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "grape carrot vegetales e ingredientes categoria comida bebida grape"
+  },
+  {
+    "id": "phos-candy",
+    "slug": "candy",
+    "name": "Candy",
+    "label": "Queso y dulces",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "cheese",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Candy"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "candy cheese queso y dulces categoria comida bebida candy"
+  },
+  {
+    "id": "phos-croissant",
+    "slug": "croissant",
+    "name": "Croissant",
+    "label": "Pan horneado",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "bread",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Croissant"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "croissant bread pan horneado categoria comida bebida croissant"
+  },
+  {
+    "id": "phos-popcorn",
+    "slug": "popcorn",
+    "name": "Popcorn",
+    "label": "Botanas y palomitas",
+    "origin": "phosphor-0-token",
+    "sourceGroup": "compiler",
+    "sourceLabel": "Compilado 0-Tokens",
+    "category": "Pedidos y Reparto",
+    "dslKey": null,
+    "phosphorSlug": "popcorn",
+    "inPos": true,
+    "posUses": 1,
+    "lucideAliases": [
+      "Popcorn"
+    ],
+    "posModules": [
+      "categories"
+    ],
+    "keywords": "popcorn popcorn botanas y palomitas categoria comida bebida popcorn"
   }
 ]

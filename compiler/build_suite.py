@@ -64,7 +64,9 @@ def generate_react_component_tsx(catalog: list[dict]) -> str:
     entries_json = json.dumps(icon_entries, ensure_ascii=False, separators=(",", ":"))
     aliases_json = json.dumps(alias_map, ensure_ascii=False, separators=(",", ":"))
 
-    return f"""import * as React from "react";
+    return f""""use client";
+
+import * as React from "react";
 
 export type IuSoftIconVariant = "glass" | "outline" | "solid" | "duotone";
 export type IuSoftIconSurface = "auto" | "light" | "dark" | "emerald" | "emerald-light";
@@ -161,7 +163,16 @@ export const IUSOFT_SURFACE_TOKENS: Record<Exclude<IuSoftIconSurface, "auto">, R
  * Hoja CSS opcional para activar cascada automática en contenedores oscuros (`.dark`, `/driver`, `[data-iusoft-surface]`).
  */
 export const IUSOFT_SURFACE_CSS = `
-.dark, [data-iusoft-surface="dark"], .driver-pwa {{
+.dark,
+[data-theme="dark"],
+[data-iusoft-surface="dark"],
+[data-driver-portal],
+.driver-pwa,
+.bg-primary,
+[class*="bg-[#18181B]"],
+[class*="bg-[#09090B]"],
+[class*="bg-zinc-900"],
+[class*="bg-zinc-950"] {{
   --iusoft-obs-top: #FAFAFA;
   --iusoft-obs-bottom: #A1A1AA;
   --iusoft-glass-top: #71717A;
@@ -175,7 +186,8 @@ export const IUSOFT_SURFACE_CSS = `
   --iusoft-bevel-bottom: #FFFFFF;
   --iusoft-bevel-bottom-op: 0.08;
 }}
-[data-iusoft-surface="emerald"] {{
+[data-iusoft-surface="emerald"],
+[class*="bg-[#052E16]"] {{
   --iusoft-obs-top: #4ADE80;
   --iusoft-obs-bottom: #10B981;
   --iusoft-glass-top: #10B981;
@@ -189,7 +201,9 @@ export const IUSOFT_SURFACE_CSS = `
   --iusoft-bevel-bottom: #6EE7B7;
   --iusoft-bevel-bottom-op: 0.10;
 }}
-[data-iusoft-surface="emerald-light"] {{
+[data-iusoft-surface="emerald-light"],
+[class*="bg-[#E7F8EE]"],
+[class*="bg-[#22C55E]"] {{
   --iusoft-obs-top: #0D7A5C;
   --iusoft-obs-bottom: #052E16;
   --iusoft-glass-top: #6EE7B7;
@@ -203,28 +217,90 @@ export const IUSOFT_SURFACE_CSS = `
   --iusoft-bevel-bottom: #FFFFFF;
   --iusoft-bevel-bottom-op: 0;
 }}
+[class*="bg-[#0D7A5C]"],
+[class*="bg-[#16A34A]"] {{
+  --iusoft-obs-top: #FFFFFF;
+  --iusoft-obs-bottom: #D1FAE5;
+  --iusoft-glass-top: #6EE7B7;
+  --iusoft-glass-top-op: 0.46;
+  --iusoft-glass-bottom: #047857;
+  --iusoft-glass-bottom-op: 0.48;
+  --iusoft-bevel-top: #FFFFFF;
+  --iusoft-bevel-top-op: 0.94;
+  --iusoft-bevel-mid: #FFFFFF;
+  --iusoft-bevel-mid-op: 0.28;
+  --iusoft-bevel-bottom: #FFFFFF;
+  --iusoft-bevel-bottom-op: 0.08;
+}}
+.dark .bg-primary,
+[data-theme="dark"] .bg-primary,
+[data-driver-portal] [class*="bg-[var(--driver-primary)]"],
+[data-driver-portal] [class*="bg-[#FAFAFA]"],
+[data-driver-portal] .bg-white {{
+  --iusoft-obs-top: #5B5B5E;
+  --iusoft-obs-bottom: #161617;
+  --iusoft-glass-top: #A1A1AA;
+  --iusoft-glass-top-op: 0.52;
+  --iusoft-glass-bottom: #71717A;
+  --iusoft-glass-bottom-op: 0.48;
+  --iusoft-bevel-top: #FFFFFF;
+  --iusoft-bevel-top-op: 0.92;
+  --iusoft-bevel-mid: #FFFFFF;
+  --iusoft-bevel-mid-op: 0.26;
+  --iusoft-bevel-bottom: #FFFFFF;
+  --iusoft-bevel-bottom-op: 0;
+}}
 `;
+
+let surfaceCssInjected = false;
+function ensureSurfaceStyles() {{
+  if (surfaceCssInjected || typeof document === "undefined") return;
+  surfaceCssInjected = true;
+  if (document.getElementById("iusoft-surface-css")) return;
+  const styleEl = document.createElement("style");
+  styleEl.id = "iusoft-surface-css";
+  styleEl.textContent = IUSOFT_SURFACE_CSS;
+  document.head.appendChild(styleEl);
+}}
 
 const ICON_DATA: Record<string, IconVariants> = {entries_json};
 const ICON_ALIASES: Record<string, string> = {aliases_json};
 
 export const IUSOFT_ICON_SLUGS = Object.keys(ICON_DATA);
 
-export function IuSoftIcon({{
-  name,
-  variant = "glass",
-  surface = "auto",
-  size = 24,
-  strokeWidth: _ignoredStrokeWidth,
-  animate = "hover",
-  style,
-  onMouseEnter,
-  ...svgProps
-}}: IuSoftIconProps) {{
+export const IuSoftIcon = React.forwardRef<SVGSVGElement, IuSoftIconProps>(function IuSoftIcon(
+  {{
+    name,
+    variant = "glass",
+    surface = "auto",
+    size = 24,
+    strokeWidth: _ignoredStrokeWidth,
+    animate = "hover",
+    className,
+    style,
+    onMouseEnter,
+    ...svgProps
+  }},
+  forwardedRef
+) {{
   const rawId = React.useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const pfx = `iusoft-${{rawId}}`;
   const svgRef = React.useRef<SVGSVGElement | null>(null);
   const rafRef = React.useRef<number | null>(null);
+
+  const setMergedRef = React.useCallback(
+    (node: SVGSVGElement | null) => {{
+      svgRef.current = node;
+      if (typeof forwardedRef === "function") forwardedRef(node);
+      else if (forwardedRef) (forwardedRef as React.MutableRefObject<SVGSVGElement | null>).current = node;
+    }},
+    [forwardedRef]
+  );
+
+  const useSafeInsertion = typeof React.useInsertionEffect === "function" ? React.useInsertionEffect : React.useEffect;
+  useSafeInsertion(() => {{
+    ensureSurfaceStyles();
+  }}, []);
 
   React.useEffect(() => {{
     return () => {{
@@ -288,23 +364,26 @@ export function IuSoftIcon({{
   const slug = ICON_ALIASES[name] || ICON_ALIASES[String(name).toLowerCase()];
   const entry = slug ? ICON_DATA[slug] : undefined;
   if (!entry) return null;
+  const mergedClassName = ["lucide", `lucide-${{slug}}`, className].filter(Boolean).join(" ");
 
   if (variant === "glass") {{
     const g = entry.glass;
     const bevelD = g.inner !== undefined ? (g.inner ? `${{g.glass}} ${{g.inner}}` : g.glass) : (g.bevel || g.glass);
-    const mergedStyle: React.CSSProperties | undefined =
+    const baseStyle: React.CSSProperties = {{ flexShrink: 0, ...style }};
+    const mergedStyle: React.CSSProperties =
       surface === "auto"
-        ? style
-        : ({{ ...IUSOFT_SURFACE_TOKENS[surface], ...style }} as React.CSSProperties);
+        ? baseStyle
+        : ({{ ...IUSOFT_SURFACE_TOKENS[surface], ...baseStyle }} as React.CSSProperties);
 
     return (
       <svg
-        ref={{svgRef}}
+        ref={{setMergedRef}}
         xmlns="http://www.w3.org/2000/svg"
         width={{size}}
         height={{size}}
         viewBox="0 0 24 24"
         fill="none"
+        className={{mergedClassName}}
         style={{mergedStyle}}
         onMouseEnter={{handleMouseEnter}}
         {{...svgProps}}
@@ -394,25 +473,43 @@ export function IuSoftIcon({{
   const rawInner = entry[variant];
   return (
     <svg
-      ref={{svgRef}}
+      ref={{setMergedRef}}
       xmlns="http://www.w3.org/2000/svg"
       width={{size}}
       height={{size}}
       viewBox="0 0 24 24"
       fill="currentColor"
-      style={{style}}
+      className={{mergedClassName}}
+      style={{{{ flexShrink: 0, ...style }}}}
       onMouseEnter={{handleMouseEnter}}
       {{...svgProps}}
     >
       <g className="iusoft-whole-xf" dangerouslySetInnerHTML={{{{ __html: rawInner }}}} />
     </svg>
   );
-}}
+}});
 """
 
 
 def generate_sarchi_adapter_tsx(catalog: list[dict]) -> str:
     """Genera `dist/sarchi-icons.tsx`: adaptador drop-in compatible con `lucide-react` para Sarchi Pizza POS."""
+    micro_outline_slugs = {
+        "loader-2",
+        "check",
+        "check-check",
+        "x",
+        "plus",
+        "minus",
+        "chevron-right",
+        "chevron-left",
+        "chevron-down",
+        "chevron-up",
+        "chevrons-up-down",
+        "more-horizontal",
+        "more-vertical",
+        "grip-vertical",
+        "arrow-up-down",
+    }
     exported_identifiers = []
     seen = set()
     for item in catalog:
@@ -425,14 +522,16 @@ def generate_sarchi_adapter_tsx(catalog: list[dict]) -> str:
         for sym in candidates:
             if sym not in seen:
                 seen.add(sym)
-                is_spinner = "loader" in item["slug"]
-                default_var = '"outline"' if is_spinner else "undefined"
+                is_micro = item["slug"] in micro_outline_slugs or "loader" in item["slug"]
+                default_var = '"outline"' if is_micro else "undefined"
                 exported_identifiers.append(
                     f'export const {sym}: SarchiLucideIcon = createSarchiIcon("{item["slug"]}", "{sym}", {default_var});'
                 )
 
     exports_block = "\n".join(exported_identifiers)
-    return f"""import * as React from "react";
+    return f""""use client";
+
+import * as React from "react";
 import {{
   IuSoftIcon,
   IUSOFT_SURFACE_CSS,
@@ -511,9 +610,9 @@ function resolveSmartVariant(
   const targetMode = explicitVariant || ctxVariant;
   if (targetMode !== "auto") return targetMode;
 
-  // Regla GPU Sarchi: iconos compactos (size <= 15 o clases size-3 / size-3.5 / w-3 / h-3) usan outline 0-blur
+  // Regla GPU y nitidez Sarchi: iconos compactos (size <= 15 o clases size/w/h 0.5..3.5 / px) usan outline 0-blur
   if (typeof size === "number" && size <= 15) return "outline";
-  if (/\\b(size-3(?:\\.5)?|[wh]-3(?:\\.5)?)\\b/.test(cls)) return "outline";
+  if (/\\b(?:size|w|h)-(?:0\\.5|1(?:\\.5)?|2(?:\\.5)?|3(?:\\.5)?|px)\\b/.test(cls)) return "outline";
   return "glass";
 }}
 
@@ -540,6 +639,7 @@ function createSarchiIcon(
     const resolvedSurface = surface || ctx.surface;
     return (
       <IuSoftIcon
+        ref={{_ref}}
         name={{slug}}
         variant={{resolvedVariant}}
         surface={{resolvedSurface}}

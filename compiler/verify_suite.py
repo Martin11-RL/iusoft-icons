@@ -91,7 +91,7 @@ def main():
     if not tsx_fp.exists():
         fail("Falta dist/iusoft-icons-react.tsx")
     tsx_txt = tsx_fp.read_text(encoding="utf-8")
-    if "export function IuSoftIcon" not in tsx_txt or "IUSOFT_SURFACE_TOKENS" not in tsx_txt:
+    if ("export function IuSoftIcon" not in tsx_txt and "export const IuSoftIcon" not in tsx_txt) or "IUSOFT_SURFACE_TOKENS" not in tsx_txt:
         fail("dist/iusoft-icons-react.tsx incompleto")
 
     sarchi_fp = REPO_ROOT / "dist" / "sarchi-icons.tsx"

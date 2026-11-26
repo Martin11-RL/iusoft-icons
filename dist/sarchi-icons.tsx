@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import {
   IuSoftIcon,
@@ -77,9 +79,9 @@ function resolveSmartVariant(
   const targetMode = explicitVariant || ctxVariant;
   if (targetMode !== "auto") return targetMode;
 
-  // Regla GPU Sarchi: iconos compactos (size <= 15 o clases size-3 / size-3.5 / w-3 / h-3) usan outline 0-blur
+  // Regla GPU y nitidez Sarchi: iconos compactos (size <= 15 o clases size/w/h 0.5..3.5 / px) usan outline 0-blur
   if (typeof size === "number" && size <= 15) return "outline";
-  if (/\b(size-3(?:\.5)?|[wh]-3(?:\.5)?)\b/.test(cls)) return "outline";
+  if (/\b(?:size|w|h)-(?:0\.5|1(?:\.5)?|2(?:\.5)?|3(?:\.5)?|px)\b/.test(cls)) return "outline";
   return "glass";
 }
 
@@ -106,6 +108,7 @@ function createSarchiIcon(
     const resolvedSurface = surface || ctx.surface;
     return (
       <IuSoftIcon
+        ref={_ref}
         name={slug}
         variant={resolvedVariant}
         surface={resolvedSurface}
@@ -131,7 +134,7 @@ export const Pizza: SarchiLucideIcon = createSarchiIcon("pizza", "Pizza", undefi
 export const Flame: SarchiLucideIcon = createSarchiIcon("flame", "Flame", undefined);
 export const Loader2: SarchiLucideIcon = createSarchiIcon("loader-2", "Loader2", "outline");
 export const Loader2Icon: SarchiLucideIcon = createSarchiIcon("loader-2", "Loader2Icon", "outline");
-export const Plus: SarchiLucideIcon = createSarchiIcon("plus", "Plus", undefined);
+export const Plus: SarchiLucideIcon = createSarchiIcon("plus", "Plus", "outline");
 export const MapPin: SarchiLucideIcon = createSarchiIcon("map-pin", "MapPin", undefined);
 export const CheckCircle2: SarchiLucideIcon = createSarchiIcon("check-circle-2", "CheckCircle2", undefined);
 export const CheckCircle: SarchiLucideIcon = createSarchiIcon("check-circle-2", "CheckCircle", undefined);
@@ -141,10 +144,10 @@ export const RefreshCw: SarchiLucideIcon = createSarchiIcon("refresh-cw", "Refre
 export const Trash2: SarchiLucideIcon = createSarchiIcon("trash-2", "Trash2", undefined);
 export const Clock: SarchiLucideIcon = createSarchiIcon("clock", "Clock", undefined);
 export const Clock2: SarchiLucideIcon = createSarchiIcon("clock", "Clock2", undefined);
-export const Check: SarchiLucideIcon = createSarchiIcon("check", "Check", undefined);
-export const CheckIcon: SarchiLucideIcon = createSarchiIcon("check", "CheckIcon", undefined);
-export const X: SarchiLucideIcon = createSarchiIcon("x", "X", undefined);
-export const XIcon: SarchiLucideIcon = createSarchiIcon("x", "XIcon", undefined);
+export const Check: SarchiLucideIcon = createSarchiIcon("check", "Check", "outline");
+export const CheckIcon: SarchiLucideIcon = createSarchiIcon("check", "CheckIcon", "outline");
+export const X: SarchiLucideIcon = createSarchiIcon("x", "X", "outline");
+export const XIcon: SarchiLucideIcon = createSarchiIcon("x", "XIcon", "outline");
 export const AlertTriangle: SarchiLucideIcon = createSarchiIcon("alert-triangle", "AlertTriangle", undefined);
 export const TriangleAlert: SarchiLucideIcon = createSarchiIcon("alert-triangle", "TriangleAlert", undefined);
 export const TriangleAlertIcon: SarchiLucideIcon = createSarchiIcon("alert-triangle", "TriangleAlertIcon", undefined);
@@ -161,8 +164,8 @@ export const Phone: SarchiLucideIcon = createSarchiIcon("phone", "Phone", undefi
 export const Smartphone: SarchiLucideIcon = createSarchiIcon("smartphone", "Smartphone", undefined);
 export const ExternalLink: SarchiLucideIcon = createSarchiIcon("external-link", "ExternalLink", undefined);
 export const Download: SarchiLucideIcon = createSarchiIcon("download", "Download", undefined);
-export const ChevronRight: SarchiLucideIcon = createSarchiIcon("chevron-right", "ChevronRight", undefined);
-export const ChevronRightIcon: SarchiLucideIcon = createSarchiIcon("chevron-right", "ChevronRightIcon", undefined);
+export const ChevronRight: SarchiLucideIcon = createSarchiIcon("chevron-right", "ChevronRight", "outline");
+export const ChevronRightIcon: SarchiLucideIcon = createSarchiIcon("chevron-right", "ChevronRightIcon", "outline");
 export const CreditCard: SarchiLucideIcon = createSarchiIcon("credit-card", "CreditCard", undefined);
 export const History: SarchiLucideIcon = createSarchiIcon("history", "History", undefined);
 export const User: SarchiLucideIcon = createSarchiIcon("user", "User", undefined);
@@ -175,8 +178,8 @@ export const Eye: SarchiLucideIcon = createSarchiIcon("eye", "Eye", undefined);
 export const Sparkles: SarchiLucideIcon = createSarchiIcon("sparkles", "Sparkles", undefined);
 export const Wallet: SarchiLucideIcon = createSarchiIcon("wallet", "Wallet", undefined);
 export const MessageCircle: SarchiLucideIcon = createSarchiIcon("message-circle", "MessageCircle", undefined);
-export const ChevronDown: SarchiLucideIcon = createSarchiIcon("chevron-down", "ChevronDown", undefined);
-export const ChevronDownIcon: SarchiLucideIcon = createSarchiIcon("chevron-down", "ChevronDownIcon", undefined);
+export const ChevronDown: SarchiLucideIcon = createSarchiIcon("chevron-down", "ChevronDown", "outline");
+export const ChevronDownIcon: SarchiLucideIcon = createSarchiIcon("chevron-down", "ChevronDownIcon", "outline");
 export const Info: SarchiLucideIcon = createSarchiIcon("info", "Info", undefined);
 export const InfoIcon: SarchiLucideIcon = createSarchiIcon("info", "InfoIcon", undefined);
 export const Save: SarchiLucideIcon = createSarchiIcon("save", "Save", undefined);
@@ -206,8 +209,8 @@ export const ShoppingCart: SarchiLucideIcon = createSarchiIcon("shopping-cart", 
 export const ArrowRight: SarchiLucideIcon = createSarchiIcon("arrow-right", "ArrowRight", undefined);
 export const Bluetooth: SarchiLucideIcon = createSarchiIcon("bluetooth", "Bluetooth", undefined);
 export const ChefHat: SarchiLucideIcon = createSarchiIcon("chef-hat", "ChefHat", undefined);
-export const ChevronLeft: SarchiLucideIcon = createSarchiIcon("chevron-left", "ChevronLeft", undefined);
-export const ChevronLeftIcon: SarchiLucideIcon = createSarchiIcon("chevron-left", "ChevronLeftIcon", undefined);
+export const ChevronLeft: SarchiLucideIcon = createSarchiIcon("chevron-left", "ChevronLeft", "outline");
+export const ChevronLeftIcon: SarchiLucideIcon = createSarchiIcon("chevron-left", "ChevronLeftIcon", "outline");
 export const ClipboardList: SarchiLucideIcon = createSarchiIcon("clipboard-list", "ClipboardList", undefined);
 export const EyeOff: SarchiLucideIcon = createSarchiIcon("eye-off", "EyeOff", undefined);
 export const PowerOff: SarchiLucideIcon = createSarchiIcon("power-off", "PowerOff", undefined);
@@ -220,7 +223,7 @@ export const CalendarClock: SarchiLucideIcon = createSarchiIcon("calendar-clock"
 export const Layers: SarchiLucideIcon = createSarchiIcon("layers", "Layers", undefined);
 export const LogOut: SarchiLucideIcon = createSarchiIcon("log-out", "LogOut", undefined);
 export const MessageSquare: SarchiLucideIcon = createSarchiIcon("message-square", "MessageSquare", undefined);
-export const Minus: SarchiLucideIcon = createSarchiIcon("minus", "Minus", undefined);
+export const Minus: SarchiLucideIcon = createSarchiIcon("minus", "Minus", "outline");
 export const SlidersHorizontal: SarchiLucideIcon = createSarchiIcon("sliders-horizontal", "SlidersHorizontal", undefined);
 export const Star: SarchiLucideIcon = createSarchiIcon("star", "Star", undefined);
 export const Sun: SarchiLucideIcon = createSarchiIcon("sun", "Sun", undefined);
@@ -240,8 +243,8 @@ export const Palette: SarchiLucideIcon = createSarchiIcon("palette", "Palette", 
 export const Timer: SarchiLucideIcon = createSarchiIcon("timer", "Timer", undefined);
 export const ArrowRightLeft: SarchiLucideIcon = createSarchiIcon("arrow-right-left", "ArrowRightLeft", undefined);
 export const ArrowLeftRight: SarchiLucideIcon = createSarchiIcon("arrow-right-left", "ArrowLeftRight", undefined);
-export const ArrowUpDown: SarchiLucideIcon = createSarchiIcon("arrow-up-down", "ArrowUpDown", undefined);
-export const ChevronUp: SarchiLucideIcon = createSarchiIcon("chevron-up", "ChevronUp", undefined);
+export const ArrowUpDown: SarchiLucideIcon = createSarchiIcon("arrow-up-down", "ArrowUpDown", "outline");
+export const ChevronUp: SarchiLucideIcon = createSarchiIcon("chevron-up", "ChevronUp", "outline");
 export const Filter: SarchiLucideIcon = createSarchiIcon("filter", "Filter", undefined);
 export const Home: SarchiLucideIcon = createSarchiIcon("home", "Home", undefined);
 export const Map: SarchiLucideIcon = createSarchiIcon("map", "Map", undefined);
@@ -256,13 +259,13 @@ export const Wifi: SarchiLucideIcon = createSarchiIcon("wifi", "Wifi", undefined
 export const AlertOctagon: SarchiLucideIcon = createSarchiIcon("alert-octagon", "AlertOctagon", undefined);
 export const ArrowUp: SarchiLucideIcon = createSarchiIcon("arrow-up", "ArrowUp", undefined);
 export const Bot: SarchiLucideIcon = createSarchiIcon("bot", "Bot", undefined);
-export const CheckCheck: SarchiLucideIcon = createSarchiIcon("check-check", "CheckCheck", undefined);
+export const CheckCheck: SarchiLucideIcon = createSarchiIcon("check-check", "CheckCheck", "outline");
 export const Hourglass: SarchiLucideIcon = createSarchiIcon("hourglass", "Hourglass", undefined);
 export const Landmark: SarchiLucideIcon = createSarchiIcon("landmark", "Landmark", undefined);
 export const Mail: SarchiLucideIcon = createSarchiIcon("mail", "Mail", undefined);
 export const Maximize2: SarchiLucideIcon = createSarchiIcon("maximize-2", "Maximize2", undefined);
-export const MoreHorizontal: SarchiLucideIcon = createSarchiIcon("more-horizontal", "MoreHorizontal", undefined);
-export const MoreHorizontalIcon: SarchiLucideIcon = createSarchiIcon("more-horizontal", "MoreHorizontalIcon", undefined);
+export const MoreHorizontal: SarchiLucideIcon = createSarchiIcon("more-horizontal", "MoreHorizontal", "outline");
+export const MoreHorizontalIcon: SarchiLucideIcon = createSarchiIcon("more-horizontal", "MoreHorizontalIcon", "outline");
 export const Rocket: SarchiLucideIcon = createSarchiIcon("rocket", "Rocket", undefined);
 export const ShieldX: SarchiLucideIcon = createSarchiIcon("shield-x", "ShieldX", undefined);
 export const Trash: SarchiLucideIcon = createSarchiIcon("trash", "Trash", undefined);
@@ -274,7 +277,7 @@ export const CalendarOff: SarchiLucideIcon = createSarchiIcon("calendar-off", "C
 export const Camera: SarchiLucideIcon = createSarchiIcon("camera", "Camera", undefined);
 export const Cloud: SarchiLucideIcon = createSarchiIcon("cloud", "Cloud", undefined);
 export const Crosshair: SarchiLucideIcon = createSarchiIcon("crosshair", "Crosshair", undefined);
-export const GripVertical: SarchiLucideIcon = createSarchiIcon("grip-vertical", "GripVertical", undefined);
+export const GripVertical: SarchiLucideIcon = createSarchiIcon("grip-vertical", "GripVertical", "outline");
 export const HelpCircle: SarchiLucideIcon = createSarchiIcon("help-circle", "HelpCircle", undefined);
 export const Link2: SarchiLucideIcon = createSarchiIcon("link-2", "Link2", undefined);
 export const List: SarchiLucideIcon = createSarchiIcon("list", "List", undefined);
@@ -295,7 +298,7 @@ export const Blend: SarchiLucideIcon = createSarchiIcon("blend", "Blend", undefi
 export const Bold: SarchiLucideIcon = createSarchiIcon("bold", "Bold", undefined);
 export const Building: SarchiLucideIcon = createSarchiIcon("building", "Building", undefined);
 export const Building2: SarchiLucideIcon = createSarchiIcon("building-2", "Building2", undefined);
-export const ChevronsUpDown: SarchiLucideIcon = createSarchiIcon("chevrons-up-down", "ChevronsUpDown", undefined);
+export const ChevronsUpDown: SarchiLucideIcon = createSarchiIcon("chevrons-up-down", "ChevronsUpDown", "outline");
 export const Circle: SarchiLucideIcon = createSarchiIcon("circle", "Circle", undefined);
 export const ClipboardCheck: SarchiLucideIcon = createSarchiIcon("clipboard-check", "ClipboardCheck", undefined);
 export const CloudOff: SarchiLucideIcon = createSarchiIcon("cloud-off", "CloudOff", undefined);
@@ -308,7 +311,7 @@ export const Hash: SarchiLucideIcon = createSarchiIcon("hash", "Hash", undefined
 export const Inbox: SarchiLucideIcon = createSarchiIcon("inbox", "Inbox", undefined);
 export const LayoutDashboard: SarchiLucideIcon = createSarchiIcon("layout-dashboard", "LayoutDashboard", undefined);
 export const Minimize2: SarchiLucideIcon = createSarchiIcon("minimize-2", "Minimize2", undefined);
-export const MoreVertical: SarchiLucideIcon = createSarchiIcon("more-vertical", "MoreVertical", undefined);
+export const MoreVertical: SarchiLucideIcon = createSarchiIcon("more-vertical", "MoreVertical", "outline");
 export const MousePointerClick: SarchiLucideIcon = createSarchiIcon("mouse-pointer-click", "MousePointerClick", undefined);
 export const NotebookText: SarchiLucideIcon = createSarchiIcon("notebook-text", "NotebookText", undefined);
 export const OctagonX: SarchiLucideIcon = createSarchiIcon("octagon-x", "OctagonX", undefined);
@@ -351,6 +354,7 @@ export const Beach: SarchiLucideIcon = createSarchiIcon("beach", "Beach", undefi
 export const Bed: SarchiLucideIcon = createSarchiIcon("bed", "Bed", undefined);
 export const Bell: SarchiLucideIcon = createSarchiIcon("bell", "Bell", undefined);
 export const Bone: SarchiLucideIcon = createSarchiIcon("bone", "Bone", undefined);
+export const Drumstick: SarchiLucideIcon = createSarchiIcon("bone", "Drumstick", undefined);
 export const Book: SarchiLucideIcon = createSarchiIcon("book", "Book", undefined);
 export const Bookmark: SarchiLucideIcon = createSarchiIcon("bookmark", "Bookmark", undefined);
 export const Broom: SarchiLucideIcon = createSarchiIcon("broom", "Broom", undefined);
@@ -388,3 +392,20 @@ export const Scooter: SarchiLucideIcon = createSarchiIcon("scooter", "Scooter", 
 export const Trophy: SarchiLucideIcon = createSarchiIcon("trophy", "Trophy", undefined);
 export const Umbrella: SarchiLucideIcon = createSarchiIcon("umbrella", "Umbrella", undefined);
 export const Windmill: SarchiLucideIcon = createSarchiIcon("windmill", "Windmill", undefined);
+export const Cookie: SarchiLucideIcon = createSarchiIcon("cookie", "Cookie", undefined);
+export const Beer: SarchiLucideIcon = createSarchiIcon("beer", "Beer", undefined);
+export const Wine: SarchiLucideIcon = createSarchiIcon("wine", "Wine", undefined);
+export const Soup: SarchiLucideIcon = createSarchiIcon("soup", "Soup", undefined);
+export const Sandwich: SarchiLucideIcon = createSarchiIcon("sandwich", "Sandwich", undefined);
+export const Cake: SarchiLucideIcon = createSarchiIcon("cake", "Cake", undefined);
+export const Salad: SarchiLucideIcon = createSarchiIcon("salad", "Salad", undefined);
+export const Fish: SarchiLucideIcon = createSarchiIcon("fish", "Fish", undefined);
+export const Beef: SarchiLucideIcon = createSarchiIcon("beef", "Beef", undefined);
+export const Milk: SarchiLucideIcon = createSarchiIcon("milk", "Milk", undefined);
+export const Apple: SarchiLucideIcon = createSarchiIcon("apple", "Apple", undefined);
+export const Cherry: SarchiLucideIcon = createSarchiIcon("cherry", "Cherry", undefined);
+export const Citrus: SarchiLucideIcon = createSarchiIcon("citrus", "Citrus", undefined);
+export const Grape: SarchiLucideIcon = createSarchiIcon("grape", "Grape", undefined);
+export const Candy: SarchiLucideIcon = createSarchiIcon("candy", "Candy", undefined);
+export const Croissant: SarchiLucideIcon = createSarchiIcon("croissant", "Croissant", undefined);
+export const Popcorn: SarchiLucideIcon = createSarchiIcon("popcorn", "Popcorn", undefined);
