@@ -1287,30 +1287,41 @@ def compile_phosphor_slug(phos_slug: str, assets_dir: pathlib.Path = DEFAULT_PHO
     }
 
 
-def render_standalone_svg(slug: str, variant: str, svg_data: dict) -> str:
-    """Serializa un archivo `.svg` 24x24 100% autocontenido con variables `--iusoft-*` y fallback estático."""
+def render_standalone_svg(slug: str, variant: str, svg_data: dict, palette_id: str = "sistema-grafito") -> str:
+    """Serializa un archivo `.svg` 24x24 100% autocontenido con refracción cromática contextual de 2 canales."""
+    import contextual_palettes as cp
+
     safe_id = re.sub(r"[^a-z0-9-]+", "-", slug.lower()).strip("-")
     pfx = f"iusoft-{safe_id}"
 
     if variant == "glass":
+        pal = cp.CONTEXTUAL_PALETTES.get(palette_id, cp.CONTEXTUAL_PALETTES["sistema-grafito"])["light"]
+        ob0, ob1 = pal["obsBack"]
+        g0, gop0, g1, gop1 = pal["glass"]
+        of0, of1 = pal["obsFront"]
+        bop0, bop1, bop2 = pal["bevel"]
+
         g = svg_data["glass"]
         inner_str = g.get("inner", "")
         bevel_d = f"{g['glass']} {inner_str}".strip() if "inner" in g else g.get("bevel", g["glass"])
-        back_m = "".join(f'<path d="{d}" fill="url(#{pfx}-obs)"/>' for d in g["back"])
-        front_m = "".join(f'<path d="{d}" fill="url(#{pfx}-obs)"/>' for d in g["front"])
+        back_m = "".join(f'<path d="{d}" fill="url(#{pfx}-obs-back)"/>' for d in g["back"])
+        front_m = "".join(f'<path d="{d}" fill="url(#{pfx}-obs-front)"/>' for d in g["front"])
         return (
             f'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">\n'
             f'  <defs>\n'
-            f'    <linearGradient id="{pfx}-obs" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse">'
-            f'<stop offset="0%" stop-color="#5B5B5E" style="stop-color:var(--iusoft-obs-top,#5B5B5E)"/>'
-            f'<stop offset="100%" stop-color="#161617" style="stop-color:var(--iusoft-obs-bottom,#161617)"/></linearGradient>\n'
+            f'    <linearGradient id="{pfx}-obs-back" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse">'
+            f'<stop offset="0%" stop-color="{ob0}" style="stop-color:var(--iusoft-obs-back-top,{ob0})"/>'
+            f'<stop offset="100%" stop-color="{ob1}" style="stop-color:var(--iusoft-obs-back-bottom,{ob1})"/></linearGradient>\n'
+            f'    <linearGradient id="{pfx}-obs-front" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse">'
+            f'<stop offset="0%" stop-color="{of0}" style="stop-color:var(--iusoft-obs-front-top,{of0})"/>'
+            f'<stop offset="100%" stop-color="{of1}" style="stop-color:var(--iusoft-obs-front-bottom,{of1})"/></linearGradient>\n'
             f'    <linearGradient id="{pfx}-glass" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse">'
-            f'<stop offset="0%" stop-color="#D4D4D8" stop-opacity="0.68" style="stop-color:var(--iusoft-glass-top,#D4D4D8);stop-opacity:var(--iusoft-glass-top-op,0.68)"/>'
-            f'<stop offset="100%" stop-color="#A1A1AA" stop-opacity="0.64" style="stop-color:var(--iusoft-glass-bottom,#A1A1AA);stop-opacity:var(--iusoft-glass-bottom-op,0.64)"/></linearGradient>\n'
+            f'<stop offset="0%" stop-color="{g0}" stop-opacity="{gop0}" style="stop-color:var(--iusoft-glass-top,{g0});stop-opacity:var(--iusoft-glass-top-op,{gop0})"/>'
+            f'<stop offset="100%" stop-color="{g1}" stop-opacity="{gop1}" style="stop-color:var(--iusoft-glass-bottom,{g1});stop-opacity:var(--iusoft-glass-bottom-op,{gop1})"/></linearGradient>\n'
             f'    <linearGradient id="{pfx}-bevel" x1="12" y1="{g["y1"]}" x2="12" y2="{g["y2"]}" gradientUnits="userSpaceOnUse">'
-            f'<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.96" style="stop-color:var(--iusoft-bevel-top,#FFFFFF);stop-opacity:var(--iusoft-bevel-top-op,0.96)"/>'
-            f'<stop offset="58%" stop-color="#FFFFFF" stop-opacity="0.28" style="stop-color:var(--iusoft-bevel-mid,#FFFFFF);stop-opacity:var(--iusoft-bevel-mid-op,0.28)"/>'
-            f'<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" style="stop-color:var(--iusoft-bevel-bottom,#FFFFFF);stop-opacity:var(--iusoft-bevel-bottom-op,0)"/></linearGradient>\n'
+            f'<stop offset="0%" stop-color="#FFFFFF" stop-opacity="{bop0}" style="stop-color:var(--iusoft-bevel-top,#FFFFFF);stop-opacity:var(--iusoft-bevel-top-op,{bop0})"/>'
+            f'<stop offset="58%" stop-color="#FFFFFF" stop-opacity="{bop1}" style="stop-color:var(--iusoft-bevel-mid,#FFFFFF);stop-opacity:var(--iusoft-bevel-mid-op,{bop1})"/>'
+            f'<stop offset="100%" stop-color="#FFFFFF" stop-opacity="{bop2}" style="stop-color:var(--iusoft-bevel-bottom,#FFFFFF);stop-opacity:var(--iusoft-bevel-bottom-op,{bop2})"/></linearGradient>\n'
             f'    <filter id="{pfx}-blur" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">'
             f'<feGaussianBlur stdDeviation="1.6"/></filter>\n'
             f'    <mask id="{pfx}-out" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40">'

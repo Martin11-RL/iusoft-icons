@@ -3,25 +3,26 @@
 import * as React from "react";
 import {
   IuSoftIcon,
+  CONTEXTUAL_PALETTES,
   IUSOFT_SURFACE_CSS,
   IUSOFT_SURFACE_TOKENS,
   type IuSoftIconName,
   type IuSoftIconSurface,
+  type IuSoftIconTone,
   type IuSoftIconVariant,
+  type IuSoftPaletteId,
 } from "./iusoft-icons-react";
 
-export { IuSoftIcon, IUSOFT_SURFACE_CSS, IUSOFT_SURFACE_TOKENS };
-export type { IuSoftIconName, IuSoftIconSurface, IuSoftIconVariant };
+export { IuSoftIcon, CONTEXTUAL_PALETTES, IUSOFT_SURFACE_CSS, IUSOFT_SURFACE_TOKENS };
+export type { IuSoftIconName, IuSoftIconSurface, IuSoftIconTone, IuSoftIconVariant, IuSoftPaletteId };
 
-/**
- * Propiedades 100% compatibles con `lucide-react` (`LucideProps`) + extensiones Glass/Superficie de Sarchi POS.
- */
 export interface LucideProps extends Omit<React.SVGProps<SVGSVGElement>, "name"> {
   size?: string | number;
   strokeWidth?: string | number;
   absoluteStrokeWidth?: boolean;
   variant?: IuSoftIconVariant | "auto";
   surface?: IuSoftIconSurface;
+  tone?: IuSoftIconTone;
   animate?: "hover" | "none";
 }
 
@@ -33,30 +34,32 @@ export type LucideIcon = SarchiLucideIcon;
 interface SarchiIconContextValue {
   defaultVariant: IuSoftIconVariant | "auto";
   surface: IuSoftIconSurface;
+  tone: IuSoftIconTone;
 }
 
 const SarchiIconContext = React.createContext<SarchiIconContextValue>({
   defaultVariant: "auto",
   surface: "auto",
+  tone: "contextual",
 });
 
 export interface SarchiIconProviderProps {
-  /**
-   * - `"auto"` (recomendado): `glass` en tamaños >= 18px (Sidebar, Headers, KPIs, Empty States) y `outline` ligero en
-   *   controles compactos (`<= 16px`), spinners (`animate-spin`) o dentro de botones sólidos.
-   * - `"glass"` / `"outline"` / `"solid"` / `"duotone"`: fuerza variante global salvo override por prop.
-   */
   defaultVariant?: IuSoftIconVariant | "auto";
   surface?: IuSoftIconSurface;
+  tone?: IuSoftIconTone;
   children: React.ReactNode;
 }
 
 export function SarchiIconProvider({
   defaultVariant = "auto",
   surface = "auto",
+  tone = "contextual",
   children,
 }: SarchiIconProviderProps) {
-  const value = React.useMemo(() => ({ defaultVariant, surface }), [defaultVariant, surface]);
+  const value = React.useMemo(
+    () => ({ defaultVariant, surface, tone }),
+    [defaultVariant, surface, tone]
+  );
   return (
     <SarchiIconContext.Provider value={value}>
       <style dangerouslySetInnerHTML={{ __html: IUSOFT_SURFACE_CSS }} />
@@ -94,6 +97,7 @@ function createSarchiIcon(
     {
       variant,
       surface,
+      tone,
       size = 24,
       className,
       strokeWidth: _sw,
@@ -106,12 +110,14 @@ function createSarchiIcon(
     const ctx = React.useContext(SarchiIconContext);
     const resolvedVariant = resolveSmartVariant(variant, ctx.defaultVariant, forcedDefault, size, className);
     const resolvedSurface = surface || ctx.surface;
+    const resolvedTone = tone || ctx.tone;
     return (
       <IuSoftIcon
         ref={_ref}
         name={slug}
         variant={resolvedVariant}
         surface={resolvedSurface}
+        tone={resolvedTone}
         size={size}
         className={className}
         animate={clsHasSpin(className) ? "none" : animate}
@@ -127,7 +133,7 @@ function clsHasSpin(cls?: string): boolean {
   return Boolean(cls && cls.includes("animate-spin"));
 }
 
-// === 215+ Símbolos Drop-In Compatibles con `lucide-react` para Sarchi Pizza POS ===
+// === 281 Símbolos Drop-In Compatibles con `lucide-react` para Sarchi Pizza POS ===
 export const Printer: SarchiLucideIcon = createSarchiIcon("printer", "Printer", undefined);
 export const Bike: SarchiLucideIcon = createSarchiIcon("bike", "Bike", undefined);
 export const Pizza: SarchiLucideIcon = createSarchiIcon("pizza", "Pizza", undefined);

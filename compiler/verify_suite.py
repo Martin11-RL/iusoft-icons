@@ -66,8 +66,8 @@ def main():
             if not paths:
                 fail(f"SVG vacío sin geometría en icons/{variant}/{slug}.svg")
             if variant == "glass":
-                if "--iusoft-obs-top" not in raw:
-                    fail(f"Faltan tokens --iusoft-* en icons/glass/{slug}.svg")
+                if "--iusoft-obs-back-top" not in raw:
+                    fail(f"Faltan tokens contextuales --iusoft-obs-back-top en icons/glass/{slug}.svg")
                 for el in root.iter():
                     if "stroke" in el.attrib and el.attrib["stroke"] not in ("none", ""):
                         fail(f"Prohibido atributo stroke en estilo Glass: icons/glass/{slug}.svg")

@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IU-SOFT Icons — Librería Vectorial Glass, Outline, Solid y Duotone</title>
-  <meta name="description" content="Librería vectorial de 243 iconos en 4 estilos (Glass, Outline, Solid y Duotone · 972 SVGs) para Sarchi Pizza POS e IU-SOFT, con descarga directa SVG y JSX bajo licencia MIT." />
+  <meta name="description" content="Librería vectorial de 260 iconos en 4 estilos (Glass con refracción cromática contextual, Outline, Solid y Duotone · 1,040 SVGs) para Sarchi Pizza POS e IU-SOFT, bajo licencia MIT." />
   <meta property="og:title" content="IU-SOFT Icons — Librería Vectorial Glass, Outline, Solid y Duotone" />
-  <meta property="og:description" content="243 iconos × 4 estilos (972 SVGs) con refracción óptica Glass, búsqueda en vivo y exportación limpia SVG/JSX." />
+  <meta property="og:description" content="260 iconos × 4 estilos (1,040 SVGs) con 8 paletas ópticas de refracción cromática contextual, búsqueda en vivo y exportación limpia SVG/JSX." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2318181B'/%3E%3Cpath fill='%23FAFAFA' d='M16 6a10 10 0 0 0-10 10c0 2 .6 3.9 1.7 5.4L16 16V6Zm2 0v10l8.3 5.4A10 10 0 0 0 18 6Zm-1 12.6L9.1 23.8a10 10 0 0 0 13.8 0L17 18.6Z'/%3E%3C/svg%3E" />
   <style>
@@ -171,6 +171,7 @@
     .min-w-\[240px\] { min-width: 240px; }
     .max-w-\[460px\] { max-width: 460px; }
     .max-w-\[700px\] { max-width: 700px; }
+    .max-w-\[980px\] { max-width: 980px; }
     .max-w-\[1160px\] { max-width: 1160px; }
 
     .h-\[18px\] { height: 18px; }
@@ -180,6 +181,7 @@
     .h-\[36px\] { height: 36px; }
     .h-\[38px\] { height: 38px; }
     .h-\[40px\] { height: 40px; }
+    .h-\[54px\] { height: 54px; }
     .min-h-\[32px\] { min-height: 32px; }
     .min-h-\[40px\] { min-height: 40px; }
     .min-h-\[64px\] { min-height: 64px; }
@@ -274,6 +276,8 @@
 
     @media (min-width: 1024px) {
       .lg\:grid-cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+      .lg\:inline-flex { display: inline-flex; }
+      .lg\:hidden { display: none; }
     }
 
     /* 4. Superficies Semánticas Tema Claro / Oscuro (DESIGN.md) */
@@ -475,7 +479,9 @@
     #icon-grid[data-iusoft-surface="dark"] .icon-tile,
     #icon-grid[data-iusoft-surface="emerald"] .icon-tile,
     #dock-preview[data-iusoft-surface="dark"],
-    #dock-preview[data-iusoft-surface="emerald"] {
+    #dock-preview[data-iusoft-surface="emerald"],
+    #dock-scales[data-iusoft-surface="dark"],
+    #dock-scales[data-iusoft-surface="emerald"] {
       background-color: #09090B;
       color: #FAFAFA;
       box-shadow: inset 0 0 0 1px #27272A;
@@ -548,6 +554,17 @@
       </div>
 
       <div class="flex flex-nowrap items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar max-w-full">
+        <a
+          href="./examples/05-contextual-color-glass.html"
+          id="link-color-lab"
+          class="control-surface focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] sm:text-[13px] lh-20 font-medium px-2.5 sm:px-3.5 h-[36px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 sm:gap-2 cursor-pointer"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.5a1 1 0 0 1 .9.56l2.14 4.34 4.79.7a1 1 0 0 1 .55 1.7l-3.46 3.38.82 4.77a1 1 0 0 1-1.45 1.05L12 16.75l-4.29 2.25a1 1 0 0 1-1.45-1.05l.82-4.77-3.46-3.38a1 1 0 0 1 .55-1.7l4.79-.7L11.1 3.06a1 1 0 0 1 .9-.56Z" />
+          </svg>
+          <span class="whitespace-nowrap">Laboratorio Color</span>
+        </a>
+
         <a
           href="./examples/04-sarchi-surfaces-preview.html"
           id="link-sarchi-surfaces"
@@ -646,18 +663,23 @@
 
           <span id="surface-sep" class="surface-divider hidden sm:inline-flex" aria-hidden="true"></span>
 
-          <div role="radiogroup" aria-label="Superficie óptica Glass" class="flex flex-nowrap items-center gap-1.5 overflow-x-auto no-scrollbar max-w-full" id="surface-bar">
-            <button type="button" role="radio" aria-checked="true" data-surface="light" class="surface-pill pill-selected focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+          <div role="group" aria-label="Tono y superficie óptica Glass" class="flex flex-nowrap items-center gap-1.5 overflow-x-auto no-scrollbar max-w-full" id="surface-bar">
+            <button type="button" aria-pressed="true" data-tone="color" class="tone-pill pill-selected focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+              <span class="whitespace-nowrap">Color contextual</span>
+            </button>
+            <button type="button" aria-pressed="false" data-tone="mono" class="tone-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+              <span class="whitespace-nowrap">Monocromo</span>
+            </button>
+
+            <span class="surface-divider" aria-hidden="true"></span>
+
+            <button type="button" aria-pressed="true" data-surface="light" class="surface-pill pill-selected focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
               <span class="dot-swatch" style="background-color:#D4D4D8;" aria-hidden="true"></span>
               <span class="whitespace-nowrap">Fondo claro</span>
             </button>
-            <button type="button" role="radio" aria-checked="false" data-surface="dark" class="surface-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+            <button type="button" aria-pressed="false" data-surface="dark" class="surface-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
               <span class="dot-swatch" style="background-color:#09090B;" aria-hidden="true"></span>
               <span class="whitespace-nowrap">OLED oscuro</span>
-            </button>
-            <button type="button" role="radio" aria-checked="false" data-surface="emerald" class="surface-pill pill-idle focus-ring ui-transition shrink-0 whitespace-nowrap text-[12px] lh-16 font-medium px-3 h-[32px] max-sm:min-h-[44px] rounded-full inline-flex items-center gap-1.5 cursor-pointer">
-              <span class="dot-swatch" style="background-color:#10B981;" aria-hidden="true"></span>
-              <span class="whitespace-nowrap">Esmeralda</span>
             </button>
           </div>
         </div>
@@ -719,15 +741,15 @@
           id="btn-reset-filters"
           class="control-surface focus-ring ui-transition text-[13px] lh-20 font-medium px-4 h-[38px] max-sm:min-h-[44px] rounded-full cursor-pointer mt-1"
         >
-          Mostrar los 243 iconos
+          Mostrar los 260 iconos
         </button>
       </div>
     </main>
 
     <!-- Pie informativo -->
     <footer class="pt-4 border-t hairline-b flex flex-wrap items-center justify-between gap-2 text-[12px] lh-16 muted-ink">
-      <span>Haz clic en cualquier loseta para inspeccionar usos en Sarchi POS, copiar JSX o descargar el SVG limpio.</span>
-      <span class="font-mono num-lock">viewBox 0 0 24 24 · 243 iconos · 972 SVGs</span>
+      <span>Haz clic en cualquier loseta para inspeccionar su familia cromática, copiar JSX o descargar el SVG limpio.</span>
+      <span class="font-mono num-lock">viewBox 0 0 24 24 · 260 iconos · 1,040 SVGs</span>
     </footer>
   </div>
 
@@ -735,17 +757,18 @@
   <aside
     id="selection-dock"
     aria-label="Acciones del icono seleccionado"
-    class="fixed bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 w-[calc(100%-24px)] max-w-[700px]"
+    class="fixed bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 w-[calc(100%-24px)] max-w-[980px]"
   >
     <div class="dock-shell rounded-[22px] sm:rounded-full px-3 sm:px-4 py-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-2.5">
       <div class="flex items-center gap-2.5 min-w-0 w-full sm:w-auto sm:flex-1">
-        <span id="dock-preview" data-iusoft-surface="light" class="w-[36px] h-[36px] rounded-full icon-tile inline-flex items-center justify-center shrink-0" aria-hidden="true"></span>
+        <span id="dock-preview" data-iusoft-surface="light" class="w-[36px] h-[36px] rounded-full icon-tile inline-flex lg:hidden items-center justify-center shrink-0" aria-hidden="true"></span>
+        <span id="dock-scales" data-iusoft-surface="light" class="hidden lg:inline-flex items-center gap-2 px-3 h-[54px] rounded-full icon-tile shrink-0" aria-hidden="true"></span>
         <div class="min-w-0 flex-1">
           <div class="flex items-center gap-1.5">
             <span id="dock-title" class="text-[14px] lh-20 font-semibold truncate">Ticket impresora</span>
             <span id="dock-code" class="text-[12px] lh-16 font-mono muted-ink num-lock">Printer</span>
           </div>
-          <div id="dock-meta" class="text-[12px] lh-16 muted-ink truncate num-lock">14 usos en Sarchi · Giro Pizzería</div>
+          <div id="dock-meta" class="text-[12px] lh-16 muted-ink truncate num-lock">Sistema y Estructura · Cuarzo grafito · 14 usos en Sarchi</div>
         </div>
       </div>
 
@@ -791,16 +814,38 @@
   <script>
     (function () {
       const CATALOG = __IUSOFT_CATALOG_JSON__;
+      const PALETTES = __IUSOFT_PALETTES_JSON__;
+
+      const MONO_STOPS = {
+        light: {
+          obsBack: ["#52525B", "#18181B"],
+          glass: ["#D4D4D8", "0.68", "#A1A1AA", "0.64"],
+          obsFront: ["#52525B", "#18181B"],
+          bevel: ["0.96", "0.28", "0"]
+        },
+        dark: {
+          obsBack: ["#FAFAFA", "#A1A1AA"],
+          glass: ["#71717A", "0.56", "#3F3F46", "0.52"],
+          obsFront: ["#FAFAFA", "#A1A1AA"],
+          bevel: ["0.94", "0.32", "0.08"]
+        }
+      };
 
       let activeStyle = "glass";
+      let activeTone = "color";
       let activeSurface = "light";
-      const initSurfParam = (new URLSearchParams(window.location.search).get("surface") || "").toLowerCase();
+      const urlParams = new URLSearchParams(window.location.search);
+      const initSurfParam = (urlParams.get("surface") || "").toLowerCase();
       if (initSurfParam === "dark" || initSurfParam === "oled") {
         activeSurface = "dark";
-      } else if (initSurfParam === "emerald") {
-        activeSurface = "emerald";
       } else if (initSurfParam === "light") {
         activeSurface = "light";
+      }
+      const initToneParam = (urlParams.get("tone") || "").toLowerCase();
+      if (initToneParam === "mono" || initToneParam === "monochrome") {
+        activeTone = "mono";
+      } else if (initToneParam === "color" || initToneParam === "contextual") {
+        activeTone = "color";
       }
       let activeCategory = "Todos";
       let activeSize = 40;
@@ -835,39 +880,48 @@
         });
       }
 
-      function renderSVG(item, styleKey, sizePx, cleanExport) {
+      function renderGlassSvg(item, pfx, sizePx, cleanExport) {
         const sv = item.svg;
-        const pfx = cleanExport ? `iusoft-${item.id}` : `iu-${++uidSeq}`;
-
-        if (styleKey === "glass") {
-          if (typeof sv.glass === "string") {
-            const scoped = scopeRawInnerIds(sv.glass, pfx);
-            return `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="none">${cleanExport ? scoped : `<g class="js-spring-whole">${scoped}</g>`}</svg>`;
-          }
-          const g = sv.glass;
-          const bevelD = g.inner !== undefined ? (g.inner ? `${g.glass} ${g.inner}` : g.glass) : g.bevel;
-          const backM = g.back.map((d) => `<path d="${d}" fill="url(#${pfx}-obs)" />`).join("");
-          const frontM = g.front.map((d) => `<path d="${d}" fill="url(#${pfx}-obs)" />`).join("");
-          const gCls = cleanExport ? "" : ` class="js-glass-xf"`;
-          const bCls = cleanExport ? "" : ` class="js-back-xf"`;
-          return [
-            `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="none">`,
-            `<defs>`,
-            `<linearGradient id="${pfx}-obs" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5B5B5E" style="stop-color:var(--iusoft-obs-top,#5B5B5E)"/><stop offset="100%" stop-color="#161617" style="stop-color:var(--iusoft-obs-bottom,#161617)"/></linearGradient>`,
-            `<linearGradient id="${pfx}-glass" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D4D4D8" stop-opacity="0.68" style="stop-color:var(--iusoft-glass-top,#D4D4D8);stop-opacity:var(--iusoft-glass-top-op,0.68)"/><stop offset="100%" stop-color="#A1A1AA" stop-opacity="0.64" style="stop-color:var(--iusoft-glass-bottom,#A1A1AA);stop-opacity:var(--iusoft-glass-bottom-op,0.64)"/></linearGradient>`,
-            `<linearGradient id="${pfx}-bevel" x1="12" y1="${g.y1}" x2="12" y2="${g.y2}" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.96" style="stop-color:var(--iusoft-bevel-top,#FFFFFF);stop-opacity:var(--iusoft-bevel-top-op,0.96)"/><stop offset="58%" stop-color="#FFFFFF" stop-opacity="0.28" style="stop-color:var(--iusoft-bevel-mid,#FFFFFF);stop-opacity:var(--iusoft-bevel-mid-op,0.28)"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" style="stop-color:var(--iusoft-bevel-bottom,#FFFFFF);stop-opacity:var(--iusoft-bevel-bottom-op,0)"/></linearGradient>`,
-            `<filter id="${pfx}-blur" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox"><feGaussianBlur stdDeviation="1.6"/></filter>`,
-            `<mask id="${pfx}-out" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#ffffff"/><g${gCls}><path d="${g.glass}" fill="#000000"/></g></mask>`,
-            `<mask id="${pfx}-in" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#000000"/><g${gCls}><path d="${g.glass}" fill="#ffffff"/></g></mask>`,
-            `</defs>`,
-            `<g mask="url(#${pfx}-out)"><g${bCls}>${backM}</g></g>`,
-            `<g mask="url(#${pfx}-in)"><g filter="url(#${pfx}-blur)"><g${bCls}>${backM}</g></g></g>`,
-            `<g${gCls}><path d="${g.glass}" fill="url(#${pfx}-glass)"/><path d="${bevelD}" fill="url(#${pfx}-bevel)" fill-rule="evenodd"/>${frontM}</g>`,
-            `</svg>`
-          ].join("");
+        if (typeof sv.glass === "string") {
+          const scoped = scopeRawInnerIds(sv.glass, pfx);
+          return `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="none">${cleanExport ? scoped : `<g class="js-spring-whole">${scoped}</g>`}</svg>`;
         }
+        const g = sv.glass;
+        const bevelD = g.inner !== undefined ? (g.inner ? `${g.glass} ${g.inner}` : g.glass) : g.bevel;
+        const isOled = activeSurface === "dark";
+        const palSpec = PALETTES[item.palette] || PALETTES["sistema-grafito"];
+        const stops = activeTone === "mono"
+          ? (isOled ? MONO_STOPS.dark : MONO_STOPS.light)
+          : (isOled ? palSpec.dark : palSpec.light);
 
-        const inner = scopeRawInnerIds(sv[styleKey], pfx);
+        const backM = g.back.map((d) => `<path d="${d}" fill="url(#${pfx}-obs-back)" />`).join("");
+        const frontM = g.front.map((d) => `<path d="${d}" fill="url(#${pfx}-obs-front)" />`).join("");
+        const gCls = cleanExport ? "" : ` class="js-glass-xf"`;
+        const bCls = cleanExport ? "" : ` class="js-back-xf"`;
+        return [
+          `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="none">`,
+          `<defs>`,
+          `<linearGradient id="${pfx}-obs-back" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="${stops.obsBack[0]}"/><stop offset="100%" stop-color="${stops.obsBack[1]}"/></linearGradient>`,
+          `<linearGradient id="${pfx}-obs-front" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="${stops.obsFront[0]}"/><stop offset="100%" stop-color="${stops.obsFront[1]}"/></linearGradient>`,
+          `<linearGradient id="${pfx}-glass" x1="12" y1="2.5" x2="12" y2="21.5" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="${stops.glass[0]}" stop-opacity="${stops.glass[1]}"/><stop offset="100%" stop-color="${stops.glass[2]}" stop-opacity="${stops.glass[3]}"/></linearGradient>`,
+          `<linearGradient id="${pfx}-bevel" x1="12" y1="${g.y1}" x2="12" y2="${g.y2}" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FFFFFF" stop-opacity="${stops.bevel[0]}"/><stop offset="58%" stop-color="#FFFFFF" stop-opacity="${stops.bevel[1]}"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="${stops.bevel[2]}"/></linearGradient>`,
+          `<filter id="${pfx}-blur" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox"><feGaussianBlur stdDeviation="1.6"/></filter>`,
+          `<mask id="${pfx}-out" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#ffffff"/><g${gCls}><path d="${g.glass}" fill="#000000"/></g></mask>`,
+          `<mask id="${pfx}-in" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-8" y="-8" width="40" height="40"><rect x="-8" y="-8" width="40" height="40" fill="#000000"/><g${gCls}><path d="${g.glass}" fill="#ffffff"/></g></mask>`,
+          `</defs>`,
+          `<g mask="url(#${pfx}-out)"><g${bCls}>${backM}</g></g>`,
+          `<g mask="url(#${pfx}-in)"><g filter="url(#${pfx}-blur)"><g${bCls}>${backM}</g></g></g>`,
+          `<g${gCls}><path d="${g.glass}" fill="url(#${pfx}-glass)"/><path d="${bevelD}" fill="url(#${pfx}-bevel)" fill-rule="evenodd"/>${frontM}</g>`,
+          `</svg>`
+        ].join("");
+      }
+
+      function renderSVG(item, styleKey, sizePx, cleanExport) {
+        const pfx = cleanExport ? `iusoft-${item.id}` : `iu-${++uidSeq}`;
+        if (styleKey === "glass") {
+          return renderGlassSvg(item, pfx, sizePx, cleanExport);
+        }
+        const inner = scopeRawInnerIds(item.svg[styleKey], pfx);
         return `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${sizePx}" viewBox="0 0 24 24" fill="currentColor">${cleanExport ? inner : `<g class="js-spring-whole">${inner}</g>`}</svg>`;
       }
 
@@ -889,10 +943,13 @@
       const sarchiTotal = CATALOG.filter((e) => e.inSarchi).length;
       document.getElementById("header-stats").textContent = `${CATALOG.length} iconos · 4 estilos · ${sarchiTotal}/${sarchiTotal} Sarchi POS (100%)`;
 
-      document.querySelectorAll("[data-style-preview]").forEach((el) => {
-        const st = el.getAttribute("data-style-preview");
-        el.innerHTML = renderSVG(CATALOG[0], st, 18, false);
-      });
+      function refreshStylePreviews() {
+        document.querySelectorAll("[data-style-preview]").forEach((el) => {
+          const st = el.getAttribute("data-style-preview");
+          el.innerHTML = renderSVG(CATALOG[0], st, 18, false);
+        });
+      }
+      refreshStylePreviews();
 
       const categoryBar = document.getElementById("category-bar");
       function renderCategories() {
@@ -961,6 +1018,7 @@
 
       const dockEl = document.getElementById("selection-dock");
       const dockPreview = document.getElementById("dock-preview");
+      const dockScales = document.getElementById("dock-scales");
       const dockTitle = document.getElementById("dock-title");
       const dockCode = document.getElementById("dock-code");
       const dockMeta = document.getElementById("dock-meta");
@@ -973,12 +1031,18 @@
         }
         dockEl.hidden = false;
         dockPreview.innerHTML = renderSVG(selectedItem, activeStyle, 22, false);
+        dockScales.innerHTML = [24, 32, 40, 48]
+          .map((px) => renderSVG(selectedItem, activeStyle, px, false))
+          .join("");
         dockTitle.textContent = selectedItem.label;
         dockCode.textContent = selectedItem.name;
         const usesPart = selectedItem.inSarchi
           ? `${selectedItem.sarchiUses} ${selectedItem.sarchiUses === 1 ? "uso" : "usos"} en Sarchi`
           : "Incluido en librería";
-        dockMeta.textContent = `${usesPart} · ${selectedItem.sourceLabel}`;
+        const paletteInfo = activeStyle === "glass"
+          ? (activeTone === "mono" ? "Monocromo Zinc" : (selectedItem.paletteLabel || selectedItem.sourceLabel))
+          : selectedItem.sourceLabel;
+        dockMeta.textContent = `${paletteInfo} · ${usesPart}`;
         downloadLabel.textContent = `Descargar ${activeStyle} SVG`;
       }
 
@@ -1047,20 +1111,40 @@
         const eff = activeStyle === "glass" ? activeSurface : (isDark ? "dark" : "light");
         gridEl.setAttribute("data-iusoft-surface", eff);
         dockPreview.setAttribute("data-iusoft-surface", eff);
+        dockScales.setAttribute("data-iusoft-surface", eff);
         surfaceBar.hidden = activeStyle !== "glass";
         surfaceSep.hidden = activeStyle !== "glass";
+        document.querySelectorAll(".tone-pill").forEach((b) => {
+          const on = b.getAttribute("data-tone") === activeTone;
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+          b.classList.toggle("pill-selected", on);
+          b.classList.toggle("pill-idle", !on);
+        });
         document.querySelectorAll(".surface-pill").forEach((b) => {
           const on = b.getAttribute("data-surface") === activeSurface;
-          b.setAttribute("aria-checked", on ? "true" : "false");
+          b.setAttribute("aria-pressed", on ? "true" : "false");
           b.classList.toggle("pill-selected", on);
           b.classList.toggle("pill-idle", !on);
         });
       }
 
+      document.querySelectorAll(".tone-pill").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          activeTone = btn.getAttribute("data-tone");
+          syncSurfaceAttributes();
+          refreshStylePreviews();
+          renderGrid();
+          updateSelectionDock();
+        });
+      });
+
       document.querySelectorAll(".surface-pill").forEach((btn) => {
         btn.addEventListener("click", () => {
           activeSurface = btn.getAttribute("data-surface");
           syncSurfaceAttributes();
+          refreshStylePreviews();
+          renderGrid();
+          updateSelectionDock();
         });
       });
 
@@ -1146,6 +1230,9 @@
           themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />`;
         }
         syncSurfaceAttributes();
+        refreshStylePreviews();
+        renderGrid();
+        updateSelectionDock();
       });
 
       function fallbackCopyText(text) {
