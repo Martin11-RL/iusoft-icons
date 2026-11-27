@@ -1,7 +1,7 @@
 {
   "name": "@iusoft/icons",
-  "version": "2.0.0",
-  "description": "Librería vectorial de 243 iconos en 4 estilos (Glass v2 multi-superficie Light/OLED/Emerald, Outline, Solid y Duotone · 972 SVGs) con compilador geométrico determinista 0-tokens y adaptador drop-in 215/215 para Sarchi Pizza POS.",
+  "version": "2.2.0",
+  "description": "Librería vectorial de 260 iconos en 4 estilos (Glass v2.2 con 8 paletas ópticas contextuales Light/OLED, Outline, Solid y Duotone · 1,040 SVGs) con compilador geométrico determinista 0-tokens y adaptador drop-in 281 símbolos para Sarchi Pizza POS.",
   "license": "MIT",
   "main": "./dist/catalog.json",
   "types": "./dist/iusoft-icons-react.tsx",
